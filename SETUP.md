@@ -41,7 +41,7 @@ This creates a Share Sheet action so you can send any URL to your knowledge base
    - Request Body (JSON):
      ```json
      {
-       "title": "New Source",
+       "title": "New Source: (from mobile)",
        "body": "## Source URLs\n\n- [SourceURL]\n\n## Notes\n\n_Sent from mobile_\n\n---\n\n## Instructions for Copilot\n\nRead these files in order:\n1. DELEGATION_SPEC.md\n2. WIKI_RULES.md\n3. QUALITY_EXAMPLES.md\n4. SESSION_LOG.md\n\nThen read the current wiki state. Process the source URLs above using the Ingestion Prompt stages from PROMPTS.md. Create a PR with all new/updated wiki files. Link the PR back to this issue.",
        "labels": ["new-source"]
      }
