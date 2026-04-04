@@ -12,12 +12,15 @@ The rapidly evolving stack of tools, frameworks, and architectural patterns enab
 - Claude Code projected at 20%+ of all daily commits by end of 2026 ([[great-gpu-shortage-rental-capacity]])
 - Gemma 4 positioned as "perfect" local model for open agent stacks with Apache 2.0 licensing ([[ainews-gemma-4-multimodal]])
 - "Model-Harness Training Loop" thesis: open models + traces + fine-tuning infra ([[ainews-everything-is-cli]])
+- Production agents require 12 infrastructure primitives most builders skip: tool registry, memory persistence, orchestration, observability, security layering, session persistence, workflow state, permissions/audit, agent identity, testing, error handling, and versioning [UNVERIFIED] ([[nates-newsletter-agent-blind-spots]])
+- "80% plumbing, 20% model" — gap between demo-grade and production-grade agents is almost entirely an infrastructure gap, not a model capability gap [UNVERIFIED] ([[nates-newsletter-agent-blind-spots]])
 
 ## Open Questions
 - Will CLIs or MCP become the dominant agent interface standard?
 - How will agent memory systems evolve beyond Claude Code's 3-layer design?
 - When does agent reliability reach the point of truly unattended multi-hour operation?
 - Will open-model agent stacks (Gemma 4 + Hermes) compete with closed-source (Claude Code)?
+- Who owns the "production agent infrastructure" layer — cloud providers, dev-tool platforms (GitHub), or a new category of agent-ops vendors?
 
 ## Related Concepts
 - [[gpu-and-compute-economics]] — agents drive compute demand

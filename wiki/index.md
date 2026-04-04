@@ -2,7 +2,7 @@
 This index is maintained automatically. Each entry links to its summary
 and lists related concepts.
 
-## Sources (8)
+## Sources (9)
 
 | # | Summary | Source | Date | Concepts |
 |---|---------|--------|------|----------|
@@ -14,6 +14,7 @@ and lists related concepts.
 | 6 | [[dwarkesh-dylan-patel-interview]] | Dwarkesh Podcast | 2026-03-13 | [[semiconductor-supply-chain-bottlenecks]], [[gpu-and-compute-economics]], [[data-center-infrastructure]] |
 | 7 | [[clouded-judgement-per-token-pricing]] | Clouded Judgement | 2026-03-27 | [[token-economics-and-pricing]], [[gpu-and-compute-economics]] |
 | 8 | [[fourth-industrial-revolution]] | Clouded Judgement | 2024-07-17 | [[data-center-infrastructure]] |
+| 9 | [[nates-newsletter-agent-blind-spots]] | Nate's Newsletter | ~2026-04-03 | [[ai-agent-ecosystem]] |
 
 ## Concepts (7)
 
@@ -22,7 +23,7 @@ and lists related concepts.
 | [[gpu-and-compute-economics]] | 3 sources |
 | [[semiconductor-supply-chain-bottlenecks]] | 3 sources |
 | [[inference-architecture-and-scaling]] | 4 sources |
-| [[ai-agent-ecosystem]] | 4 sources |
+| [[ai-agent-ecosystem]] | 5 sources |
 | [[token-economics-and-pricing]] | 3 sources |
 | [[open-models-and-local-inference]] | 3 sources |
 | [[data-center-infrastructure]] | 3 sources |
