@@ -1,0 +1,49 @@
+name: New Source
+description: "Drop article URLs, PDF links, or video links here. Copilot will process them into the wiki automatically."
+title: "New Source: "
+labels:
+  - new-source
+body:
+  - type: textarea
+    id: source-urls
+    attributes:
+      label: Source URLs
+      description: Paste one URL per line.
+      placeholder: |
+        https://example.com/article-1
+        https://example.com/article-2
+    validations:
+      required: true
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: Notes
+      description: "Optional — any context about why this source matters or what to look for."
+      placeholder: "e.g. Relevant to the compute supply-demand angle. Check for pricing data."
+    validations:
+      required: false
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+
+        ## Instructions for Copilot
+
+        Read these files in order:
+        1. DELEGATION_SPEC.md
+        2. WIKI_RULES.md
+        3. QUALITY_EXAMPLES.md
+        4. SESSION_LOG.md
+
+        Then read the current wiki state:
+        - wiki/index.md
+        - wiki/connections.md
+        - Scan wiki/summaries/ and wiki/concepts/
+
+        Process the source URLs listed above using the Ingestion Prompt stages from PROMPTS.md.
+
+        For Stage 1 (Source Retrieval), post your retrieval report as a comment on this issue, then proceed unless any sources completely failed.
+
+        Create a PR with all new/updated wiki files. Link the PR back to this issue.
