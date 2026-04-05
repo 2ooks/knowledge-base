@@ -27,6 +27,8 @@ The rapidly evolving stack of tools, frameworks, and architectural patterns enab
 - OpenAI unifies ChatGPT + Codex into a "superapp," explicitly prioritizing Enterprise and Coding over other product lines ([[ainews-every-lab-serious-enough-about]])
 - AI-specific roles are hockey-sticking across the tech industry: AI engineers, AI PMs, and roles at AI-native companies (OpenAI, Anthropic, Cursor, Lovable) are all surging; a third of all AI roles are Bay Area–based ([[lenny-state-of-product-job-market-2026]])
 - Design roles plateauing while PM and eng roles surge may be AI-related: engineers moving faster with AI tools reduces need for traditional design process involvement ([[lenny-state-of-product-job-market-2026]])
+- "Vibe coding" enables non-technical founders to build and deploy full applications using natural language prompts with AI tools (Claude Code, Replit), compressing development timelines from months to days/weekends [UNVERIFIED] ([[forbes-vibe-code-revenue-stream]])
+- Founders are building micro-SaaS businesses, service automation tools, and offering vibe coding as a service — monetizing domain expertise without traditional coding skills [UNVERIFIED] ([[forbes-vibe-code-revenue-stream]])
 
 ## Open Questions
 - Will CLIs or MCP become the dominant agent interface standard?
