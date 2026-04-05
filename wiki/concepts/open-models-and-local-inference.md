@@ -15,6 +15,9 @@ The trend toward open-weight AI models with permissive licenses that can run loc
 - Karpathy tweeted about "LLM Knowledge Bases" (Obsidian + compiled markdown wiki) — local workflows ([[ainews-gemma-4-multimodal]])
 - vLLM demonstrated fully local MoE inference on NVIDIA Jetson (Nemotron 3 Nano 30B) with zero cloud APIs — edge inference is reaching MoE model classes ([[ainews-autoresearch-sparks-of-recursive]])
 - Qwen3.5 fine-tuning agent workflow published by Unsloth claims to run on ≤24GB RAM, enabling agent-driven fine-tuning on consumer hardware ([[ainews-autoresearch-sparks-of-recursive]])
+- Reason-ModernColBERT (150M parameters) achieves ~90% on BrowseComp-Plus, outperforming models up to 54× larger — late-interaction retrieval systematically beats dense single-vector approaches for reasoning-intensive search ([[ainews-every-lab-serious-enough-about]])
+- Qwen 3.5 Max Preview reaches #3 in Math and Top 10 in Arena Expert; open model leaderboard movement remains rapid ([[ainews-every-lab-serious-enough-about]])
+- NVIDIA Nemotron 3 mixes Transformer + Mamba 2, MoE/LatentMoE, multi-token prediction, and NVFP4 for lower inference costs and long-context agent workloads — architecture experimentation beyond pure transformers accelerating ([[ainews-every-lab-serious-enough-about]])
 
 ## Open Questions
 - Will Apache 2.0 open models close the gap with closed-source frontier models (Claude, GPT)?
