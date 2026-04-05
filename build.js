@@ -46,8 +46,8 @@ function resolveWikilinks(markdown, depth) {
     const target = slugMap[slug];
     if (target) {
       const href  = depth > 0 ? `../${target}` : target;
-      const label = slug.replace(/-/g, '\u00a0').replace(/-/g, ' ');
-      return `[${slug.replace(/-/g, ' ')}](${href})`;
+      const label = slug.replace(/-/g, ' ');
+      return `[${label}](${href})`;
     }
     return `<span class="wikilink-missing" title="No page for '${slug}'">${slug.replace(/-/g, ' ')}</span>`;
   });
