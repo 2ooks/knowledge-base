@@ -1,7 +1,7 @@
-# Automatically merges wiki ingestion PRs created by the Copilot coding agent.
+# Automatically merges wiki ingestion PRs created by any coding agent.
 # Triggers when a PR is opened, marked ready for review, or updated.
-# Only acts on non-draft PRs authored by Copilot targeting the main branch.
-name: Auto-merge Copilot ingestion PRs
+# Merges any agent-authored PR targeting main, regardless of draft status.
+name: Auto-merge agent ingestion PRs
 
 on:
   pull_request:
@@ -15,12 +15,18 @@ jobs:
   auto-merge:
     runs-on: ubuntu-latest
     if: |
-      github.event.pull_request.user.login == 'Copilot' &&
-      github.event.pull_request.draft == false &&
+      (github.event.pull_request.user.login == 'Copilot' ||
+       github.event.pull_request.user.login == 'Claude') &&
       github.event.pull_request.base.ref == 'main'
     steps:
       - name: Wait for mergeability check
-        run: sleep 5
+        run: sleep 10
+
+      - name: Convert draft to ready if needed
+        if: github.event.pull_request.draft == true
+        env:
+          GH_TOKEN: ${{ secrets.KB_PAT }}
+        run: gh pr ready ${{ github.event.pull_request.number }} --repo ${{ github.repository }}
 
       - name: Merge PR
         env:
