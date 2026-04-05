@@ -34,7 +34,11 @@ Jamin Ball ([[fourth-industrial-revolution]]) flags power proximity as a major b
 Gemma 4 ([[ainews-gemma-4-multimodal]]) and the open agent ecosystem (Hermes, OpenClaw) suggest open models are "good enough." But the Claude Code leak ([[ainews-claude-code-source-leak]]) reveals years of sophisticated harness engineering that open stacks haven't replicated. Can open harnesses catch up, or is the integration advantage durable?
 
 ### Scaling Is Over vs. Scaling Has Barely Started
-Sutskever declares "pre-training as we have known it is over" and Patel argues scaling alone won't achieve breakthroughs ([[dwarkesh-ilya-sutskever-2]], [[dwarkesh-thoughts-on-ai-progress-dec-2025]]). Yet Dylan Patel ([[dwarkesh-dylan-patel-interview]]) describes $600B+ in CapEx flowing into GPU infrastructure this year, and every GPU is sold out through Q3 2026 ([[great-gpu-shortage-rental-capacity]]). Either the investment thesis is wrong (the money is chasing a paradigm that's ending) or Sutskever's "end of pre-training" is narrower than it sounds (inference, agent loops, and autoresearch may consume compute differently but at equal or greater scale). The resolution matters for Microsoft/GitHub: if the paradigm shift is real, strategic value moves from raw compute (Azure) to research infrastructure (GitHub).
+Sutskever declares "pre-training as we have known it is over" and Patel argues scaling alone won't achieve breakthroughs ([[dwarkesh-ilya-sutskever-2]], [[dwarkesh-thoughts-on-ai-progress-dec-2025]]). Yet Dylan Patel ([[dwarkesh-dylan-patel-interview]]) describes $600B+ in CapEx flowing into GPU infrastructure this year, and every GPU is sold out through Q3 2026 ([[great-gpu-shortage-rental-capacity]]).
+
+Either the investment thesis is wrong (the money is chasing a paradigm that's ending) or Sutskever's "end of pre-training" is narrower than it sounds — inference, agent loops, and autoresearch may consume compute differently but at equal or greater scale.
+
+The resolution matters for Microsoft/GitHub: if the paradigm shift is real, strategic value moves from raw compute (Azure) to research infrastructure (GitHub).
 
 ## Research Gaps
 

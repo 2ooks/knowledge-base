@@ -123,7 +123,7 @@ _No sessions logged yet._
 - **New research gap**: "The Post-Scaling Research Infrastructure Gap" — no source models what the research infrastructure stack looks like for autoresearch loops and synthetic data pipelines; actionable partnership thesis for GitHub
 
 ### Issues / Limitations
-- Both dwarkesh.com articles were inaccessible via direct fetch (domain blocked). All claims for issues #18 and #20 are sourced from secondary summaries and marked [UNVERIFIED]. Claims should be verified if the user can share the full article text.
+- Both dwarkesh.com articles were inaccessible via direct fetch (domain blocked). All claims for issues #18 and #20 are sourced from secondary summaries and marked [UNVERIFIED]. Claims should be verified if the user can share the full article text. **Verification priority: HIGH** — these two summaries have substantially lower confidence than the Lenny's Newsletter summary, which was sourced directly from the full article.
 - Publication dates for the Dwarkesh articles are approximate: "Thoughts on AI Progress" dated December 2025 based on the title and URL slug; "Ilya Sutskever 2" dated ~November/December 2025 based on The Zvi's analysis post (dated December 3, 2025).
 - The Lenny's Newsletter article text was truncated before the remote work and Bay Area sections' full detail; key statistics from those sections were captured in the retrieved portion.
 
