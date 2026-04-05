@@ -17,9 +17,11 @@ The economic dynamics of AI compute — how GPUs are priced, rented, depreciated
 - Will credit-based pricing replace per-token and per-seat models across the industry?
 - How will Nvidia's Groq LPU acquisition change the inference cost curve?
 - At what point does demand destruction from high prices actually kick in?
+- If "the age of scaling is over" [UNVERIFIED] ([[dwarkesh-ilya-sutskever-2]]), does GPU demand growth shift from training to inference and agent workloads — and what does that mean for capital allocation between training clusters and inference fleets?
 
 ## Related Concepts
 - [[semiconductor-supply-chain-bottlenecks]]
 - [[inference-architecture-and-scaling]]
 - [[token-economics-and-pricing]]
 - [[ai-agent-ecosystem]]
+- [[ai-scaling-limits-and-research-paradigm]] — scaling limits thesis challenges assumptions about indefinitely growing training compute demand

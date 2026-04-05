@@ -25,6 +25,8 @@ The rapidly evolving stack of tools, frameworks, and architectural patterns enab
 - NemoClaw (NVIDIA): zero permissions by default, sandboxed subagents, infra-enforced private inference — security primitives becoming first-class agent infrastructure ([[ainews-every-lab-serious-enough-about]])
 - SkyPilot Kubernetes-native autoresearch: ~910 experiments in 8 hours vs. ~96 sequentially — infrastructure directly reshaping the shape of automated research loops ([[ainews-every-lab-serious-enough-about]])
 - OpenAI unifies ChatGPT + Codex into a "superapp," explicitly prioritizing Enterprise and Coding over other product lines ([[ainews-every-lab-serious-enough-about]])
+- AI-specific roles are hockey-sticking across the tech industry: AI engineers, AI PMs, and roles at AI-native companies (OpenAI, Anthropic, Cursor, Lovable) are all surging; a third of all AI roles are Bay Area–based ([[lenny-state-of-product-job-market-2026]])
+- Design roles plateauing while PM and eng roles surge may be AI-related: engineers moving faster with AI tools reduces need for traditional design process involvement ([[lenny-state-of-product-job-market-2026]])
 
 ## Open Questions
 - Will CLIs or MCP become the dominant agent interface standard?
@@ -41,3 +43,4 @@ The rapidly evolving stack of tools, frameworks, and architectural patterns enab
 - [[gpu-and-compute-economics]] — agents drive compute demand
 - [[token-economics-and-pricing]] — agent workloads drive token consumption
 - [[open-models-and-local-inference]]
+- [[ai-scaling-limits-and-research-paradigm]] — if model capabilities plateau, the harness/infrastructure layer becomes even more critical
