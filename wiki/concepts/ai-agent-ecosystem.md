@@ -14,6 +14,11 @@ The rapidly evolving stack of tools, frameworks, and architectural patterns enab
 - "Model-Harness Training Loop" thesis: open models + traces + fine-tuning infra ([[ainews-everything-is-cli]])
 - Production agents require 12 infrastructure primitives most builders skip: tool registry, memory persistence, orchestration, observability, security layering, session persistence, workflow state, permissions/audit, agent identity, testing, error handling, and versioning [UNVERIFIED] ([[nates-newsletter-agent-blind-spots]])
 - "80% plumbing, 20% model" — gap between demo-grade and production-grade agents is almost entirely an infrastructure gap, not a model capability gap [UNVERIFIED] ([[nates-newsletter-agent-blind-spots]])
+- Karpathy's "autoresearch" loop on nanochat cut "Time to GPT-2" by ~11% via ~700 autonomous changes — described as the "AutoML moment" of 2026; Karpathy calls swarm-agent optimization "the final boss battle for frontier labs" ([[ainews-autoresearch-sparks-of-recursive]])
+- Coding agents are shifting the bottleneck from generation to review/verification: "execution is cheap, judgment is scarce" — Claude Code, OpenAI Codex, and Devin all shipped PR review agents in the same week ([[ainews-autoresearch-sparks-of-recursive]])
+- Agent loops are harness-constrained, not model-constrained: Opus 4.6 sustains 12+ hours / 118 experiments; GPT-5.4 "xhigh" fails on "LOOP FOREVER" — looping primitives, interruption/rewind, and transparent sessions are the differentiator ([[ainews-autoresearch-sparks-of-recursive]])
+- Perplexity "Computer" integrates Claude Code + GitHub CLI for end-to-end fork → implement → PR automation; third-party agents are now autonomous actors on GitHub repos ([[ainews-autoresearch-sparks-of-recursive]])
+- "Agentic identity" is emerging as a distinct infrastructure primitive: Teleport proposes cryptographic identity, least privilege, and audit trails across MCP/tools ([[ainews-autoresearch-sparks-of-recursive]])
 
 ## Open Questions
 - Will CLIs or MCP become the dominant agent interface standard?
@@ -21,6 +26,8 @@ The rapidly evolving stack of tools, frameworks, and architectural patterns enab
 - When does agent reliability reach the point of truly unattended multi-hour operation?
 - Will open-model agent stacks (Gemma 4 + Hermes) compete with closed-source (Claude Code)?
 - Who owns the "production agent infrastructure" layer — cloud providers, dev-tool platforms (GitHub), or a new category of agent-ops vendors?
+- As third-party agents (Perplexity Computer, Devin) operate autonomously on GitHub repos, what identity/permissions model governs which agent can do what?
+- Can autoresearch loops be made robust enough for production ML pipelines, and who provides the harness infrastructure for that?
 
 ## Related Concepts
 - [[gpu-and-compute-economics]] — agents drive compute demand
