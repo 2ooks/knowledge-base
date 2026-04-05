@@ -17,6 +17,7 @@ Key rules:
 - Every connection must pass the "So what?" test from DELEGATION_SPEC.md
 - Append to SESSION_LOG.md when done
 - Link the resulting PR back to the source issue
+- When opening the pull request for a new-source ingestion, do NOT create it as a draft. Open it as a ready-for-review PR immediately so automated workflows can merge it.
 
 ## General
 
