@@ -21,7 +21,7 @@ jobs:
     steps:
       - name: Assign Copilot to the issue
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.KB_PAT }}
         run: |
           gh issue edit ${{ github.event.issue.number }} \
             --add-assignee Copilot \
