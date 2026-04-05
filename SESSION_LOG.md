@@ -65,3 +65,30 @@ _No sessions logged yet._
 - None — full article text was accessible. All claims are attributed to the primary source with no [UNVERIFIED] flags needed.
 - Gemma 4 parameter rumors referenced in this article (120B total / 15B active) are unconfirmed; consistent with treatment in existing [[ainews-gemma-4-multimodal]] summary.
 - Publication date set to March 9, 2026 (end of the "3/5/2026–3/9/2026" coverage window stated in the article).
+
+---
+
+## Session: 2026-04-05 (2)
+
+### Articles Processed
+
+| Article | Retrieval Quality |
+|---------|-----------------|
+| [AINews: Every Lab Serious Enough About Coding Now Owns a Developer Toolchain](https://www.latent.space/p/ainews-every-lab-serious-enough-about) | **Full article accessed** — Latent.Space is publicly accessible. Full text retrieved covering the March 18–19, 2026 AINews digest. No paywalled content. All claims are directly attributable to the primary source. |
+
+### Summaries Created
+- `wiki/summaries/ainews-every-lab-serious-enough-about.md`
+
+### Concepts Updated
+- `wiki/concepts/ai-agent-ecosystem.md` — added seven new key points: developer toolchain land grab (GDM/Antigravity, Anthropic/Bun, OpenAI/Astral), LangSmith Fleet as agent fleet management with identity/permissions/audit, "agent operating system" framing, Devin teams (parallel VMs), NemoClaw zero-permissions-default, SkyPilot K8s autoresearch scaling (910 experiments in 8h), OpenAI superapp unification; added two new open questions on toolchain acquisition strategy and agent fleet consolidation
+- `wiki/concepts/open-models-and-local-inference.md` — added three new key points: Reason-ModernColBERT 150M outperforming 54× larger models on BrowseComp-Plus (late-interaction retrieval), Qwen 3.5 Max Preview leaderboard movement, NVIDIA Nemotron 3 architecture mixing Transformer + Mamba 2 + MoE
+
+### Connections Added / Updated
+- **New pattern**: "The Developer Toolchain Land Grab" — all three major labs now own core developer toolchain companies; direct strategic encroachment on GitHub's neutral infrastructure position
+- **New pattern**: "From Single Agents to Agent Fleets — The Enterprise Control Plane Race" — LangSmith Fleet, Devin teams, NemoClaw all launched within days; GitHub Actions permission model as the natural extension surface
+- **New pattern**: "Late-Interaction Retrieval as a Challenge to Dense RAG" — 150M ColBERT-family model outperforms models 54× larger; architectural risk signal for dense-embedding RAG pipelines including GitHub Copilot retrieval
+
+### Issues / Limitations
+- None — full article text was accessible. All claims are attributed to the primary source with no [UNVERIFIED] flags needed.
+- Article title inferred from URL slug and article framing; the exact publication title was not visible in the fetched HTML header but the slug and intro paragraph make the "every lab serious enough about coding now owns a developer toolchain" framing unambiguous.
+

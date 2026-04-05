@@ -19,6 +19,12 @@ The rapidly evolving stack of tools, frameworks, and architectural patterns enab
 - Agent loops are harness-constrained, not model-constrained: Opus 4.6 sustains 12+ hours / 118 experiments; GPT-5.4 "xhigh" fails on "LOOP FOREVER" — looping primitives, interruption/rewind, and transparent sessions are the differentiator ([[ainews-autoresearch-sparks-of-recursive]])
 - Perplexity "Computer" integrates Claude Code + GitHub CLI for end-to-end fork → implement → PR automation; third-party agents are now autonomous actors on GitHub repos ([[ainews-autoresearch-sparks-of-recursive]])
 - "Agentic identity" is emerging as a distinct infrastructure primitive: Teleport proposes cryptographic identity, least privilege, and audit trails across MCP/tools ([[ainews-autoresearch-sparks-of-recursive]])
+- All three major AI labs now own core developer toolchain assets: GDM→Antigravity, Anthropic→Bun, OpenAI→Astral (uv, ruff, ty) — framed as owning foundational Python tooling as a developer-platform moat ([[ainews-every-lab-serious-enough-about]])
+- Center of gravity shifting from single agents to managed agent fleets: LangSmith Fleet provides enterprise workspace for fleets with memory, permissions, identity, and audit trails; "agent operating system" metaphor gaining traction ([[ainews-every-lab-serious-enough-about]])
+- Cognition "teams of Devins": Devin decomposes work and delegates to parallel Devins in separate VMs — multi-agent orchestration at the VM isolation level ([[ainews-every-lab-serious-enough-about]])
+- NemoClaw (NVIDIA): zero permissions by default, sandboxed subagents, infra-enforced private inference — security primitives becoming first-class agent infrastructure ([[ainews-every-lab-serious-enough-about]])
+- SkyPilot Kubernetes-native autoresearch: ~910 experiments in 8 hours vs. ~96 sequentially — infrastructure directly reshaping the shape of automated research loops ([[ainews-every-lab-serious-enough-about]])
+- OpenAI unifies ChatGPT + Codex into a "superapp," explicitly prioritizing Enterprise and Coding over other product lines ([[ainews-every-lab-serious-enough-about]])
 
 ## Open Questions
 - Will CLIs or MCP become the dominant agent interface standard?
@@ -28,6 +34,8 @@ The rapidly evolving stack of tools, frameworks, and architectural patterns enab
 - Who owns the "production agent infrastructure" layer — cloud providers, dev-tool platforms (GitHub), or a new category of agent-ops vendors?
 - As third-party agents (Perplexity Computer, Devin) operate autonomously on GitHub repos, what identity/permissions model governs which agent can do what?
 - Can autoresearch loops be made robust enough for production ML pipelines, and who provides the harness infrastructure for that?
+- Now that all major labs own developer toolchain companies (Antigravity, Bun, Astral), is GitHub/Microsoft's position as the neutral developer infrastructure layer sustainable? What acquisitions or partnerships would reinforce it?
+- Will the "agent fleet management" layer (LangSmith Fleet, Devin teams) consolidate into platforms or remain fragmented across tool vendors?
 
 ## Related Concepts
 - [[gpu-and-compute-economics]] — agents drive compute demand

@@ -2,7 +2,7 @@
 This index is maintained automatically. Each entry links to its summary
 and lists related concepts.
 
-## Sources (10)
+## Sources (11)
 
 | # | Summary | Source | Date | Concepts |
 |---|---------|--------|------|----------|
@@ -16,6 +16,7 @@ and lists related concepts.
 | 8 | [[fourth-industrial-revolution]] | Clouded Judgement | 2024-07-17 | [[data-center-infrastructure]] |
 | 9 | [[nates-newsletter-agent-blind-spots]] | Nate's Newsletter | ~2026-04-03 | [[ai-agent-ecosystem]] |
 | 10 | [[ainews-autoresearch-sparks-of-recursive]] | Latent.Space | 2026-03-09 | [[ai-agent-ecosystem]], [[open-models-and-local-inference]] |
+| 11 | [[ainews-every-lab-serious-enough-about]] | Latent.Space | 2026-03-19 | [[ai-agent-ecosystem]], [[open-models-and-local-inference]] |
 
 ## Concepts (7)
 
@@ -24,7 +25,7 @@ and lists related concepts.
 | [[gpu-and-compute-economics]] | 3 sources |
 | [[semiconductor-supply-chain-bottlenecks]] | 3 sources |
 | [[inference-architecture-and-scaling]] | 4 sources |
-| [[ai-agent-ecosystem]] | 6 sources |
+| [[ai-agent-ecosystem]] | 7 sources |
 | [[token-economics-and-pricing]] | 3 sources |
-| [[open-models-and-local-inference]] | 4 sources |
+| [[open-models-and-local-inference]] | 5 sources |
 | [[data-center-infrastructure]] | 3 sources |
