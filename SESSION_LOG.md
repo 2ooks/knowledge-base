@@ -92,3 +92,38 @@ _No sessions logged yet._
 - None — full article text was accessible. All claims are attributed to the primary source with no [UNVERIFIED] flags needed.
 - Article title inferred from URL slug and article framing; the exact publication title was not visible in the fetched HTML header but the slug and intro paragraph make the "every lab serious enough about coding now owns a developer toolchain" framing unambiguous.
 
+---
+
+## Session: 2026-04-05 (3)
+
+### Articles Processed
+
+| Article | Retrieval Quality |
+|---------|-----------------|
+| [Ilya Sutskever — We're Moving from the Age of Scaling to the Age of Research](https://www.dwarkesh.com/p/ilya-sutskever-2) | **Secondary summary only** — dwarkesh.com is blocked for direct fetch. Claims sourced from multiple secondary summaries (EA Forum, LangCopilot, The Neuron, Artificial Intelligence Monaco). All specific claims marked [UNVERIFIED]. |
+| [Thoughts on AI Progress (Dec 2025)](https://www.dwarkesh.com/p/thoughts-on-ai-progress-dec-2025-video) | **Secondary summary only** — dwarkesh.com is blocked for direct fetch. Claims sourced from EA Forum commentary, podcast listings, and secondary summaries. All specific claims marked [UNVERIFIED]. |
+| [State of the Product Job Market (Spring 2026)](https://www.lennysnewsletter.com/p/state-of-the-product-job-market-in-ee9) | **Full article accessed** — lennysnewsletter.com is publicly accessible. Full text retrieved with TrueUp data charts. All claims are directly attributable to the primary source. |
+
+### Summaries Created
+- `wiki/summaries/dwarkesh-ilya-sutskever-2.md`
+- `wiki/summaries/dwarkesh-thoughts-on-ai-progress-dec-2025.md`
+- `wiki/summaries/lenny-state-of-product-job-market-2026.md`
+
+### Concepts Created
+- `wiki/concepts/ai-scaling-limits-and-research-paradigm.md` — new concept covering the "age of scaling is over" thesis from Sutskever and Patel's RL scaling skepticism; links to compute economics and agent ecosystem implications
+
+### Concepts Updated
+- `wiki/concepts/ai-agent-ecosystem.md` — added two new key points on AI role explosion and design role plateau from Lenny's data; added related concept link to scaling limits
+- `wiki/concepts/gpu-and-compute-economics.md` — added new open question about scaling limits thesis shifting demand from training to inference; added related concept link to scaling limits
+- `wiki/concepts/inference-architecture-and-scaling.md` — added related concept link to scaling limits
+
+### Connections Added / Updated
+- **New pattern**: "The 'Scaling Is Over' Counter-Thesis and Microsoft's Capital Allocation Risk" — Sutskever and Dwarkesh Patel challenge the $600B CapEx thesis; implications for Azure capacity planning and GitHub's infrastructure positioning
+- **New pattern**: "AI Hiring Surge as a Leading Indicator for Developer Tooling Demand" — Lenny's job market data as demand signal for developer tooling TAM
+- **New contradiction**: "Scaling: Infinite Demand vs. Diminishing Returns" — supply-side (Dylan Patel) vs. demand-side (Sutskever, Dwarkesh) perspectives on whether compute scaling yields compounding returns
+
+### Issues / Limitations
+- dwarkesh.com remains blocked for direct fetch. Both Dwarkesh sources (#18, #20) relied entirely on secondary summaries. All specific claims are [UNVERIFIED] and should be reviewed if the user can share full article/transcript text.
+- The Ilya Sutskever interview date is approximated as November 2025 based on secondary sources (EA Forum "November 2025 interview" heading); marked [UNVERIFIED].
+- The "Thoughts on AI Progress" issue URL includes a "-video" suffix; this appears to be the audio/video version of the Dec 2025 blog post. Treated as same content.
+- Lenny's Newsletter data sourced from TrueUp tracking of 9,000+ tech companies. Non-tech company roles are excluded from the dataset.

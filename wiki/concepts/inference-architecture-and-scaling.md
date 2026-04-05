@@ -24,3 +24,4 @@ The hardware architectures, system designs, and networking topologies being buil
 - [[gpu-and-compute-economics]]
 - [[semiconductor-supply-chain-bottlenecks]]
 - [[token-economics-and-pricing]]
+- [[ai-scaling-limits-and-research-paradigm]] — if pre-training gains plateau, inference becomes the primary compute workload and monetization surface
