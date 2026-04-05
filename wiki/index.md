@@ -2,7 +2,7 @@
 This index is maintained automatically. Each entry links to its summary
 and lists related concepts.
 
-## Sources (11)
+## Sources (14)
 
 | # | Summary | Source | Date | Concepts |
 |---|---------|--------|------|----------|
@@ -17,15 +17,19 @@ and lists related concepts.
 | 9 | [[nates-newsletter-agent-blind-spots]] | Nate's Newsletter | ~2026-04-03 | [[ai-agent-ecosystem]] |
 | 10 | [[ainews-autoresearch-sparks-of-recursive]] | Latent.Space | 2026-03-09 | [[ai-agent-ecosystem]], [[open-models-and-local-inference]] |
 | 11 | [[ainews-every-lab-serious-enough-about]] | Latent.Space | 2026-03-19 | [[ai-agent-ecosystem]], [[open-models-and-local-inference]] |
+| 12 | [[dwarkesh-thoughts-on-ai-progress-dec-2025]] | Dwarkesh Podcast | 2025-12 | [[scaling-limits-and-research-frontier]] |
+| 13 | [[dwarkesh-ilya-sutskever-2]] | Dwarkesh Podcast | ~2025-11/12 | [[scaling-limits-and-research-frontier]] |
+| 14 | [[lenny-state-of-product-job-market-2026]] | Lenny's Newsletter | ~2026-04 | [[ai-agent-ecosystem]] |
 
-## Concepts (7)
+## Concepts (8)
 
 | Concept | Sources |
 |---------|---------|
 | [[gpu-and-compute-economics]] | 3 sources |
 | [[semiconductor-supply-chain-bottlenecks]] | 3 sources |
 | [[inference-architecture-and-scaling]] | 4 sources |
-| [[ai-agent-ecosystem]] | 7 sources |
+| [[ai-agent-ecosystem]] | 9 sources |
 | [[token-economics-and-pricing]] | 3 sources |
 | [[open-models-and-local-inference]] | 5 sources |
 | [[data-center-infrastructure]] | 3 sources |
+| [[scaling-limits-and-research-frontier]] | 2 sources |

@@ -17,9 +17,11 @@ The economic dynamics of AI compute — how GPUs are priced, rented, depreciated
 - Will credit-based pricing replace per-token and per-seat models across the industry?
 - How will Nvidia's Groq LPU acquisition change the inference cost curve?
 - At what point does demand destruction from high prices actually kick in?
+- If "pre-training as we know it is over" ([[dwarkesh-ilya-sutskever-2]]) and progress shifts to research-driven paradigms (synthetic data, autoresearch loops), does aggregate compute demand decrease, redirect, or accelerate?
 
 ## Related Concepts
 - [[semiconductor-supply-chain-bottlenecks]]
 - [[inference-architecture-and-scaling]]
 - [[token-economics-and-pricing]]
 - [[ai-agent-ecosystem]]
+- [[scaling-limits-and-research-frontier]]

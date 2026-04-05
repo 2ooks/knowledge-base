@@ -92,3 +92,38 @@ _No sessions logged yet._
 - None — full article text was accessible. All claims are attributed to the primary source with no [UNVERIFIED] flags needed.
 - Article title inferred from URL slug and article framing; the exact publication title was not visible in the fetched HTML header but the slug and intro paragraph make the "every lab serious enough about coding now owns a developer toolchain" framing unambiguous.
 
+---
+
+## Session: 2026-04-05 (3)
+
+### Articles Processed
+
+| Article | Retrieval Quality |
+|---------|-----------------|
+| [Thoughts on AI Progress (Dec 2025)](https://www.dwarkesh.com/p/thoughts-on-ai-progress-dec-2025-video) | **Secondary summary only** — dwarkesh.com domain blocked; direct fetch failed. Claims sourced from web search results including EA Forum discussion, podcast aggregators, and secondary analysis blogs. All specific claims marked [UNVERIFIED]. |
+| [Ilya Sutskever — We're Moving from the Age of Scaling to the Age of Research](https://www.dwarkesh.com/p/ilya-sutskever-2) | **Secondary summary only** — dwarkesh.com domain blocked; direct fetch failed. Claims sourced from web search results including The Zvi analysis, Abhishek Gautam's blog, Analytics India Magazine, and podcast summaries. All specific claims marked [UNVERIFIED]. |
+| [State of the Product Job Market in 2026](https://www.lennysnewsletter.com/p/state-of-the-product-job-market-in-ee9) | **Full article accessed** — Lenny's Newsletter is publicly accessible. Full text retrieved with all data tables and charts. All claims are directly attributable to the primary source and TrueUp data. |
+
+### Summaries Created
+- `wiki/summaries/dwarkesh-thoughts-on-ai-progress-dec-2025.md`
+- `wiki/summaries/dwarkesh-ilya-sutskever-2.md`
+- `wiki/summaries/lenny-state-of-product-job-market-2026.md`
+
+### Concepts Created
+- `wiki/concepts/scaling-limits-and-research-frontier.md` — new concept covering the "end of pre-training" thesis and shift from scaling to research paradigms; linked from both Dwarkesh summaries
+
+### Concepts Updated
+- `wiki/concepts/ai-agent-ecosystem.md` — added two new key points from Lenny's data: AI roles hockey-sticking with one-third Bay Area-based, design roles plateauing while PM/eng grow (PM-to-designer ratio 1.27x); added new open question on role composition shifts; added related concept link to [[scaling-limits-and-research-frontier]]
+- `wiki/concepts/gpu-and-compute-economics.md` — added new open question on how the end of pre-training may redirect compute demand; added related concept link to [[scaling-limits-and-research-frontier]]
+
+### Connections Added / Updated
+- **New pattern**: "The 'End of Pre-Training' and Its Infrastructure Pivot" — Sutskever + Patel on paradigm shift from brute-force scaling to research-driven AI; implications for GitHub/Microsoft positioning (research infrastructure vs. raw compute)
+- **New pattern**: "AI's Job Creation Paradox — More Developers, Not Fewer" — Lenny's hiring data vs. Patel's bearish near-term view; composition shifts in tech teams (design decline) as signal for GitHub product strategy
+- **New contradiction**: "Scaling Is Over vs. Scaling Has Barely Started" — Sutskever/Patel declaring end of pre-training while $600B+ flows into GPU infrastructure; resolution determines strategic value distribution between Azure and GitHub
+- **New research gap**: "The Post-Scaling Research Infrastructure Gap" — no source models what the research infrastructure stack looks like for autoresearch loops and synthetic data pipelines; actionable partnership thesis for GitHub
+
+### Issues / Limitations
+- Both dwarkesh.com articles were inaccessible via direct fetch (domain blocked). All claims for issues #18 and #20 are sourced from secondary summaries and marked [UNVERIFIED]. Claims should be verified if the user can share the full article text.
+- Publication dates for the Dwarkesh articles are approximate: "Thoughts on AI Progress" dated December 2025 based on the title and URL slug; "Ilya Sutskever 2" dated ~November/December 2025 based on The Zvi's analysis post (dated December 3, 2025).
+- The Lenny's Newsletter article text was truncated before the remote work and Bay Area sections' full detail; key statistics from those sections were captured in the retrieved portion.
+

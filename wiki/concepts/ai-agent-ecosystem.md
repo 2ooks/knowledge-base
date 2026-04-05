@@ -25,6 +25,8 @@ The rapidly evolving stack of tools, frameworks, and architectural patterns enab
 - NemoClaw (NVIDIA): zero permissions by default, sandboxed subagents, infra-enforced private inference — security primitives becoming first-class agent infrastructure ([[ainews-every-lab-serious-enough-about]])
 - SkyPilot Kubernetes-native autoresearch: ~910 experiments in 8 hours vs. ~96 sequentially — infrastructure directly reshaping the shape of automated research loops ([[ainews-every-lab-serious-enough-about]])
 - OpenAI unifies ChatGPT + Codex into a "superapp," explicitly prioritizing Enterprise and Coding over other product lines ([[ainews-every-lab-serious-enough-about]])
+- AI roles at tech companies are "hockey-sticking" — demand for AI engineers and AI PMs exploding; one-third of all AI roles are Bay Area-based ([[lenny-state-of-product-job-market-2026]])
+- Design roles have plateaued while PM and eng roles grow — potential signal that AI-driven engineering velocity is reducing need for traditional design processes; PM-to-designer ratio flipped to 1.27x ([[lenny-state-of-product-job-market-2026]])
 
 ## Open Questions
 - Will CLIs or MCP become the dominant agent interface standard?
@@ -36,8 +38,10 @@ The rapidly evolving stack of tools, frameworks, and architectural patterns enab
 - Can autoresearch loops be made robust enough for production ML pipelines, and who provides the harness infrastructure for that?
 - Now that all major labs own developer toolchain companies (Antigravity, Bun, Astral), is GitHub/Microsoft's position as the neutral developer infrastructure layer sustainable? What acquisitions or partnerships would reinforce it?
 - Will the "agent fleet management" layer (LangSmith Fleet, Devin teams) consolidate into platforms or remain fragmented across tool vendors?
+- If AI is creating more tech jobs (not fewer), but reshaping role composition (fewer designers, more AI PMs), how should developer platforms like GitHub adapt their product surfaces?
 
 ## Related Concepts
 - [[gpu-and-compute-economics]] — agents drive compute demand
 - [[token-economics-and-pricing]] — agent workloads drive token consumption
 - [[open-models-and-local-inference]]
+- [[scaling-limits-and-research-frontier]]
