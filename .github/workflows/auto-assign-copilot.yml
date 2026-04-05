@@ -1,12 +1,8 @@
-# Automatically assigns the Copilot coding agent to any issue that is part of
-# the "Add to KB" mobile workflow, so the user doesn't have to do it manually.
-# Triggers when an issue is opened and either carries the `new-source` label
-# or has "New Source" in the title (fallback for when the label isn't applied
-# by the iOS Shortcut reliably).
-#
-# Uses the REST API directly because `gh issue edit --add-assignee` uses a
-# GraphQL mutation that cannot assign bot accounts.
-name: Auto-assign Copilot to new-source issues
+# Prepares new-source issues for Copilot ingestion.
+# Copilot cannot be assigned programmatically via API (GraphQL or REST),
+# so this workflow adds the new-source label and posts a reminder comment.
+# The user then assigns Copilot manually from GitHub Mobile (one tap).
+name: Prepare new-source issues
 
 on:
   issues:
@@ -16,18 +12,22 @@ permissions:
   issues: write
 
 jobs:
-  assign-copilot:
+  prepare-issue:
     runs-on: ubuntu-latest
-    if: |
-      contains(github.event.issue.labels.*.name, 'new-source') ||
-      contains(github.event.issue.title, 'New Source')
+    if: contains(github.event.issue.title, 'New Source')
     steps:
-      - name: Assign Copilot to the issue
+      - name: Add new-source label
         env:
-          GH_TOKEN: ${{ secrets.KB_PAT }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          curl -X POST \
-            -H "Authorization: Bearer $GH_TOKEN" \
-            -H "Accept: application/vnd.github+json" \
-            https://api.github.com/repos/${{ github.repository }}/issues/${{ github.event.issue.number }}/assignees \
-            -d '{"assignees":["Copilot"]}'
+          gh issue edit ${{ github.event.issue.number }} \ 
+            --add-label "new-source" \ 
+            --repo ${{ github.repository }}
+
+      - name: Post reminder comment
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh issue comment ${{ github.event.issue.number }} \ 
+            --repo ${{ github.repository }} \ 
+            --body "📱 **New source received.** Assign Copilot to this issue to start ingestion."
