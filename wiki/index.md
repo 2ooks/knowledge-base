@@ -2,7 +2,7 @@
 This index is maintained automatically. Each entry links to its summary
 and lists related concepts.
 
-## Sources (14)
+## Sources (15)
 
 | # | Summary | Source | Date | Concepts |
 |---|---------|--------|------|----------|
@@ -20,6 +20,7 @@ and lists related concepts.
 | 12 | [[dwarkesh-ilya-sutskever-2]] | Dwarkesh Podcast | ~2025-11 | [[ai-scaling-limits-and-research-paradigm]], [[gpu-and-compute-economics]], [[ai-agent-ecosystem]], [[inference-architecture-and-scaling]] |
 | 13 | [[dwarkesh-thoughts-on-ai-progress-dec-2025]] | Dwarkesh Patel (blog) | ~2025-12 | [[ai-scaling-limits-and-research-paradigm]], [[gpu-and-compute-economics]] |
 | 14 | [[lenny-state-of-product-job-market-2026]] | Lenny's Newsletter | 2026-04 | [[ai-agent-ecosystem]], [[gpu-and-compute-economics]] |
+| 15 | [[forbes-vibe-code-revenue-stream]] | Forbes | 2026-04-05 | [[ai-agent-ecosystem]] |
 
 ## Concepts (8)
 
@@ -28,7 +29,7 @@ and lists related concepts.
 | [[gpu-and-compute-economics]] | 5 sources |
 | [[semiconductor-supply-chain-bottlenecks]] | 3 sources |
 | [[inference-architecture-and-scaling]] | 4 sources |
-| [[ai-agent-ecosystem]] | 9 sources |
+| [[ai-agent-ecosystem]] | 10 sources |
 | [[token-economics-and-pricing]] | 3 sources |
 | [[open-models-and-local-inference]] | 5 sources |
 | [[data-center-infrastructure]] | 3 sources |
