@@ -25,6 +25,7 @@ The rapidly evolving stack of tools, frameworks, and architectural patterns enab
 - NemoClaw (NVIDIA): zero permissions by default, sandboxed subagents, infra-enforced private inference — security primitives becoming first-class agent infrastructure ([[ainews-every-lab-serious-enough-about]])
 - SkyPilot Kubernetes-native autoresearch: ~910 experiments in 8 hours vs. ~96 sequentially — infrastructure directly reshaping the shape of automated research loops ([[ainews-every-lab-serious-enough-about]])
 - OpenAI unifies ChatGPT + Codex into a "superapp," explicitly prioritizing Enterprise and Coding over other product lines ([[ainews-every-lab-serious-enough-about]])
+- "Vibe coding" is emerging as the entrepreneurial application layer of the agent ecosystem: non-technical founders use Claude Code and similar tools to build micro-SaaS products, calculators, and diagnostic tools by describing solutions in natural language, compressing product development timelines from months to days [UNVERIFIED] ([[forbes-jodie-cook-vibe-code-revenue-stream]])
 
 ## Open Questions
 - Will CLIs or MCP become the dominant agent interface standard?

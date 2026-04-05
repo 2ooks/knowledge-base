@@ -2,7 +2,7 @@
 This index is maintained automatically. Each entry links to its summary
 and lists related concepts.
 
-## Sources (11)
+## Sources (12)
 
 | # | Summary | Source | Date | Concepts |
 |---|---------|--------|------|----------|
@@ -17,6 +17,7 @@ and lists related concepts.
 | 9 | [[nates-newsletter-agent-blind-spots]] | Nate's Newsletter | ~2026-04-03 | [[ai-agent-ecosystem]] |
 | 10 | [[ainews-autoresearch-sparks-of-recursive]] | Latent.Space | 2026-03-09 | [[ai-agent-ecosystem]], [[open-models-and-local-inference]] |
 | 11 | [[ainews-every-lab-serious-enough-about]] | Latent.Space | 2026-03-19 | [[ai-agent-ecosystem]], [[open-models-and-local-inference]] |
+| 12 | [[forbes-jodie-cook-vibe-code-revenue-stream]] | Forbes | 2026-04-05 | [[ai-agent-ecosystem]] |
 
 ## Concepts (7)
 
@@ -25,7 +26,7 @@ and lists related concepts.
 | [[gpu-and-compute-economics]] | 3 sources |
 | [[semiconductor-supply-chain-bottlenecks]] | 3 sources |
 | [[inference-architecture-and-scaling]] | 4 sources |
-| [[ai-agent-ecosystem]] | 7 sources |
+| [[ai-agent-ecosystem]] | 8 sources |
 | [[token-economics-and-pricing]] | 3 sources |
 | [[open-models-and-local-inference]] | 5 sources |
 | [[data-center-infrastructure]] | 3 sources |
