@@ -13,6 +13,8 @@ The trend toward open-weight AI models with permissive licenses that can run loc
 - Architecture is non-standard: hybrid attention, per-layer embeddings, KV cache sharing, MoE as separate layers ([[ainews-gemma-4-multimodal]])
 - Claude Code source leak revealed closed-source agent architecture patterns that the open ecosystem is now racing to replicate ([[ainews-claude-code-source-leak]])
 - Karpathy tweeted about "LLM Knowledge Bases" (Obsidian + compiled markdown wiki) — local workflows ([[ainews-gemma-4-multimodal]])
+- vLLM demonstrated fully local MoE inference on NVIDIA Jetson (Nemotron 3 Nano 30B) with zero cloud APIs — edge inference is reaching MoE model classes ([[ainews-autoresearch-sparks-of-recursive]])
+- Qwen3.5 fine-tuning agent workflow published by Unsloth claims to run on ≤24GB RAM, enabling agent-driven fine-tuning on consumer hardware ([[ainews-autoresearch-sparks-of-recursive]])
 
 ## Open Questions
 - Will Apache 2.0 open models close the gap with closed-source frontier models (Claude, GPT)?
