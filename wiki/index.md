@@ -2,7 +2,7 @@
 This index is maintained automatically. Each entry links to its summary
 and lists related concepts.
 
-## Sources (11)
+## Sources (12)
 
 | # | Summary | Source | Date | Concepts |
 |---|---------|--------|------|----------|
@@ -11,21 +11,23 @@ and lists related concepts.
 | 3 | [[ainews-gemma-4-multimodal]] | Latent.Space | 2026-04-03 | [[open-models-and-local-inference]], [[ai-agent-ecosystem]] |
 | 4 | [[nvidia-inference-kingdom-expands]] | SemiAnalysis | 2026-03-23 | [[inference-architecture-and-scaling]], [[semiconductor-supply-chain-bottlenecks]], [[data-center-infrastructure]] |
 | 5 | [[great-gpu-shortage-rental-capacity]] | SemiAnalysis | 2026-04-01 | [[gpu-and-compute-economics]], [[token-economics-and-pricing]] |
-| 6 | [[dwarkesh-dylan-patel-interview]] | Dwarkesh Podcast | 2026-03-13 | [[semiconductor-supply-chain-bottlenecks]], [[gpu-and-compute-economics]], [[data-center-infrastructure]] |
+| 6 | [[dwarkesh-dylan-patel-interview]] | Dwarkesh Podcast | 2026-03-13 | [[semiconductor-supply-chain-bottlenecks]], [[gpu-and-compute-economics]], [[data-center-infrastructure]], [[agi-timelines-and-progress]] |
 | 7 | [[clouded-judgement-per-token-pricing]] | Clouded Judgement | 2026-03-27 | [[token-economics-and-pricing]], [[gpu-and-compute-economics]] |
 | 8 | [[fourth-industrial-revolution]] | Clouded Judgement | 2024-07-17 | [[data-center-infrastructure]] |
 | 9 | [[nates-newsletter-agent-blind-spots]] | Nate's Newsletter | ~2026-04-03 | [[ai-agent-ecosystem]] |
 | 10 | [[ainews-autoresearch-sparks-of-recursive]] | Latent.Space | 2026-03-09 | [[ai-agent-ecosystem]], [[open-models-and-local-inference]] |
 | 11 | [[ainews-every-lab-serious-enough-about]] | Latent.Space | 2026-03-19 | [[ai-agent-ecosystem]], [[open-models-and-local-inference]] |
+| 12 | [[dwarkesh-thoughts-on-ai-progress-dec-2025]] | Dwarkesh Podcast | 2025-12 | [[agi-timelines-and-progress]], [[ai-agent-ecosystem]] |
 
-## Concepts (7)
+## Concepts (8)
 
 | Concept | Sources |
 |---------|---------|
 | [[gpu-and-compute-economics]] | 3 sources |
 | [[semiconductor-supply-chain-bottlenecks]] | 3 sources |
 | [[inference-architecture-and-scaling]] | 4 sources |
-| [[ai-agent-ecosystem]] | 7 sources |
+| [[ai-agent-ecosystem]] | 8 sources |
 | [[token-economics-and-pricing]] | 3 sources |
 | [[open-models-and-local-inference]] | 5 sources |
 | [[data-center-infrastructure]] | 3 sources |
+| [[agi-timelines-and-progress]] | 2 sources |

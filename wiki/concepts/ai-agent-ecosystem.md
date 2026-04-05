@@ -25,6 +25,7 @@ The rapidly evolving stack of tools, frameworks, and architectural patterns enab
 - NemoClaw (NVIDIA): zero permissions by default, sandboxed subagents, infra-enforced private inference — security primitives becoming first-class agent infrastructure ([[ainews-every-lab-serious-enough-about]])
 - SkyPilot Kubernetes-native autoresearch: ~910 experiments in 8 hours vs. ~96 sequentially — infrastructure directly reshaping the shape of automated research loops ([[ainews-every-lab-serious-enough-about]])
 - OpenAI unifies ChatGPT + Codex into a "superapp," explicitly prioritizing Enterprise and Coding over other product lines ([[ainews-every-lab-serious-enough-about]])
+- Minority skeptical view: current RL-on-LLM agent workflows may be "expert systems 2.0" — baking in task-specific skills via curated RL environments rather than achieving flexible general learning; the gap between benchmark performance and true autonomous operation remains large [UNVERIFIED] ([[dwarkesh-thoughts-on-ai-progress-dec-2025]])
 
 ## Open Questions
 - Will CLIs or MCP become the dominant agent interface standard?

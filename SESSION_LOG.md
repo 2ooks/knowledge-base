@@ -92,3 +92,31 @@ _No sessions logged yet._
 - None — full article text was accessible. All claims are attributed to the primary source with no [UNVERIFIED] flags needed.
 - Article title inferred from URL slug and article framing; the exact publication title was not visible in the fetched HTML header but the slug and intro paragraph make the "every lab serious enough about coding now owns a developer toolchain" framing unambiguous.
 
+---
+
+## Session: 2026-04-05 (3)
+
+### Articles Processed
+
+| Article | Retrieval Quality |
+|---------|-----------------|
+| [Thoughts on AI Progress (Dec 2025)](https://www.dwarkesh.com/p/thoughts-on-ai-progress-dec-2025-video) | **Secondary summary only** — direct fetch to dwarkesh.com failed (domain blocked). All claims sourced from web search summaries, podcast directory descriptions, and an EA Forum repost (also blocked). All specific claims in the summary are marked [UNVERIFIED]. Publication date approximated as December 2025 based on article slug. |
+
+### Summaries Created
+- `wiki/summaries/dwarkesh-thoughts-on-ai-progress-dec-2025.md`
+
+### Concepts Created
+- `wiki/concepts/agi-timelines-and-progress.md` — new concept file; theme spans this source and [[dwarkesh-dylan-patel-interview]] (AI timeline geopolitics)
+
+### Concepts Updated
+- `wiki/concepts/ai-agent-ecosystem.md` — added key point on Patel's "expert systems 2.0" skepticism of RL-on-LLM agent approaches
+
+### Connections Added / Updated
+- **New contradiction**: "RL Scaling: Stepping Stone or Expert Systems 2.0?" — Patel's Dec 2025 skepticism vs. bullish autoresearch/agent sources; strategic implication for CapEx assumptions
+- **New research gap**: "What If the Timelines Are Slow? The 'Valuable Narrow AI' Scenario" — models the bifurcation between fast-AGI and slow-AGI strategy for Microsoft/GitHub; slow timelines actually strengthen GitHub's workflow lock-in position
+
+### Issues / Limitations
+- Full article text unavailable (domain blocked). All key claims are [UNVERIFIED] and should be reviewed and confirmed if the user can share the full essay text.
+- Publication date set to "2025-12" (approximate) based on article slug; exact date not confirmed.
+- Patel's exact framing of the "expert systems reprise" argument could not be verified verbatim; reconstructed from multiple secondary summaries with consistent descriptions.
+
