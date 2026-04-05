@@ -1,7 +1,8 @@
 # Prepares new-source issues for Copilot ingestion.
 # Copilot cannot be assigned programmatically via API (GraphQL or REST),
-# so this workflow adds the new-source label and posts a reminder comment.
-# The user then assigns Copilot manually from GitHub Mobile (one tap).
+# so this workflow adds the new-source label and @mentions the owner
+# to trigger a push notification on GitHub Mobile.
+# The user then assigns Copilot from the notification (one tap).
 name: Prepare new-source issues
 
 on:
@@ -21,7 +22,10 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: gh issue edit ${{ github.event.issue.number }} --add-label "new-source" --repo ${{ github.repository }}
 
-      - name: Post reminder comment
+      - name: Notify owner to assign Copilot
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: gh issue comment ${{ github.event.issue.number }} --repo ${{ github.repository }} --body "📱 **New source received.** Assign Copilot to this issue to start ingestion."
+        run: |
+          gh issue comment ${{ github.event.issue.number }} \
+            --repo ${{ github.repository }} \
+            --body "@${{ github.repository_owner }} 📱 **New source ready.** Open this issue and tap **Assignees → Copilot** to start ingestion. The PR will auto-merge when done."
