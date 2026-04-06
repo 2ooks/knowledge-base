@@ -229,3 +229,29 @@ Updated `.github/workflows/auto-merge-ingestion.yml`:
 - None — full article text was provided by the user in the issue description. All claims are attributed to the primary source with no [UNVERIFIED] flags needed.
 - This article provides the most comprehensive and systematic definition of agent harness engineering to date, serving as the canonical framework for the "harness > model" thesis that runs throughout the wiki.
 
+---
+
+## Session: 2026-04-06 (3) — Wiki Integrity Audit
+
+### Checks Performed
+| Check | Result |
+|-------|--------|
+| Every `[[wikilink]]` points to an existing file | ✅ PASS |
+| Every summary linked from ≥1 concept file | ✅ PASS |
+| Every concept linked from connections.md | ❌ FAIL — 8 orphaned concepts |
+| index.md lists every summary and concept | ✅ PASS |
+
+### Fixes Applied
+- **connections.md** — added `[[wikilinks]]` for all 8 concept files that were missing:
+  - `[[ai-agent-ecosystem]]`
+  - `[[ai-scaling-limits-and-research-paradigm]]`
+  - `[[data-center-infrastructure]]`
+  - `[[gpu-and-compute-economics]]`
+  - `[[inference-architecture-and-scaling]]`
+  - `[[open-models-and-local-inference]]`
+  - `[[semiconductor-supply-chain-bottlenecks]]`
+  - `[[token-economics-and-pricing]]`
+
+### Issues / Limitations
+- None — all other checks passed. No broken wikilinks, no orphaned summaries, and index.md was complete.
+
