@@ -255,3 +255,41 @@ Updated `.github/workflows/auto-merge-ingestion.yml`:
 ### Issues / Limitations
 - None — all other checks passed. No broken wikilinks, no orphaned summaries, and index.md was complete.
 
+---
+
+## Session: 2026-04-06 (4)
+
+### Articles Processed
+
+| Article | Retrieval Quality |
+|---------|-----------------|
+| [Anthropic Accidentally Revealed Their Most Powerful Model Ever — AI Daily Brief, March 27, 2026](malformed URL in issue) | **Full article text available** — Complete episode text provided in issue description, including headlines (Claude Mythos leak, Gemini 3.1 Flash Live, Shopify Tinker, OpenAI updates) and main story on vertical AI models (Cursor Composer 2, Intercom Fin Apex, Decagon). All claims are directly attributable to the source content. |
+
+### Summaries Created
+- `wiki/summaries/ai-daily-brief-anthropic-mythos-vertical-models.md`
+
+### Raw Articles Created
+- `raw/articles/ai-daily-brief-anthropic-mythos-vertical-models.md`
+
+### Concepts Created
+- `wiki/concepts/vertical-models-and-usage-data.md` — new concept covering the emerging pattern where product companies build domain-specific models by post-training open-source bases on proprietary usage data, achieving performance that matches or exceeds general frontier models at lower cost
+
+### Concepts Updated
+- `wiki/concepts/ai-agent-ecosystem.md` — added four new key points: Cursor Composer 2 on Kimi K2.5 beating Opus 4.6, OpenAI Codex plugin updates and adult mode shelved, Claude Mythos as new tier above Opus
+- `wiki/concepts/open-models-and-local-inference.md` — added key point on Kimi K2.5 as foundation for Cursor Composer 2, demonstrating open base models can reach frontier performance via domain-specific post-training
+- `wiki/concepts/token-economics-and-pricing.md` — added three key points on "API tax" observation and multiple companies finding in-house training better/cheaper/faster than frontier API calls
+
+### Connections Added / Updated
+- **New pattern**: "Vertical Models and the 'API Tax' Rebellion" — Cursor, Intercom, and Decagon demonstrating that vertical models trained on proprietary usage data can beat general frontier models; represents structural threat to frontier API business model; includes strategic implications for Azure AI (vertical model training as a service), GitHub Copilot's data moat, end of model-provider lock-in, and open-source base model partnerships
+- **New pattern**: "Claude Mythos and the Return of Model Tiers" — Anthropic's leaked Mythos model represents premium tier strategy, creating bifurcated market where vertical models win on cost-performance for established workflows while frontier models retain dominance on novel/rare tasks
+- **New research gap**: "Vertical Model Training Infrastructure — Azure's Next Revenue Category?" — multiple companies independently rebuilding same RL training infrastructure; opportunity for Azure to productize vertical model workflow
+- **New research gap**: "Frontier Labs' Response to Vertical Model Competition" — no source yet describes how OpenAI, Anthropic, GDM will respond strategically to vertical model competition
+
+### Index Updated
+- `wiki/index.md` — added entry #18 for ai-daily-brief-anthropic-mythos-vertical-models; updated ai-agent-ecosystem source count to 13, token-economics-and-pricing to 4, open-models-and-local-inference to 6; added new concept vertical-models-and-usage-data with 1 source
+
+### Issues / Limitations
+- None — full article text was provided in the issue description. All claims are attributed to the primary source with no [UNVERIFIED] flags needed.
+- Source URL appears malformed in the issue (shows "Login Login Login..." repeated) but this appears to be a rendering artifact from the newsletter subscription prompt; does not affect content quality.
+- This article represents a major strategic shift thesis: vertical models trained on usage data may fundamentally challenge the frontier API business model, with significant implications for Microsoft/GitHub positioning in the AI value chain.
+
