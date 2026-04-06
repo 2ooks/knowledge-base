@@ -44,6 +44,12 @@ The rapidly evolving stack of tools, frameworks, and architectural patterns enab
 - Cursor's Composer 2 built on Kimi K2.5 (open-source base) with 75% of compute from proprietary RL post-training on usage data; beats Opus 4.6 and matches GPT-5.4 on coding benchmarks at lower cost ([[ai-daily-brief-anthropic-mythos-vertical-models]])
 - OpenAI added plugins to Codex and reset usage limits across all plans, positioning against Anthropic's Claude Code rate limit changes; shelved adult mode indefinitely, consolidating on coding and enterprise ([[ai-daily-brief-anthropic-mythos-vertical-models]])
 - Claude Mythos revealed as new tier above Opus — "step change" in performance, particularly for coding, academic reasoning, and cybersecurity; expensive to serve, targeting early access for cybersecurity applications ([[ai-daily-brief-anthropic-mythos-vertical-models]])
+- Cursor 3 (codename "Glass") represents architectural shift: agent management console as primary interface, traditional IDE demoted to secondary fallback; "the prompt box sits where the file tree used to be" ([[cursor-3-agent-management-console]])
+- Cloud Handoff: seamless session portability between local and cloud mid-task — developers can move running agent sessions to cloud, close machine, and pull back later; "that kind of session portability has been a gap in most competing tools" ([[cursor-3-agent-management-console]])
+- Cursor 3's multi-repo workspace is default, with unified sidebar showing all local and cloud agents from every surface (mobile, web, Slack, GitHub, Linear); cloud agents generate demos and screenshots for review without pulling code locally ([[cursor-3-agent-management-console]])
+- The architectural divergence in AI-assisted development: Anthropic (terminal-first, no IDE), OpenAI (omni-surface orchestration everywhere), Google Antigravity (dual-mode with coequal Editor View and Manager Surface), Cursor (agent console default, IDE fallback) ([[cursor-3-agent-management-console]])
+- Cursor acquired Graphite (code review platform) in December 2025 because "reviewing code was becoming the bottleneck as AI accelerated writing it" — engineer role shifting toward reviewing agent diffs, verifying screenshots, orchestrating tasks ([[cursor-3-agent-management-console]])
+- Cursor's Automations: agents triggered by GitHub events, Slack messages, and timers without human intervention (launched March 5, 2026) ([[cursor-3-agent-management-console]])
 
 ## Open Questions
 - Will CLIs or MCP become the dominant agent interface standard?
@@ -56,6 +62,8 @@ The rapidly evolving stack of tools, frameworks, and architectural patterns enab
 - Now that all major labs own developer toolchain companies (Antigravity, Bun, Astral), is GitHub/Microsoft's position as the neutral developer infrastructure layer sustainable? What acquisitions or partnerships would reinforce it?
 - Will the "agent fleet management" layer (LangSmith Fleet, Devin teams) consolidate into platforms or remain fragmented across tool vendors?
 - If agents can update their own instructions from user feedback without re-deployment, what governance model ensures these self-modifications stay safe and auditable at scale? GitHub's permission and audit infrastructure may be directly applicable here.
+- Will the architectural divergence in agent orchestration layers resolve into a single pattern (terminal-first vs. IDE-integrated vs. omni-surface), or will developers fragment across these surfaces based on workflow? Which architecture wins developer loyalty for the next decade?
+- As VS Code extensions become less relevant in agent-first interfaces, does Microsoft's VS Code moat — the "center of gravity for developer tooling for nearly a decade" — collapse, or does Copilot's integration preserve it?
 
 ## Related Concepts
 - [[gpu-and-compute-economics]] — agents drive compute demand

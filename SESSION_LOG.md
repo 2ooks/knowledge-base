@@ -431,3 +431,37 @@ The LangChain article re-ingestion revealed that the original secondary-source r
 ### Issues / Limitations
 - dwarkesh.com remains blocked; Sutskever interview primary text was not directly retrieved; claims rely on multi-source secondary corroboration
 - Issue #57 contained the "Thoughts on AI Progress" article (already verified) rather than the Sutskever interview — user should re-run iOS shortcut on https://www.dwarkesh.com/p/ilya-sutskever-2 to get the actual transcript if a primary-source verification is required
+
+---
+
+## Session: 2026-04-06 (7) — Cursor 3 Agent Management Console Ingestion
+
+### Articles Processed
+
+| Article | Retrieval Quality |
+|---------|-----------------|
+| [Cursor's $2 billion bet: The IDE is now a fallback, not the default](https://thenewstack.io/cursors-2-billion-bet-the-ide-is-now-a-fallback-not-the-default/) | **Full article text available** — Complete article text provided in issue description. All claims are directly attributable to the primary source. Date confirmed as April 5, 2026. Author: Janakiram MSV. |
+
+### Summaries Created
+- `wiki/summaries/cursor-3-agent-management-console.md`
+
+### Raw Articles Created
+- `raw/articles/cursor-3-agent-management-console.md`
+
+### Concepts Updated
+- `wiki/concepts/ai-agent-ecosystem.md` — added seven new key points: Cursor 3 architectural shift (agent console primary, IDE fallback), Cloud Handoff session portability, multi-repo workspace with unified sidebar, the four-way architectural divergence (Anthropic terminal-first, OpenAI omni-surface, Google dual-mode, Cursor agent-first), Graphite acquisition (code review bottleneck), engineer role shifting to orchestration/review, Automations (GitHub/Slack/timer-triggered agents); added two new open questions on architectural divergence and VS Code moat
+- `wiki/concepts/vertical-models-and-usage-data.md` — added two new key points: Composer 2 pricing ($0.50/M input, $2.50/M output) as "substantially below frontier model pricing," Cursor's competitive response to Claude Code with six-week product offensive including Composer 2
+
+### Connections Added
+- **New pattern**: "The Architectural Divergence in Agent Orchestration — and What It Means for GitHub" — comprehensive analysis of the four competing architectures (Anthropic terminal-first, OpenAI omni-surface, Google dual-mode, Cursor agent-first) with five strategic implications for GitHub/Microsoft: VS Code moat under threat, session portability as table stakes, neutral platform strategy as potential liability, model choice as infrastructure, code review as battleground
+
+### Index Updated
+- `wiki/index.md` — added entry #19 for cursor-3-agent-management-console; updated ai-agent-ecosystem source count to 14, vertical-models-and-usage-data to 2, open-models-and-local-inference to 7, token-economics-and-pricing to 5
+
+### Issues / Limitations
+- None — full article text was available in the issue description. All claims are attributed to the primary source with no [UNVERIFIED] flags needed.
+- This article provides critical strategic clarity on the architectural divergence happening in developer tooling: Cursor 3's radical pivot to agent-first interface (demoting the IDE to fallback) represents one of four competing visions for where the orchestration layer should live, with direct implications for Microsoft's VS Code moat and GitHub's positioning as neutral developer infrastructure.
+- The article also documents Cursor's competitive response to Claude Code ($2.5B run rate vs. Cursor's $2B), which included four major product launches in six weeks (Automations, Composer 2, self-hosted cloud agents, Cursor 3) — demonstrating the velocity and stakes in the AI-assisted development market.
+- Key strategic finding: "If the agent-first interface wins, VS Code extensions become less relevant" and "Microsoft should be paying close attention" as "the assumption that VS Code is the center of gravity for developer tooling, an assumption that has held for nearly a decade, is weakening." This is a direct challenge to GitHub's existing integration strategy.
+- The Google Antigravity detail ($2.4 billion in licensing fees to Windsurf + hiring CEO and engineers into DeepMind) provides important context on acquisition pricing in this space and reinforces the toolchain land grab thesis.
+
