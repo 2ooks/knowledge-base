@@ -431,3 +431,42 @@ The LangChain article re-ingestion revealed that the original secondary-source r
 ### Issues / Limitations
 - dwarkesh.com remains blocked; Sutskever interview primary text was not directly retrieved; claims rely on multi-source secondary corroboration
 - Issue #57 contained the "Thoughts on AI Progress" article (already verified) rather than the Sutskever interview — user should re-run iOS shortcut on https://www.dwarkesh.com/p/ilya-sutskever-2 to get the actual transcript if a primary-source verification is required
+
+---
+
+## Session: 2026-04-06 (7)
+
+### Articles Processed
+
+| Article | Retrieval Quality |
+|---------|-----------------|
+| [Cursor 3 Is Not an IDE Update. It's a Bet That You'll Manage Agents, Not Write Code](https://medium.com/@heloir.yan/cursor-3-is-not-an-ide-update-its-a-bet-that-you-ll-manage-agents-not-write-code) | **Full article text available** — Complete article text provided in issue description (Medium member-only story). All claims are directly attributable to the primary source. Date: April 4, 2026 (approx.). |
+
+### Summaries Created
+- `wiki/summaries/medium-cursor-3-agents-window-architecture.md`
+
+### Raw Articles Created
+- `raw/articles/medium-cursor-3-agents-window-architecture.md`
+
+### Concepts Updated
+- `wiki/concepts/ai-agent-ecosystem.md` — added 10 new key points covering: Third Era thesis (Tab → synchronous agents → autonomous fleets), agent adoption flip at Cursor (2.5:1 Tab:agent to 2:1 agent:Tab in one year), 35% of Cursor's PRs from autonomous cloud agents, Agents Window as first from-scratch interface (VS Code limitations), Design Mode and `/best-of-n` as fleet management features, five competitive interface bets (Copilot/Cursor IDE/Cursor Agents/Claude Code/Devin), developer backlash concerns (craft/autonomy/incentives), March 2026 five-layer platform buildout; added 3 new open questions on VS Code architecture compatibility, Third Era adoption speed, and competitive consolidation
+- `wiki/concepts/vertical-models-and-usage-data.md` — added key point on Cursor's March 2026 platform buildout as demonstration of vertical integration with Composer 2 as "brain layer"
+
+### Connections Added
+- **New pattern**: "Cursor 3 and the Great Agent Interface Divergence" — five major players (Copilot, Cursor IDE mode, Cursor Agents Window, Claude Code, Devin) making mutually exclusive architectural bets on the interface for agent-driven development; Cursor's empirical data (15x agent growth, 35% autonomous PRs, Third Era thesis) supports the "agent fleets require new interface" thesis; architectural trigger is VS Code's incompatibility with multi-workspace parallelism, cloud/local handoff, and artifact-based review; Design Mode and `/best-of-n` are fleet management features, not IDE features; strategic implications for GitHub include extension architecture risk, VS Code fork pressure escalation, bifurcated developer sentiment, need to choose a bet within quarters not years, and pressure from Cursor's public 12-month prediction
+- **New pattern**: "The Craftsperson-to-Manager Transition and Developer Identity Crisis" — developer backlash framed as psychological/identity crisis, not just feature resistance; three concerns (craft, autonomy, incentive alignment) map to adoption barriers; strategic implications for GitHub include positioning opportunity (seat-based vs. credit-based pricing alignment), gradual vs. revolutionary adoption strategy, "So what?" test for features (preserve mental model building), and talent retention risk if experienced engineers leave rather than adapt to manager role
+
+### Index Updated
+- `wiki/index.md` — added entry #19 for medium-cursor-3-agents-window-architecture; updated ai-agent-ecosystem source count to 14; updated vertical-models-and-usage-data source count to 2
+
+### Issues / Limitations
+- None — full article text was provided in the issue description. All claims are attributed to the primary source with no [UNVERIFIED] flags needed.
+- This article is a major strategic addition to the wiki, providing:
+  1. Quantitative evidence of agent adoption acceleration (15x growth, ratio flip from 2.5:1 to 2:1 in one year)
+  2. First-hand data from a major vendor (35% of Cursor's own PRs from autonomous agents)
+  3. Architectural analysis of why VS Code forks are insufficient for agent fleets
+  4. Clear framework for competitive positioning (five interface bets with distinct theses)
+  5. Developer sentiment analysis revealing adoption barriers beyond technical capability
+- The "craftsperson-to-manager" framing is particularly valuable for GitHub's partnership positioning — it identifies a psychological/cultural adoption barrier that technical improvements alone won't solve, suggesting GitHub's neutral position and seat-based pricing (vs. credit-based) may be differentiators as the market bifurcates between developers who want to preserve craft and those who embrace agent orchestration.
+- The "within 12 months, AI IDE vs. agent orchestration platform distinction collapses" prediction creates measurable timeline pressure for GitHub's strategic response.
+
