@@ -197,3 +197,33 @@ Updated `.github/workflows/auto-merge-ingestion.yml`:
 - The exact publication date of the article is unknown; marked as ~2026.
 - The specific article may have different emphasis than what was reconstructed from secondary sources. If the user can share the article text directly, all [UNVERIFIED] claims should be reviewed and confirmed.
 - DeepAgents launch date (March 15, 2026) is from MarktechPost coverage — also secondary and should be confirmed.
+
+---
+
+## Session: 2026-04-06 (2)
+
+### Articles Processed
+
+| Article | Retrieval Quality |
+|---------|-----------------|
+| [Continual learning for AI agents](https://blog.langchain.com/continual-learning-for-ai-agents/) | **Full article text provided** — Complete article text was provided directly in the issue description, including all main sections: model layer, harness layer, context layer, comparison, and traces infrastructure. This is a major improvement over Session 2026-04-06 which relied entirely on secondary sources. All claims are now verified and directly attributable to the primary source. No [UNVERIFIED] flags needed. |
+
+### Summaries Updated
+- `wiki/summaries/langchain-continual-learning-for-ai-agents.md` — completely rewritten with verified claims from the full article text; removed all [UNVERIFIED] flags; updated date to confirmed April 5, 2026; removed "Source Retrieval Quality" section (no longer needed)
+
+### Raw Articles Updated
+- `raw/articles/langchain-continual-learning-for-ai-agents.md` — replaced secondary source reconstruction with full article text
+
+### Concepts Updated
+- `wiki/concepts/ai-agent-ecosystem.md` — replaced three [UNVERIFIED] bullet points with seven verified key points covering: three-layer learning framework (model/harness/context), catastrophic forgetting, Meta-Harness paper, context learning levels (agent/tenant/mixed), hot path vs. offline context updates, traces as foundational infrastructure, Deep Agents production capabilities; updated open questions to reflect verified information
+
+### Connections Updated
+- `wiki/connections.md` — completely rewrote "Continual Learning as a New Battleground" section (now titled "Continual Learning at Three Layers — The Infrastructure Play Beyond Model Weights") with verified claims and deeper strategic analysis; removed all [UNVERIFIED] flags; added connections to "Harness > Model" pattern, autoresearch loops, and specific GitHub/Microsoft positioning opportunities around version-controlled agent memory and the trace → harness improvement toolchain
+
+### Index Updated
+- `wiki/index.md` — updated entry #16 date from "~2026" to "2026-04-05" (now confirmed)
+
+### Issues / Limitations
+- None — full article text was provided in the issue description. All previous [UNVERIFIED] claims from Session 2026-04-06 have been replaced with verified claims directly from the primary source.
+
+---

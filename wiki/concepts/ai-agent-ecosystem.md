@@ -29,9 +29,13 @@ The rapidly evolving stack of tools, frameworks, and architectural patterns enab
 - Design roles plateauing while PM and eng roles surge may be AI-related: engineers moving faster with AI tools reduces need for traditional design process involvement ([[lenny-state-of-product-job-market-2026]])
 - "Vibe coding" enables non-technical founders to build and deploy full applications using natural language prompts with AI tools (Claude Code, Replit), compressing development timelines from months to days/weekends [UNVERIFIED] ([[forbes-vibe-code-revenue-stream]])
 - Founders are building micro-SaaS businesses, service automation tools, and offering vibe coding as a service — monetizing domain expertise without traditional coding skills [UNVERIFIED] ([[forbes-vibe-code-revenue-stream]])
-- "Continual learning" for deployed agents does not require weight updates — agents improve by accumulating knowledge in persistent memory (procedural, semantic, episodic) injected into context on future runs [UNVERIFIED] ([[langchain-continual-learning-for-ai-agents]])
-- Agent Builder's filesystem-based memory lets agents read and write their own instruction files, enabling autonomous self-updating behavior without re-deployment [UNVERIFIED] ([[langchain-continual-learning-for-ai-agents]])
-- DeepAgents (LangChain, March 2026) is an open-source "batteries-included" harness built on LangGraph: planning, filesystem, sub-agents, context management, and composable persistent memory backends [UNVERIFIED] ([[langchain-continual-learning-for-ai-agents]])
+- AI agents can "learn" at three distinct layers, not just model weights: (1) **model layer** — SFT/RL/GRPO on weights; (2) **harness layer** — optimizing the code that drives the agent via traces; (3) **context layer** — instructions, skills, memory that configure the harness ([[langchain-continual-learning-for-ai-agents]])
+- Model-layer continual learning faces **catastrophic forgetting** — when updated on new data, models degrade on prior knowledge; this remains an open research problem ([[langchain-continual-learning-for-ai-agents]])
+- **Meta-Harness** paper: harness optimization loop runs agent over tasks → evaluates → stores traces → coding agent analyzes traces → suggests harness code changes ([[langchain-continual-learning-for-ai-agents]])
+- Context-layer learning (memory) can be done at multiple levels: agent-level (OpenClaw's SOUL.md), tenant-level (user/org/team via Hex Context Studio, Decagon Duet, Sierra Explorer), or mixed (simultaneous agent+user+org memory updates) ([[langchain-continual-learning-for-ai-agents]])
+- Context updates occur in two modes: (1) **hot path** — agent updates memory while running the task; (2) **offline batch** — analyze recent traces to extract insights (OpenClaw's "dreaming") ([[langchain-continual-learning-for-ai-agents]])
+- **Traces** are the foundational infrastructure for all three learning layers — LangSmith collects traces, which power model training (via Prime Intellect), harness optimization (via Deep Agents), and context learning ([[langchain-continual-learning-for-ai-agents]])
+- Deep Agents (LangChain's open-source harness) supports production-ready context learning with user-level memory, background learning, and composable memory backends; used to improve LangSmith CLI and Deep Agents itself on TerminalBench ([[langchain-continual-learning-for-ai-agents]])
 
 ## Open Questions
 - Will CLIs or MCP become the dominant agent interface standard?
@@ -43,7 +47,8 @@ The rapidly evolving stack of tools, frameworks, and architectural patterns enab
 - Can autoresearch loops be made robust enough for production ML pipelines, and who provides the harness infrastructure for that?
 - Now that all major labs own developer toolchain companies (Antigravity, Bun, Astral), is GitHub/Microsoft's position as the neutral developer infrastructure layer sustainable? What acquisitions or partnerships would reinforce it?
 - Will the "agent fleet management" layer (LangSmith Fleet, Devin teams) consolidate into platforms or remain fragmented across tool vendors?
-- If agents can update their own instructions from user feedback without re-deployment, what governance model ensures these self-modifications stay safe and auditable at scale? GitHub's permission and audit infrastructure may be directly applicable here.
+- What governance and audit model should govern agent self-modification at scale? GitHub's version control, permission, and audit infrastructure may apply directly to the context layer (CLAUDE.md, SOUL.md) — should agent memory updates be treated as git commits?
+- Will harness-layer optimization (Meta-Harness pattern) become a distinct market, and who owns the trace → harness improvement toolchain?
 
 ## Related Concepts
 - [[gpu-and-compute-economics]] — agents drive compute demand

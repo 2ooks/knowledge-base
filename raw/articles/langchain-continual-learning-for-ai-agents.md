@@ -1,59 +1,104 @@
-# Continual Learning for AI Agents
+# Continual learning for AI agents
 
-- **Source URL:** https://blog.langchain.com/continual-learning-for-ai-agents/
-- **Publisher:** LangChain Blog
-- **Retrieval note:** blog.langchain.com is blocked for direct fetch (ERR_BLOCKED_BY_CLIENT). Content reconstructed from multiple secondary sources including web search summaries, references in AI news digests, LangChain documentation, and the langchain-ai/deepagents GitHub repository. All specific claims should be treated as [UNVERIFIED] until the primary source is accessed.
+**Source:** https://blog.langchain.com/continual-learning-for-ai-agents/
+**Author:** Harrison (Harrison's In the Loop Series)
+**Date:** April 5, 2026
+**Reading Time:** 4 min
 
-## Secondary sources consulted
+---
 
-- LangChain documentation at docs.langchain.com (partially accessible)
-- GitHub repository langchain-ai/deepagents README
-- MarktechPost: "LangChain Releases Deep Agents" (March 15, 2026)
-- "How we built Agent Builder's memory system" (blog.langchain.com — blocked, referenced via secondary summaries)
-- Web search aggregating multiple secondary summaries about LangChain continual learning patterns
+Most discussions of continual learning in AI focus on one thing: updating model weights. But for AI agents, learning can happen at three distinct layers: the model, the harness, and the context. Understanding the difference changes how you think about building systems that improve over time.
 
-## Reconstructed article themes
+The three main layers of agentic systems are:
 
-The article "Continual Learning for AI Agents" appears to cover how AI agents can improve over time without re-training model weights. Key themes sourced from secondary material:
+**Model:** the model weights themselves.
 
-### Core concept: continual learning without weight updates
+**Harness:** the harness around the model that powers all instances of the agent. This refers to the code that drives the agent, as well as any instructions or tools that are always part of the harness.
 
-Traditional ML "continual learning" involves updating model weights. For deployed agents, LangChain's framing is different: agents improve by accumulating knowledge in persistent memory systems that are injected into context on future runs. The underlying LLM weights stay static; the agent "learns" by having access to an ever-richer set of instructions, past experiences, and verified procedures.
+**Context:** additional context (instructions, skills) that lives outside the harness, and can be used to configure it.
 
-### Memory taxonomy (COALA-inspired)
+**Example #1: Mapping this a coding agent like Claude Code:**
+- Model: claude-sonnet, etc
+- Harness: Claude Code
+- User context: CLAUDE.md, /skills, mcp.json
 
-LangChain models agent memory using three types drawn from the COALA paper (Continual, Open-Ended, Autonomous Learning Agents):
-- **Procedural memory** — how to do things: rules, instructions, AGENTS.md files, evolving system prompts
-- **Semantic memory** — facts about the world or user preferences: key-value stores, user profiles
-- **Episodic memory** — past experiences: historical interaction records, example task completions
+**Example #2: Mapping this to OpenClaw:**
+- Model: many
+- Harness: Pi + some other scaffolding
+- Agent context: SOUL.md, skills from clawhub
 
-### Agent Builder's memory system (filesystem-based)
+When we talk about continual learning, most people jump immediately to the model. But in reality - an AI system can learn at all three of these levels.
 
-LangChain's Agent Builder implements memory as a virtual filesystem. Agent memories are stored as files in a database, accessible via standard file operations (read/write). This means:
-- Agents can update their own instructions when users correct behavior
-- "Skills" are modular extensions that give agents specialized capabilities
-- AGENTS.md defines baseline instructions; agents can amend it autonomously
-- Changes persist across sessions without re-deploying the agent
+## Continual learning at the model layer
 
-### LangSmith as the feedback-loop engine
+When most people talk about continual learning, this is what they most commonly refer to: updating the model weights.
 
-LangSmith provides the observability and evaluation backbone for continual improvement:
-- Traces every agent step, enabling developers to identify failure modes
-- Production traces can be converted into test datasets for offline evaluation
-- Human feedback can be collected and used to update agent instructions
-- "LLM as judge" evaluation enables automated scoring of agent outputs
+Techniques to update this include SFT, RL (e.g. GRPO), etc.
 
-### DeepAgents: the batteries-included harness
+A central challenge here is catastrophic forgetting — when a model is updated on new data or tasks, it tends to degrade on things it previously knew. This is an open research problem.
 
-Released March 2026, DeepAgents is LangChain's open-source "batteries-included agent harness" built on LangGraph. It includes:
-- Planning (write_todos for task breakdown)
-- Filesystem tools (read/write files, ls, glob, grep)
-- Sub-agents (delegating work to isolated context windows)
-- Context management (auto-summarization for long conversations)
-- Persistent memory via composable backends (SqliteSaver, PostgresSaver)
+When people do train models for a specific agentic system (e.g. you could view the OpenAI codex models as being trained for their Codex agent) they largely do this for the agentic system as a whole. In theory, you could do this at a more granular level (e.g. you could have a LORA per user) but in practice this is mostly done at the agent level.
 
-### Production implications
+## Continual learning at the harness layer
 
-- Agents that can update their own instructions from user feedback require no re-deployment cycle
-- The feedback loop (agent acts → user corrects → agent updates → change persists) enables progressive improvement
-- LangSmith Fleet manages fleets of such agents with identity, permissions, and audit trails
+As defined earlier, the harness refers to the code that drives the agent, as well as any instructions or tools that are always part of the harness.
+
+As harnesses have become more popular, there have been several papers that talk about how to optimize harnesses.
+
+A recent one is **Meta-Harness: End-to-End Optimization of Model Harnesses.**
+
+The core idea is that the agent is running in a loop. You first run it over a bunch of tasks, and then evaluate them. You then store all these logs into a filesystem. You then run a coding agent to look at these traces, and suggest changes to the harness code.
+
+Similar to continual learning for models, this is usually done at the agent level. You could in theory do this at a more granular level (e.g. learn a different code harness per user).
+
+## Continual learning at the context layer
+
+"Context" sits outside the harness and can be used to configure it. Context consists of things like instructions, skills, even tools. This is also commonly referred to as memory.
+
+This same type of context exists inside the harness as well (e.g. the harness may have base system prompt, skills). The distinction is whether it is part of the harness or part of the configuration.
+
+Learning context can be done at several different levels.
+
+Learning context can be done at the agent level - the agent has a persistent "memory" and updates its own configuration over time. A great example is OpenClaw which has its own SOUL.md that gets updated over time.
+
+Learning context is more commonly done at the tenant level (user, org, team, etc). In this case each tenant gets their own context that is updated over time. Examples include Hex's Context Studio, Decagon's Duet, Sierra's Explorer.
+
+You can also mix and match! So you could have an agent with agent level context updates, user level context updates, AND org level context updates.
+
+These updates can be done in two ways:
+
+1. **In the hot path as the agent is running.** The agent can decided to (or the user can prompt it to) update its memory as it is working on the core task.
+
+2. **After the fact in an offline job.** Similar to harness updates - run over a bunch of recent traces to extract insights and update context. This is what OpenClaw calls "dreaming".
+
+Another dimension to consider here is how explicit the memory update is. Is the user prompting the agent to remember, or is the agent remembering based on core instructions in the harness itself?
+
+## Comparison
+
+[Table summarizing the three layers would go here]
+
+## Traces are the core
+
+All of these flows are powered by traces - the full execution path of what an agent did. LangSmith is our platform that (among other things) helps collect traces.
+
+You can then use these traces in a variety of different ways.
+
+If you want to update the model, you can collect traces and then work with someone like Prime Intellect to train your own model.
+
+If you want to improve the harness, you can use Skills to give a coding agent access to these traces. This pattern is how we improved LangSmith CLI and Deep Agents (our open source, model agnostic, general purpose base harness) on terminal bench.
+
+If you want to learn context over time (either at the agent, user, or org level) - then your agent harness needs to support this. Deep Agents - our harness of choice - supports this in a production ready way. See the documentation there for examples of how to do user-level memory, background learning, and more.
+
+---
+
+**TAGS:** Harrison's In the Loop Series
+
+**YOU MIGHT ALSO LIKE:**
+- Two different types of agent authorization
+- How Coding Agents Are Reshaping Engineering, Product and Design
+- On Agent Frameworks and Agent Observability
+- From Traces to Insights: Understanding Agent Behavior at Scale
+- In software, the code documents the app. In AI, the traces do.
+- Agent Frameworks, Runtimes, and Harnesses- oh my!
+
+© LangChain Blog 2026

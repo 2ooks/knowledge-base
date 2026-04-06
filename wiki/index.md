@@ -21,7 +21,7 @@ and lists related concepts.
 | 13 | [[dwarkesh-thoughts-on-ai-progress-dec-2025]] | Dwarkesh Patel (blog) | ~2025-12 | [[ai-scaling-limits-and-research-paradigm]], [[gpu-and-compute-economics]] |
 | 14 | [[lenny-state-of-product-job-market-2026]] | Lenny's Newsletter | 2026-04 | [[ai-agent-ecosystem]], [[gpu-and-compute-economics]] |
 | 15 | [[forbes-vibe-code-revenue-stream]] | Forbes | 2026-04-05 | [[ai-agent-ecosystem]] |
-| 16 | [[langchain-continual-learning-for-ai-agents]] | LangChain Blog | ~2026 | [[ai-agent-ecosystem]] |
+| 16 | [[langchain-continual-learning-for-ai-agents]] | LangChain Blog | 2026-04-05 | [[ai-agent-ecosystem]] |
 
 ## Concepts (8)
 
