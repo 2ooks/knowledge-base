@@ -38,3 +38,9 @@ and lists related concepts.
 | [[data-center-infrastructure]] | 3 sources |
 | [[ai-scaling-limits-and-research-paradigm]] | 2 sources |
 | [[vertical-models-and-usage-data]] | 1 source |
+
+## Maintenance
+
+| Page | Description |
+|------|-------------|
+| [[verification-queue]] | Claims tagged [UNVERIFIED] — track resolution status |
