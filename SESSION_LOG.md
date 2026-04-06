@@ -151,3 +151,49 @@ _No sessions logged yet._
 - forbes.com remains blocked for direct fetch. All claims about the article content are [UNVERIFIED] and sourced from secondary summaries and related articles about vibe coding.
 - Specific examples mentioned (Evan running patty.com, brooke.com, racingminds.com; development timelines; monetization figures) could not be verified from the primary source.
 - The article represents a trend (vibe coding) that is broader than this single source; secondary sources included Google Cloud documentation on vibe coding and various vibe coding guides, which may have influenced the synthesis.
+
+---
+
+## Session: 2026-04-06
+
+### Context
+
+This session was triggered by a bug in the `auto-merge-ingestion.yml` workflow that caused agent PRs to be merged immediately on `opened` events (after the "Initial plan" commit only), before the agent had completed the full ingestion work. PRs #37 and #39 were both merged prematurely for the LangChain continual learning article. This session fixes both the root cause (workflow) and the missing ingestion (article).
+
+### Workflow Fix
+
+Updated `.github/workflows/auto-merge-ingestion.yml`:
+- Removed `opened` trigger (was causing premature merges on the initial plan commit)
+- Added `edited` trigger (fires when PR title changes — agents update the title when done)
+- Added `synchronize` trigger with a `!startsWith(title, '[WIP]')` guard
+- Added `ready_for_review` trigger
+- Added job-level `if` condition: `!startsWith(github.event.pull_request.title, '[WIP]')`
+- Added `actions/checkout` step to fetch the PR's actual file tree
+- Added "Verify wiki content exists" step: counts files changed in `wiki/summaries/` and exits with error (blocking merge) if zero — prevents merging "Initial plan"-only PRs regardless of title
+
+### Articles Processed
+
+| Article | Retrieval Quality |
+|---------|-----------------|
+| [Continual Learning for AI Agents](https://blog.langchain.com/continual-learning-for-ai-agents/) | **Secondary summary only** — blog.langchain.com is blocked for direct fetch (ERR_BLOCKED_BY_CLIENT), matching the pattern of dwarkesh.com and forbes.com. Multiple web searches performed; content reconstructed from secondary sources: langchain-ai/deepagents GitHub README, MarktechPost coverage of DeepAgents launch (March 15, 2026), LangChain documentation (partially accessible), and web search aggregating secondary summaries about Agent Builder memory system and continual learning patterns. All specific claims are marked [UNVERIFIED]. |
+
+### Summaries Created
+- `wiki/summaries/langchain-continual-learning-for-ai-agents.md`
+
+### Raw Articles Created
+- `raw/articles/langchain-continual-learning-for-ai-agents.md`
+
+### Concepts Updated
+- `wiki/concepts/ai-agent-ecosystem.md` — added three new key points: "continual learning without weight updates" via persistent memory, Agent Builder filesystem-based memory with autonomous self-updating, DeepAgents as batteries-included harness; added new open question on governance model for self-modifying agent instructions
+
+### Connections Added
+- **New pattern**: "Continual Learning as a New Battleground — Self-Modifying Agents and Governance Gaps" — LangChain's continual learning framing raises governance questions not yet answered by any platform; GitHub's version-controlled instruction file paradigm and Actions permission model are directly applicable
+
+### Index Updated
+- `wiki/index.md` — added entry #16 for langchain-continual-learning-for-ai-agents; updated ai-agent-ecosystem source count to 11
+
+### Issues / Limitations
+- blog.langchain.com remains blocked for direct fetch. All claims are [UNVERIFIED] and sourced from secondary summaries. The article date could not be confirmed; marked as ~2026.
+- The exact publication date of the article is unknown; marked as ~2026.
+- The specific article may have different emphasis than what was reconstructed from secondary sources. If the user can share the article text directly, all [UNVERIFIED] claims should be reviewed and confirmed.
+- DeepAgents launch date (March 15, 2026) is from MarktechPost coverage — also secondary and should be confirmed.

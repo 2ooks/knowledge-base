@@ -1,11 +1,12 @@
 # Automatically merges wiki ingestion PRs created by any coding agent.
-# Triggers when a PR is opened, marked ready for review, or updated.
-# Merges any agent-authored PR targeting main, regardless of draft status.
+# Triggers when a PR title is edited or marked ready for review.
+# Only merges when the PR title no longer starts with [WIP] and the PR
+# contains actual wiki content (files in wiki/summaries/).
 name: Auto-merge agent ingestion PRs
 
 on:
   pull_request:
-    types: [opened, ready_for_review, synchronize]
+    types: [edited, ready_for_review, synchronize]
 
 permissions:
   contents: write
@@ -17,10 +18,26 @@ jobs:
     if: |
       (github.event.pull_request.user.login == 'Copilot' ||
        github.event.pull_request.user.login == 'Claude') &&
-      github.event.pull_request.base.ref == 'main'
+      github.event.pull_request.base.ref == 'main' &&
+      !startsWith(github.event.pull_request.title, '[WIP]')
     steps:
-      - name: Wait for mergeability check
-        run: sleep 10
+      - name: Checkout PR
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: ${{ github.event.pull_request.head.sha }}
+
+      - name: Verify wiki content exists
+        id: check_content
+        run: |
+          COUNT=$(git diff --name-only origin/${{ github.event.pull_request.base.ref }}..HEAD \
+            | grep '^wiki/summaries/' | wc -l)
+          echo "summary_count=$COUNT" >> "$GITHUB_OUTPUT"
+          if [ "$COUNT" -eq 0 ]; then
+            echo "No files found in wiki/summaries/ — skipping merge (PR may only contain an initial plan)."
+            exit 1
+          fi
+          echo "Found $COUNT summary file(s) in wiki/summaries/ — proceeding with merge."
 
       - name: Convert draft to ready if needed
         if: github.event.pull_request.draft == true
