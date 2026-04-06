@@ -13,6 +13,8 @@ The emerging pattern where product companies build domain-specific AI models by 
 - Eoghan McCabe references Andrej Karpathy's "speciation" prediction: smaller models with cognitive core, optimized for specific tasks ([[ai-daily-brief-anthropic-mythos-vertical-models]])
 - Richard Sutton's "Bitter Lesson Revisited" on Dwarkesh podcast may have predicted this: systems trained from experience supersede those built on human knowledge — vertical models are post-trained from experience (usage data) ([[ai-daily-brief-anthropic-mythos-vertical-models]])
 - "API tax starting to look like the cloud markup of 10 years ago" — observation that per-token pricing to frontier labs becomes uneconomical compared to in-house training ([[ai-daily-brief-anthropic-mythos-vertical-models]])
+- Cursor's Composer 2 pricing at $0.50/M input tokens and $2.50/M output tokens (March 2026) is "substantially below frontier model pricing from Anthropic and OpenAI" — token economics drive tool selection more than feature comparisons for teams running dozens of parallel agents ([[cursor-3-agent-management-console]])
+- Cursor responded to Claude Code overtaking its revenue ($2.5B vs. $2B run rates) with a six-week product offensive including Composer 2 (in-house vertical model), demonstrating how competitive pressure accelerates vertical model adoption ([[cursor-3-agent-management-console]])
 
 ## Open Questions
 - Will every product company with sufficient usage data train vertical models, or will this remain limited to well-funded companies with ML expertise?
