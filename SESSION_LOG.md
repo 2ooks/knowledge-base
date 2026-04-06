@@ -560,3 +560,40 @@ All 11 summaries created in the original batch now have concept wikilinks in the
 - None. All audit recommendations implemented.
 - The concept restructuring brings the wiki from 9 concepts (1 overloaded) to 13 (evenly distributed). The largest concept `ai-agent-ecosystem` went from 14 source references to 10, and from ~60 key points to ~13.
 
+---
+
+## Session: 2026-04-06 (9) — Connections Quality Scoring and Sharpening
+
+### Context
+Scored all 13 Emerging Patterns in connections.md on a 1-3 scale (3 = non-obvious cross-source insight, 2 = useful synthesis partly restating sources, 1 = consensus restatement). Then sharpened or enhanced each pattern based on its score.
+
+**Agent:** GitHub Copilot (VS Code)
+
+### Scoring Results
+
+| # | Pattern | Score | Action |
+|---|---------|:-----:|--------|
+| 1 | The Compute Supply-Demand Death Spiral | 1 | **Sharpened** — added cross-layer amplification insight (supply constraints × pricing velocity × architectural workarounds = 3-5 year structural condition) |
+| 2 | From Compute-Hours to Token-Value | 3 | No change |
+| 3 | Agent Workloads as the New Demand Driver | 1 | **Sharpened** — added demand-side asymmetry insight (agent workloads are structurally 10-100x more token-hungry per user than chatbot) |
+| 4 | Harness > Model | 3 | No change |
+| 5 | The Production-Grade Agent Infrastructure Gap | 2 | **Added** "combination reveals" — co-training feedback loop means the gap is self-reinforcing, not just large |
+| 6 | Hardware Disaggregation for Inference | 1 | **Sharpened** — added mutual reinforcement between AFD hardware design and Pareto-frontier pricing model |
+| 7 | Claude Mythos and the Return of Model Tiers | 2 | **Added** "combination reveals" — market "barbell" where frontier concedes mid-market to verticals, creating multi-model orchestration opportunity |
+| 8 | AI Hiring Surge as Leading Indicator | 2 | **Added** "combination reveals" — supply-demand mismatch in tooling itself; acquisition prices may look cheap as developer population doubles |
+| 9 | Vibe Coding and Democratization | 2 | **Added** "combination reveals" — harness sophistication (not model capability) is what makes NL a sufficient interface now |
+| 10 | Continual Learning and Governance Gaps | 3 | No change |
+| 11 | Model-Harness Co-Training Feedback Loop | 3 | No change |
+| 12 | Vertical Models and API Tax Rebellion | 3 | No change |
+| 13 | Architectural Divergence in Agent Orchestration | 3 | No change |
+
+### Summary
+- 6 patterns scored 3 (no change needed)
+- 4 patterns scored 2 (added "combination reveals" statements)
+- 3 patterns scored 1 (sharpened with cross-source insights rather than demoting)
+- Chose to sharpen all score-1 patterns instead of demoting because each could be elevated with genuine cross-source insight that was implied but not stated
+- No Background Context section created (none needed after sharpening)
+
+### Issues / Limitations
+- QUALITY_EXAMPLES.md is still empty — should be populated with examples of the score-3 patterns and the before/after of sharpened patterns to calibrate future sessions.
+
