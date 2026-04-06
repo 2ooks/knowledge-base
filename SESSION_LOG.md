@@ -325,3 +325,34 @@ This session re-ingests the Dwarkesh Patel "Thoughts on AI Progress (Dec 2025)" 
 - This re-ingestion transforms one of the most important strategic arguments in the wiki (RL scaling skepticism) from secondary/unverified to primary/verified, significantly improving the reliability of the "Scaling: Infinite Demand vs. Diminishing Returns" contradiction and the associated Microsoft/GitHub capital allocation risk analysis.
 - The article provides the most detailed published critique of the "RL scaling will quickly yield AGI" thesis, with concrete examples (robotics, macrophage identification, economic diffusion) and quantitative anchors (Toby Ord's 1,000,000x estimate, "4 orders of magnitude" revenue gap).
 
+---
+
+## Session: 2026-04-06 (6) — Re-Ingestion with Full Article Text
+
+### Context
+
+This session re-ingests the LangChain "Continual Learning for AI Agents" article, which was previously ingested in Session 2026-04-06 from secondary sources only (blog.langchain.com was blocked). The full article text was provided in the issue description, enabling complete removal of all [UNVERIFIED] flags and significant expansion of the strategic analysis.
+
+### Articles Processed
+
+| Article | Retrieval Quality |
+|---------|-----------------|
+| [Continual Learning for AI Agents](https://blog.langchain.com/continual-learning-for-ai-agents/) | **Full article text available** — Complete article text provided in issue description. This is a re-ingestion, replacing the previous secondary-sources-only version from Session 2026-04-06. All claims are now directly attributable to the primary source. Date confirmed as April 5, 2026 (Harrison's In The Loop Series). |
+
+### Summaries Updated
+- `wiki/summaries/langchain-continual-learning-for-ai-agents.md` — completely rewritten with verified claims; removed all [UNVERIFIED] flags; confirmed date as April 5, 2026 and author as Harrison; expanded to include precise framework of three continual learning layers (Model/Harness/Context), specific examples (Claude Code, OpenClaw), Meta-Harness paper citation, context update methods (offline "dreaming" vs. in-the-hot-path), specific tools (Hex Context Studio, Decagon Duet, Sierra Explorer), and trace-powered workflows via LangSmith/Prime Intellect/Deep Agents
+
+### Raw Articles Updated
+- `raw/articles/langchain-continual-learning-for-ai-agents.md` — replaced reconstructed secondary content with complete article text from issue description
+
+### Concepts Updated
+- `wiki/concepts/ai-agent-ecosystem.md` — replaced 3 [UNVERIFIED] bullet points with 4 verified key points covering: three-layer continual learning framework (Model/Harness/Context), catastrophic forgetting + Meta-Harness pattern + context learning levels (agent/tenant/mixed), two methods for context updates (offline dreaming vs. in-the-hot-path), Deep Agents as production-ready harness for trace-powered continual improvement
+
+### Connections Updated
+- **Updated pattern**: "Continual Learning as a New Battleground — Self-Modifying Agents and Governance Gaps" — significantly expanded with verified details: precise three-layer framework (Model facing catastrophic forgetting, Harness using Meta-Harness pattern with coding agents, Context at agent/tenant/mixed levels), two methods for context updates (OpenClaw "dreaming" offline vs. in-the-hot-path), specific tools (Hex Context Studio, Decagon Duet, Sierra Explorer), explicit connection to LangSmith trace collection powering all three learning flows; removed all [UNVERIFIED] flags on LangChain continual learning claims; enhanced governance framing with CLAUDE.md/SOUL.md as version-controlled context files
+
+### Issues / Limitations
+- None — full article text was available in the issue description. All claims are attributed to the primary source with no [UNVERIFIED] flags needed.
+- This re-ingestion transforms the continual learning pattern from secondary/unverified to primary/verified, providing the canonical framework for how production agents improve over time without weight updates. The three-layer taxonomy (Model/Harness/Context) is now the standard reference for the wiki's analysis of agent learning systems.
+- The article provides specific product examples (Hex Context Studio, Decagon Duet, Sierra Explorer) that validate the tenant-level context learning pattern is already in production at multiple companies, strengthening the strategic case that this is not theoretical but an active battleground.
+

@@ -1,32 +1,35 @@
 # Continual Learning for AI Agents
 - **Source:** https://blog.langchain.com/continual-learning-for-ai-agents/
-- **Date:** ~2026 (exact date unconfirmed)
-- **Author:** LangChain team
-
-## Source Retrieval Quality
-
-**Secondary summary only** — blog.langchain.com is blocked for direct fetch (ERR_BLOCKED_BY_CLIENT), matching the pattern of other blocked domains (dwarkesh.com, forbes.com). Content reconstructed from multiple secondary sources: LangChain documentation, the langchain-ai/deepagents GitHub repository README, MarktechPost coverage of the DeepAgents launch (March 15, 2026), web search aggregation of secondary summaries about LangChain's Agent Builder memory system and continual learning patterns. All specific claims are marked [UNVERIFIED].
+- **Date:** April 5, 2026
+- **Author:** Harrison (Harrison's In The Loop Series)
 
 ## Summary
 
-LangChain's post on continual learning for AI agents argues that agents can improve over time without re-training model weights — instead, "learning" is achieved by accumulating knowledge in persistent memory systems that are injected into context on future runs [UNVERIFIED]. The framework draws on the COALA (Continual, Open-Ended, Autonomous Learning Agents) taxonomy, distinguishing three memory types: procedural (instructions and rules), semantic (facts and user preferences), and episodic (past experience records) [UNVERIFIED]. LangChain's Agent Builder implements this as a virtual filesystem where agents can read and write their own instruction files, enabling them to update their behavior based on user corrections without requiring re-deployment [UNVERIFIED]. The LangSmith platform provides the observability and evaluation layer that closes the feedback loop — production traces become test datasets, and "LLM as judge" evaluation enables automated scoring of agent outputs [UNVERIFIED]. DeepAgents, released March 2026 as LangChain's open-source "batteries-included" harness built on LangGraph, packages these patterns with planning, filesystem access, sub-agent delegation, and composable persistent memory backends [UNVERIFIED].
+Harrison's piece on continual learning for AI agents distinguishes three distinct layers where learning can occur in agentic systems: the model (updating weights via SFT, RL, GRPO), the harness (optimizing the code and instructions that drive all instances of the agent), and the context (additional instructions, skills, memory that configure individual instances outside the harness). While most continual learning discussions focus exclusively on model weights, Harrison argues that production agents primarily learn at the harness and context layers. The harness layer, exemplified by Meta-Harness research, involves running the agent over evaluation tasks, storing execution traces to a filesystem, then using a coding agent to suggest harness code improvements. The context layer — also called "memory" — can be updated at the agent level (e.g., OpenClaw's SOUL.md), the tenant level (user, org, team via tools like Hex Context Studio, Decagon's Duet, Sierra's Explorer), or mixed across levels. Context updates happen either after-the-fact in offline jobs (OpenClaw's "dreaming") or in the hot path as the agent runs. All three learning flows are powered by traces — LangSmith collects them, enabling model training with partners like Prime Intellect, harness optimization (LangSmith CLI + Deep Agents improved Terminal Bench performance), and context learning via agent harnesses that support memory.
 
 ## Key Claims
 
-- Agents can implement "continual learning" without weight updates by accumulating knowledge in persistent memory that is injected into context on future runs [UNVERIFIED]
-- LangChain models agent memory using three types from the COALA paper: procedural (rules/AGENTS.md), semantic (facts/preferences), and episodic (past experience records) [UNVERIFIED]
-- Agent Builder implements memory as a virtual filesystem — agents can read and write their own instruction files, enabling autonomous self-updating behavior between sessions [UNVERIFIED]
-- LangSmith converts production traces into test datasets for offline evaluation; "LLM as judge" enables automated scoring without human-in-the-loop review [UNVERIFIED]
-- DeepAgents (released March 2026) is an open-source harness with planning, filesystem tools, sub-agents, context auto-summarization, and composable persistent memory backends (SqliteSaver, PostgresSaver) [UNVERIFIED]
-- LangSmith Fleet manages fleets of agents with identity, permissions, and audit trails — positioned as enterprise infrastructure for organizations running many agents simultaneously [UNVERIFIED]
-- The production feedback cycle — agent acts → user corrects → agent updates own instructions → change persists across sessions — requires no re-deployment [UNVERIFIED]
+- Agentic systems have three distinct layers where continual learning can occur: Model (the weights themselves), Harness (the code, instructions, tools that power all instances), and Context (instance-specific instructions, skills, memory outside the harness)
+- Claude Code maps to this framework as: Model = claude-sonnet, Harness = Claude Code, User context = CLAUDE.md + /skills + mcp.json
+- OpenClaw maps as: Model = many, Harness = Pi + scaffolding, Agent context = SOUL.md + skills from clawhub
+- Model-layer continual learning (SFT, RL, GRPO) faces catastrophic forgetting — models degrade on previously known tasks when updated on new data; this remains an open research problem
+- Model training for agentic systems is typically done at the agent level (e.g., Codex models trained for the Codex agent), not per-user (though per-user LORAs are theoretically possible)
+- Harness-layer continual learning optimizes the code that drives the agent: Meta-Harness paper demonstrates end-to-end optimization by running agents over tasks, evaluating, storing traces to filesystem, then using a coding agent to suggest harness code changes
+- Context-layer learning (also called "memory") consists of instructions, skills, tools that configure the agent outside the harness
+- Context can be updated at multiple levels: agent-level (OpenClaw's SOUL.md), tenant-level (user, org, team), or mixed across levels
+- Context updates happen via two methods: after-the-fact in offline jobs (OpenClaw "dreaming" — running over recent traces to extract insights and update context), or in the hot path (agent updates memory while working on the core task)
+- Explicit vs. implicit memory updates: users can prompt agents to remember, or agents remember based on core harness instructions
+- LangSmith is the platform collecting traces (full execution paths) that power all three learning flows
+- Traces enable model training (with partners like Prime Intellect), harness improvement (LangSmith CLI + Deep Agents improved Terminal Bench performance), and context learning (agent harnesses supporting memory)
+- Deep Agents is LangChain's open-source, model-agnostic, general-purpose base harness supporting production-ready user-level memory, background learning, and more
 
 ## Tags
 
-#agents #continual-learning #memory #langgraph #langsmith #agent-harness #feedback-loops #evaluation #production-agents #agent-builder #deepagents
+#agents #continual-learning #memory #langgraph #langsmith #agent-harness #feedback-loops #evaluation #production-agents #meta-harness #traces #deep-agents
 
 ## Related
 
+- [[langchain-anatomy-of-agent-harness]] — "Agent = Model + Harness" definition; filesystems as foundational harness primitive enabling memory persistence
 - [[ainews-every-lab-serious-enough-about]] — LangSmith Fleet launch as "agent operating system"; enterprise agent control plane race
 - [[ainews-autoresearch-sparks-of-recursive]] — harness-constrained agent loops; the "harness > model" thesis; LangSmith's role in agentic evals
 - [[nates-newsletter-agent-blind-spots]] — the 12 infrastructure primitives agents need; "80% plumbing" thesis; memory as one of the key missing components
