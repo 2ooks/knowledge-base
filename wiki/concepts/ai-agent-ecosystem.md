@@ -29,6 +29,9 @@ The rapidly evolving stack of tools, frameworks, and architectural patterns enab
 - Design roles plateauing while PM and eng roles surge may be AI-related: engineers moving faster with AI tools reduces need for traditional design process involvement ([[lenny-state-of-product-job-market-2026]])
 - "Vibe coding" enables non-technical founders to build and deploy full applications using natural language prompts with AI tools (Claude Code, Replit), compressing development timelines from months to days/weekends [UNVERIFIED] ([[forbes-vibe-code-revenue-stream]])
 - Founders are building micro-SaaS businesses, service automation tools, and offering vibe coding as a service — monetizing domain expertise without traditional coding skills [UNVERIFIED] ([[forbes-vibe-code-revenue-stream]])
+- "Continual learning" for deployed agents does not require weight updates — agents improve by accumulating knowledge in persistent memory (procedural, semantic, episodic) injected into context on future runs [UNVERIFIED] ([[langchain-continual-learning-for-ai-agents]])
+- Agent Builder's filesystem-based memory lets agents read and write their own instruction files, enabling autonomous self-updating behavior without re-deployment [UNVERIFIED] ([[langchain-continual-learning-for-ai-agents]])
+- DeepAgents (LangChain, March 2026) is an open-source "batteries-included" harness built on LangGraph: planning, filesystem, sub-agents, context management, and composable persistent memory backends [UNVERIFIED] ([[langchain-continual-learning-for-ai-agents]])
 
 ## Open Questions
 - Will CLIs or MCP become the dominant agent interface standard?
@@ -40,6 +43,7 @@ The rapidly evolving stack of tools, frameworks, and architectural patterns enab
 - Can autoresearch loops be made robust enough for production ML pipelines, and who provides the harness infrastructure for that?
 - Now that all major labs own developer toolchain companies (Antigravity, Bun, Astral), is GitHub/Microsoft's position as the neutral developer infrastructure layer sustainable? What acquisitions or partnerships would reinforce it?
 - Will the "agent fleet management" layer (LangSmith Fleet, Devin teams) consolidate into platforms or remain fragmented across tool vendors?
+- If agents can update their own instructions from user feedback without re-deployment, what governance model ensures these self-modifications stay safe and auditable at scale? GitHub's permission and audit infrastructure may be directly applicable here.
 
 ## Related Concepts
 - [[gpu-and-compute-economics]] — agents drive compute demand
