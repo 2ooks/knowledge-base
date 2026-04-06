@@ -293,3 +293,33 @@ Updated `.github/workflows/auto-merge-ingestion.yml`:
 - Source URL appears malformed in the issue (shows "Login Login Login..." repeated) but this appears to be a rendering artifact from the newsletter subscription prompt; does not affect content quality.
 - This article represents a major strategic shift thesis: vertical models trained on usage data may fundamentally challenge the frontier API business model, with significant implications for Microsoft/GitHub positioning in the AI value chain.
 
+
+---
+
+## Session: 2026-04-06 (5) — Verification Queue Creation
+
+### Created
+- `wiki/verification-queue.md` — 37 [UNVERIFIED] claims extracted from 6 files into a structured verification queue
+
+### Files with [UNVERIFIED] claims
+| File | Claims |
+|------|--------|
+| `wiki/summaries/dwarkesh-ilya-sutskever-2.md` | 8 |
+| `wiki/summaries/dwarkesh-thoughts-on-ai-progress-dec-2025.md` | 7 |
+| `wiki/summaries/forbes-vibe-code-revenue-stream.md` | 7 |
+| `wiki/summaries/langchain-continual-learning-for-ai-agents.md` | 7 |
+| `wiki/summaries/nates-newsletter-agent-blind-spots.md` | 5 |
+| `wiki/connections.md` | 3 |
+
+### Other Updates
+- `wiki/index.md` — added "Maintenance" section with link to verification-queue
+- `WIKI_RULES.md` — added rule 8 for [UNVERIFIED] resolution workflow
+
+### Verification Patterns Observed
+- All [UNVERIFIED] claims originate from blocked domains: dwarkesh.com, forbes.com, blog.langchain.com, natesnewsletter.substack.com (paywall)
+- The most efficient resolution path would be: user provides article text directly (as was done successfully for langchain-anatomy-of-agent-harness and ai-daily-brief-anthropic-mythos-vertical-models)
+- Dwarkesh sources (15 claims total) are highest priority — they underpin the "scaling limits" concept and multiple connections
+
+### Issues / Limitations
+- None — all [UNVERIFIED] tags were found via exhaustive scan of wiki/summaries/ and wiki/connections.md
+- Concept files also reference [UNVERIFIED] claims but inherit them from summaries; the queue tracks the source-level origin
