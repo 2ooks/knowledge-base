@@ -41,6 +41,9 @@ The rapidly evolving stack of tools, frameworks, and architectural patterns enab
 - Models and harnesses are co-trained in production agents (Claude Code, Codex), creating feedback loop where useful primitives are discovered, added to harness, then used when training next generation; creates overfitting (e.g., changing apply_patch logic degrades performance) ([[langchain-anatomy-of-agent-harness]])
 - LangChain improved coding agent from outside Top 30 to Top 5 on Terminal Bench 2.0 by only changing the harness (using Opus 4.6) — best harness for a task is not necessarily the one a model was post-trained with ([[langchain-anatomy-of-agent-harness]])
 - Active harness engineering research: orchestrating hundreds of agents in parallel on shared codebase; agents analyzing own traces to fix harness failures; dynamic just-in-time context/tool assembly instead of pre-configuration ([[langchain-anatomy-of-agent-harness]])
+- Cursor's Composer 2 built on Kimi K2.5 (open-source base) with 75% of compute from proprietary RL post-training on usage data; beats Opus 4.6 and matches GPT-5.4 on coding benchmarks at lower cost ([[ai-daily-brief-anthropic-mythos-vertical-models]])
+- OpenAI added plugins to Codex and reset usage limits across all plans, positioning against Anthropic's Claude Code rate limit changes; shelved adult mode indefinitely, consolidating on coding and enterprise ([[ai-daily-brief-anthropic-mythos-vertical-models]])
+- Claude Mythos revealed as new tier above Opus — "step change" in performance, particularly for coding, academic reasoning, and cybersecurity; expensive to serve, targeting early access for cybersecurity applications ([[ai-daily-brief-anthropic-mythos-vertical-models]])
 
 ## Open Questions
 - Will CLIs or MCP become the dominant agent interface standard?

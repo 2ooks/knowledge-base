@@ -18,6 +18,7 @@ The trend toward open-weight AI models with permissive licenses that can run loc
 - Reason-ModernColBERT (150M parameters) achieves ~90% on BrowseComp-Plus, outperforming models up to 54× larger — late-interaction retrieval systematically beats dense single-vector approaches for reasoning-intensive search ([[ainews-every-lab-serious-enough-about]])
 - Qwen 3.5 Max Preview reaches #3 in Math and Top 10 in Arena Expert; open model leaderboard movement remains rapid ([[ainews-every-lab-serious-enough-about]])
 - NVIDIA Nemotron 3 mixes Transformer + Mamba 2, MoE/LatentMoE, multi-token prediction, and NVFP4 for lower inference costs and long-context agent workloads — architecture experimentation beyond pure transformers accelerating ([[ainews-every-lab-serious-enough-about]])
+- Kimi K2.5 (open-source / Chinese base model) served as the foundation for Cursor Composer 2 which beats Opus 4.6 after RL post-training — demonstrates that adequate open base models can reach frontier performance via domain-specific training ([[ai-daily-brief-anthropic-mythos-vertical-models]])
 
 ## Open Questions
 - Will Apache 2.0 open models close the gap with closed-source frontier models (Claude, GPT)?

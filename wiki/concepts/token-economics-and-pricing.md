@@ -12,6 +12,8 @@ The emerging economic framework in which AI value is measured, priced, and captu
 - Alchian-Allen effect: rising fixed GPU costs narrow the price ratio between premium and commodity tokens, pushing users toward the best models ([[dwarkesh-dylan-patel-interview]])
 - Anthropic's revenue growth ($4B added in Jan, $6B in Feb) demonstrates token demand elasticity ([[dwarkesh-dylan-patel-interview]])
 - 5-10x ROI on AI tools = massive pricing headroom before demand destruction ([[great-gpu-shortage-rental-capacity]])
+- "API tax starting to look like the cloud markup of 10 years ago" — observation that paying per-token to frontier labs may become uneconomical relative to training vertical models in-house on open-source bases ([[ai-daily-brief-anthropic-mythos-vertical-models]])
+- Multiple product companies (Cursor, Intercom, Decagon, Pinterest, Airbnb, Notion) finding it better/cheaper/faster to post-train open models in-house rather than rely on API calls to frontier models ([[ai-daily-brief-anthropic-mythos-vertical-models]])
 
 ## Open Questions
 - Will per-token pricing cannibalize per-seat SaaS models, or will they coexist?
