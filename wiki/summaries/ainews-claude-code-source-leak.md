@@ -1,3 +1,8 @@
+---
+last_validated: 2026-04-06
+decay_rate: fast
+---
+
 # AINews: The Claude Code Source Leak
 - **Source:** https://www.latent.space/p/ainews-the-claude-code-source-leak
 - **Date:** March 31, 2026

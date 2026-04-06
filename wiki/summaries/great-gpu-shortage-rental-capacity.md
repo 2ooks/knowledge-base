@@ -1,3 +1,8 @@
+---
+last_validated: 2026-04-06
+decay_rate: fast
+---
+
 # The Great GPU Shortage – Rental Capacity
 - **Source:** https://newsletter.semianalysis.com/p/the-great-gpu-shortage-rental-capacity
 - **Date:** April 1, 2026

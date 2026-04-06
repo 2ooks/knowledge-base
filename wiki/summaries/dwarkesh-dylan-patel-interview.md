@@ -1,3 +1,8 @@
+---
+last_validated: 2026-04-06
+decay_rate: slow
+---
+
 # Dylan Patel — Deep Dive on the 3 Big Bottlenecks to Scaling AI Compute
 - **Source:** https://www.dwarkesh.com/p/dylan-patel
 - **Date:** March 13, 2026

@@ -1,3 +1,8 @@
+---
+last_validated: 2026-04-06
+decay_rate: slow
+---
+
 # Thoughts on AI Progress (Dec 2025)
 - **Source:** https://www.dwarkesh.com/p/thoughts-on-ai-progress-dec-2025-video
 - **Date:** December 23, 2025

@@ -1,3 +1,8 @@
+---
+last_validated: 2026-04-06
+decay_rate: fast
+---
+
 # Your Agent Has 12 Blind Spots You're Probably Ignoring
 - **Source:** https://natesnewsletter.substack.com/p/your-agent-has-12-blind-spots-you
 - **Date:** ~April 2026 [UNVERIFIED: exact date]

@@ -1,3 +1,8 @@
+---
+last_validated: 2026-04-06
+decay_rate: fast
+---
+
 # AINews: Autoresearch — Sparks of Recursive AI Self-Improvement
 - **Source:** https://www.latent.space/p/ainews-autoresearch-sparks-of-recursive
 - **Date:** March 9, 2026

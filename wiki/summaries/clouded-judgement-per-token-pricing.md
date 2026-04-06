@@ -1,3 +1,8 @@
+---
+last_validated: 2026-04-06
+decay_rate: fast
+---
+
 # Clouded Judgement 3.26.26 - Per Token Pricing
 - **Source:** https://cloudedjudgement.substack.com/p/clouded-judgement-32626-per-token
 - **Date:** March 27, 2026

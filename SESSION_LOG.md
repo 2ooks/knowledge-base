@@ -465,3 +465,49 @@ The LangChain article re-ingestion revealed that the original secondary-source r
 - Key strategic finding: "If the agent-first interface wins, VS Code extensions become less relevant" and "Microsoft should be paying close attention" as "the assumption that VS Code is the center of gravity for developer tooling, an assumption that has held for nearly a decade, is weakening." This is a direct challenge to GitHub's existing integration strategy.
 - The Google Antigravity detail ($2.4 billion in licensing fees to Windsurf + hiring CEO and engineers into DeepMind) provides important context on acquisition pricing in this space and reinforces the toolchain land grab thesis.
 
+---
+
+## Session: 2026-04-06 (7) — Add Decay Rate Metadata to All Summaries
+
+### Context
+Added content freshness tracking to all 19 wiki summaries. Each summary now has YAML frontmatter with `last_validated` (set to 2026-04-06) and `decay_rate` (fast or slow). Updated WIKI_RULES.md (rule 9) and PROMPTS.md (Health Check item 9) to codify the review cadence.
+
+**Agent:** GitHub Copilot (VS Code)
+
+### Files Modified (21 total)
+
+#### Summaries — decay_rate: fast (14 files)
+| File | Rationale |
+|------|-----------|
+| ai-daily-brief-anthropic-mythos-vertical-models.md | Model releases, Anthropic product updates |
+| ainews-autoresearch-sparks-of-recursive.md | AI research tooling, agent capabilities |
+| ainews-claude-code-source-leak.md | Agent architecture, Claude Code features |
+| ainews-every-lab-serious-enough-about.md | Lab toolchain acquisitions, agent tooling |
+| ainews-everything-is-cli.md | CLI tooling, agent infra, model releases |
+| ainews-gemma-4-multimodal.md | Model release, benchmarks, ecosystem support |
+| clouded-judgement-per-token-pricing.md | GPU pricing, token economics, SaaS market data |
+| cursor-3-agent-management-console.md | IDE/agent tooling, product updates |
+| great-gpu-shortage-rental-capacity.md | GPU rental rates, compute pricing, demand data |
+| langchain-anatomy-of-agent-harness.md | Agent frameworks, harness engineering |
+| langchain-continual-learning-for-ai-agents.md | Agent training techniques |
+| lenny-state-of-product-job-market-2026.md | Job market data, hiring trends |
+| nates-newsletter-agent-blind-spots.md | Agent failure modes, tooling |
+| forbes-vibe-code-revenue-stream.md | Vibe coding trends, developer tooling |
+
+#### Summaries — decay_rate: slow (5 files)
+| File | Rationale |
+|------|-----------|
+| dwarkesh-dylan-patel-interview.md | Semiconductor supply chain, multi-year projections |
+| dwarkesh-ilya-sutskever-2.md | Research paradigm shifts, long-term AI trajectory |
+| dwarkesh-thoughts-on-ai-progress-dec-2025.md | AI progress assessment, long-term trends |
+| fourth-industrial-revolution.md | Data center infrastructure taxonomy, industrial revolution framing |
+| nvidia-inference-kingdom-expands.md | Hardware architecture roadmap, multi-year Nvidia plans |
+
+#### Config files updated (2 files)
+- `WIKI_RULES.md` — Added rule 9 (decay_rate review cadence: fast=60 days, slow=180 days)
+- `PROMPTS.md` — Added Health Check item 9 (flag overdue summaries based on decay_rate)
+
+### Issues / Limitations
+- None. All 19 summaries updated, both config files updated.
+- Future ingestions should include `last_validated` and `decay_rate` in new summary frontmatter at creation time. This is not yet codified in the ingestion prompt — consider adding in a future session.
+

@@ -1,3 +1,8 @@
+---
+last_validated: 2026-04-06
+decay_rate: slow
+---
+
 # Nvidia – The Inference Kingdom Expands
 - **Source:** https://newsletter.semianalysis.com/p/nvidia-the-inference-kingdom-expands
 - **Date:** March 23, 2026

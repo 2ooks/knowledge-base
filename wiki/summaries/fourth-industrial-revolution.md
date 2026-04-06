@@ -1,3 +1,8 @@
+---
+last_validated: 2026-04-06
+decay_rate: slow
+---
+
 # The Fourth Industrial Revolution: The Intelligence Revolution
 - **Source:** https://cloudedjudgement.substack.com/p/the-fourth-industrial-revolution
 - **Date:** July 17, 2024

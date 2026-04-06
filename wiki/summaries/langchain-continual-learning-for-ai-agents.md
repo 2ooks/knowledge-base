@@ -1,3 +1,8 @@
+---
+last_validated: 2026-04-06
+decay_rate: fast
+---
+
 # Continual Learning for AI Agents
 - **Source:** https://blog.langchain.com/continual-learning-for-ai-agents/
 - **Date:** April 5, 2026

@@ -1,3 +1,8 @@
+---
+last_validated: 2026-04-06
+decay_rate: fast
+---
+
 # Cursor's $2 billion bet: The IDE is now a fallback, not the default
 
 **Source:** https://thenewstack.io/cursors-2-billion-bet-the-ide-is-now-a-fallback-not-the-default/

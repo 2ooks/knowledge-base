@@ -1,3 +1,8 @@
+---
+last_validated: 2026-04-06
+decay_rate: fast
+---
+
 # AINews: Every Lab Serious Enough About Coding Now Owns a Developer Toolchain
 - **Source:** https://www.latent.space/p/ainews-every-lab-serious-enough-about
 - **Date:** March 19, 2026

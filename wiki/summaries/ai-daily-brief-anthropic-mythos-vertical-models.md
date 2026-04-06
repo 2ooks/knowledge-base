@@ -1,3 +1,8 @@
+---
+last_validated: 2026-04-06
+decay_rate: fast
+---
+
 # Anthropic Accidentally Revealed Their Most Powerful Model Ever
 
 **Source URL**: [URL appears malformed in source]

@@ -1,3 +1,8 @@
+---
+last_validated: 2026-04-06
+decay_rate: fast
+---
+
 # AINews: Gemma 4 — The Best Small Multimodal Open Models
 - **Source:** https://www.latent.space/p/ainews-gemma-4-the-best-small-multimodal
 - **Date:** April 3, 2026

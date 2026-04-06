@@ -1,3 +1,8 @@
+---
+last_validated: 2026-04-06
+decay_rate: fast
+---
+
 # The Anatomy of an Agent Harness
 - **Source:** https://blog.langchain.com/the-anatomy-of-an-agent-harness/
 - **Date:** March 10, 2026

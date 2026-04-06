@@ -1,3 +1,8 @@
+---
+last_validated: 2026-04-06
+decay_rate: fast
+---
+
 # State of the Product Job Market (Spring 2026)
 - **Source:** https://www.lennysnewsletter.com/p/state-of-the-product-job-market-in-ee9
 - **Date:** April 2026

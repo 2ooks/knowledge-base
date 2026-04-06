@@ -1,3 +1,8 @@
+---
+last_validated: 2026-04-06
+decay_rate: fast
+---
+
 # AINews: Everything is CLI
 - **Source:** https://www.latent.space/p/ainews-everything-is-cli
 - **Date:** March 26, 2026

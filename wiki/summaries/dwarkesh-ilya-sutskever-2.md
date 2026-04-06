@@ -1,3 +1,8 @@
+---
+last_validated: 2026-04-06
+decay_rate: slow
+---
+
 # Ilya Sutskever — We're Moving from the Age of Scaling to the Age of Research
 - **Source:** https://www.dwarkesh.com/p/ilya-sutskever-2
 - **Date:** November 25, 2025

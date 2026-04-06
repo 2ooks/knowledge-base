@@ -1,3 +1,8 @@
+---
+last_validated: 2026-04-06
+decay_rate: fast
+---
+
 # How to Vibe Code a New Revenue Stream Using What You Already Know
 
 **Source URL:** https://www.forbes.com/sites/jodiecook/2026/04/05/how-to-vibe-code-a-new-revenue-stream-using-what-you-already-know/

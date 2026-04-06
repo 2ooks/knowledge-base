@@ -21,3 +21,6 @@
 8. When resolving an [UNVERIFIED] tag, update both the source
    file and verification-queue.md. Change Status to Verified or
    Unverifiable with date.
+9. Summaries with decay_rate: fast should be reviewed every 60 days.
+   Summaries with decay_rate: slow should be reviewed every 180 days.
+   The Health Check prompt flags overdue summaries.

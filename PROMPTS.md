@@ -111,6 +111,8 @@ Give me a report covering:
 7. Connections that fail the "So what?" test from DELEGATION_SPEC.md
 8. 5 suggested questions worth investigating to deepen the wiki
    (frame these through the Microsoft/GitHub partnership lens)
+9. Summaries past their review window based on decay_rate
+   (fast = 60 days, slow = 180 days since last_validated)
 
 Don't fix anything — just report. I'll tell you what to act on.
 ```
