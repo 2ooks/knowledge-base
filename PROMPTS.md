@@ -137,6 +137,45 @@ Tell me what you changed.
 
 ---
 
+## Briefing Generator Prompt (use to create executive-ready briefing from wiki)
+
+```
+Read these files first:
+1. WIKI_RULES.md
+2. DELEGATION_SPEC.md
+3. wiki/connections.md
+4. wiki/index.md
+
+Generate a structured briefing document in outputs/ with filename
+briefing-YYYY-MM-DD.md covering:
+
+## Key Findings (3-5 max)
+For each finding:
+- One-sentence headline framed as "what changed and why it matters"
+- 2-3 sentences of supporting evidence from wiki sources
+- "So what for us:" — one sentence connecting to Microsoft/GitHub
+  partnership context from DELEGATION_SPEC.md
+
+## Active Contradictions (2-3 max)
+Unresolved tensions between sources that affect strategic decisions.
+For each: the two positions, which sources support each, and what
+would resolve it.
+
+## Open Questions (2-3 max)
+Highest-priority research gaps from connections.md, framed as
+questions a senior leader would ask.
+
+## Confidence Notes
+Flag any findings that rely on [UNVERIFIED] claims.
+Note any summaries past their review window.
+
+Keep the total document under 800 words. This is a briefing, not
+a report — every sentence should pass the "would I say this in a
+5-minute standup?" test.
+```
+
+---
+
 ## Tips
 
 - Start with 5-10 articles, not 500
