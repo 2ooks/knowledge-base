@@ -293,3 +293,35 @@ Updated `.github/workflows/auto-merge-ingestion.yml`:
 - Source URL appears malformed in the issue (shows "Login Login Login..." repeated) but this appears to be a rendering artifact from the newsletter subscription prompt; does not affect content quality.
 - This article represents a major strategic shift thesis: vertical models trained on usage data may fundamentally challenge the frontier API business model, with significant implications for Microsoft/GitHub positioning in the AI value chain.
 
+---
+
+## Session: 2026-04-06 (5) — Re-Ingestion with Full Article Text
+
+### Context
+
+This session re-ingests the Dwarkesh Patel "Thoughts on AI Progress (Dec 2025)" article, which was previously ingested in Session 2026-04-05 (3) from secondary sources only (dwarkesh.com was blocked). The full article text was provided in the issue description, enabling complete removal of all [UNVERIFIED] flags and significant expansion of the strategic analysis.
+
+### Articles Processed
+
+| Article | Retrieval Quality |
+|---------|-----------------|
+| [Thoughts on AI Progress (Dec 2025)](https://www.dwarkesh.com/p/thoughts-on-ai-progress-dec-2025-video) | **Full article text available** — Complete article text provided in issue description. This is a re-ingestion, replacing the previous secondary-sources-only version from Session 2026-04-05 (3). All claims are now directly attributable to the primary source. Date confirmed as December 23, 2025. |
+
+### Summaries Updated
+- `wiki/summaries/dwarkesh-thoughts-on-ai-progress-dec-2025.md` — completely rewritten with verified claims; removed all [UNVERIFIED] flags; confirmed date as December 23, 2025; expanded key claims from 7 to 11 with direct quotes and specific examples (biologist/macrophage, robotics litmus test, Toby Ord's 1,000,000x estimate, continual learning thesis)
+
+### Raw Articles Created
+- `raw/articles/dwarkesh-thoughts-on-ai-progress-dec-2025.md` — saved complete article text for reference
+
+### Concepts Updated
+- `wiki/concepts/ai-scaling-limits-and-research-paradigm.md` — replaced 3 [UNVERIFIED] bullet points with 9 verified key points including: fundamental contradiction thesis (short timelines vs. RL bullishness), mid-training supply chains, robotics as litmus test, RL scaling "laundering pretraining prestige," Toby Ord's 1,000,000x scale-up estimate, "schleppy training loops" critique, economic diffusion lag argument, goal post shifting justification, continual learning as post-AGI driver, AGI timeline ("next decade or two")
+
+### Connections Updated
+- **Updated contradiction**: "Scaling: Infinite Demand vs. Diminishing Returns" — significantly expanded with verified details from Patel's article: mid-training supply chain argument, robotics litmus test, RL scaling "laundering prestige" framing, Toby Ord's quantitative estimate, economic diffusion lag critique; removed [UNVERIFIED] flags on Dwarkesh Patel claims
+- **Updated research gap**: "The 'Scaling Is Over' Counter-Thesis and Microsoft's Capital Allocation Risk" — enhanced with Patel's detailed arguments: mid-training supply chain only makes sense if models remain poor at generalizing, robotics litmus test, "schleppy training loops" critique, economic diffusion lag as capabilities gap not adoption friction, "4 orders of magnitude" revenue gap, continual learning path for post-AGI improvement; removed [UNVERIFIED] flags on Dwarkesh Patel claims
+
+### Issues / Limitations
+- None — full article text was available in the issue description. All claims are attributed to the primary source with no [UNVERIFIED] flags needed.
+- This re-ingestion transforms one of the most important strategic arguments in the wiki (RL scaling skepticism) from secondary/unverified to primary/verified, significantly improving the reliability of the "Scaling: Infinite Demand vs. Diminishing Returns" contradiction and the associated Microsoft/GitHub capital allocation risk analysis.
+- The article provides the most detailed published critique of the "RL scaling will quickly yield AGI" thesis, with concrete examples (robotics, macrophage identification, economic diffusion) and quantitative anchors (Toby Ord's 1,000,000x estimate, "4 orders of magnitude" revenue gap).
+
