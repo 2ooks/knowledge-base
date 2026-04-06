@@ -44,6 +44,15 @@ The rapidly evolving stack of tools, frameworks, and architectural patterns enab
 - Cursor's Composer 2 built on Kimi K2.5 (open-source base) with 75% of compute from proprietary RL post-training on usage data; beats Opus 4.6 and matches GPT-5.4 on coding benchmarks at lower cost ([[ai-daily-brief-anthropic-mythos-vertical-models]])
 - OpenAI added plugins to Codex and reset usage limits across all plans, positioning against Anthropic's Claude Code rate limit changes; shelved adult mode indefinitely, consolidating on coding and enterprise ([[ai-daily-brief-anthropic-mythos-vertical-models]])
 - Claude Mythos revealed as new tier above Opus — "step change" in performance, particularly for coding, academic reasoning, and cybersecurity; expensive to serve, targeting early access for cybersecurity applications ([[ai-daily-brief-anthropic-mythos-vertical-models]])
+- Cursor's "Third Era" thesis (Feb 26, 2026): Era one = Tab autocomplete (~2 years), Era two = synchronous agents (may not last one year), Era three = autonomous agent fleets where developers review artifacts rather than supervise execution ([[medium-cursor-3-agents-window-architecture]])
+- Agent adoption flip at Cursor: March 2025 had ~2.5 Tab users per agent user; by early 2026 ratio reversed to 2 agent users per Tab user — 15x growth in agent usage over one year ([[medium-cursor-3-agents-window-architecture]])
+- Cursor dogfooding: 35% of Cursor's own merged PRs now come from agents operating autonomously in cloud VMs without real-time developer supervision ([[medium-cursor-3-agents-window-architecture]])
+- Cursor 3 Agents Window is first interface Anysphere built from scratch (not VS Code fork) — architectural admission that VS Code's model breaks under agent parallelism; addresses multi-workspace parallelism, cloud/local session handoff, and artifact-based review (demos/screenshots/videos) ([[medium-cursor-3-agents-window-architecture]])
+- Design Mode (Cmd+Shift+D) in Cursor: visual UI annotation workflow where developers point at browser elements and describe changes; agents translate to implementation — "a management interaction, not an IDE interaction" ([[medium-cursor-3-agents-window-architecture]])
+- `/best-of-n` command runs same prompt across multiple models (e.g., Sonnet, GPT, Composer) in parallel worktrees, then surfaces parent agent that compares outputs and can merge best parts — "a model evaluation pipeline embedded in the developer's workflow" ([[medium-cursor-3-agents-window-architecture]])
+- Five competitive interface bets on agent surfaces: GitHub Copilot (bolt agent features onto IDE via extensions), Cursor IDE mode (fork VS Code for deeper hooks), Cursor Agents Window (new surface for fleet management), Claude Code (no UI, just terminal + 1M context), Devin/Cognition (fully autonomous, acquired Windsurf for $250M) ([[medium-cursor-3-agents-window-architecture]])
+- Developer backlash against agent-first workflows reveals three concerns: craft (abstractions prevent reading/reasoning about code), autonomy (shift from craftsperson to middle manager), and incentive alignment (credit-based pricing pushes more agent usage) ([[medium-cursor-3-agents-window-architecture]])
+- March 2026 Cursor platform buildout: 5 layers in 28 days — Automations (triggers, March 5), Marketplace (30+ MCP plugins, March 11), Composer 2 (brain, March 19), Self-hosted cloud agents (runtime, March 25), Cursor 3 / Agents Window (surface, April 2) ([[medium-cursor-3-agents-window-architecture]])
 
 ## Open Questions
 - Will CLIs or MCP become the dominant agent interface standard?
@@ -56,6 +65,9 @@ The rapidly evolving stack of tools, frameworks, and architectural patterns enab
 - Now that all major labs own developer toolchain companies (Antigravity, Bun, Astral), is GitHub/Microsoft's position as the neutral developer infrastructure layer sustainable? What acquisitions or partnerships would reinforce it?
 - Will the "agent fleet management" layer (LangSmith Fleet, Devin teams) consolidate into platforms or remain fragmented across tool vendors?
 - If agents can update their own instructions from user feedback without re-deployment, what governance model ensures these self-modifications stay safe and auditable at scale? GitHub's permission and audit infrastructure may be directly applicable here.
+- Is VS Code's architecture fundamentally incompatible with agent fleets, or can it be extended? If Cursor is right that agent parallelism requires a ground-up rebuild, what does that mean for GitHub Copilot's VS Code extension strategy?
+- Will the "Third Era" (autonomous agent fleets) arrive as quickly as Cursor predicts, or will developer resistance slow adoption? What percentage of PRs need to come from autonomous agents before the tipping point occurs?
+- Does the five-way competitive split (Copilot/Cursor IDE/Cursor Agents/Claude Code/Devin) consolidate, or does each interface bet serve a distinct market segment? If consolidation happens, which bet wins?
 
 ## Related Concepts
 - [[gpu-and-compute-economics]] — agents drive compute demand

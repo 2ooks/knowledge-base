@@ -2,7 +2,7 @@
 This index is maintained automatically. Each entry links to its summary
 and lists related concepts.
 
-## Sources (18)
+## Sources (19)
 
 | # | Summary | Source | Date | Concepts |
 |---|---------|--------|------|----------|
@@ -24,6 +24,7 @@ and lists related concepts.
 | 16 | [[langchain-continual-learning-for-ai-agents]] | LangChain Blog | ~2026 | [[ai-agent-ecosystem]] |
 | 17 | [[langchain-anatomy-of-agent-harness]] | LangChain Blog | 2026-03-10 | [[ai-agent-ecosystem]] |
 | 18 | [[ai-daily-brief-anthropic-mythos-vertical-models]] | AI Daily Brief | 2026-03-27 | [[ai-agent-ecosystem]], [[open-models-and-local-inference]], [[token-economics-and-pricing]], [[vertical-models-and-usage-data]] |
+| 19 | [[medium-cursor-3-agents-window-architecture]] | Medium | 2026-04-04 | [[ai-agent-ecosystem]], [[vertical-models-and-usage-data]] |
 
 ## Concepts (9)
 
@@ -32,12 +33,12 @@ and lists related concepts.
 | [[gpu-and-compute-economics]] | 5 sources |
 | [[semiconductor-supply-chain-bottlenecks]] | 3 sources |
 | [[inference-architecture-and-scaling]] | 4 sources |
-| [[ai-agent-ecosystem]] | 13 sources |
+| [[ai-agent-ecosystem]] | 14 sources |
 | [[token-economics-and-pricing]] | 4 sources |
 | [[open-models-and-local-inference]] | 6 sources |
 | [[data-center-infrastructure]] | 3 sources |
 | [[ai-scaling-limits-and-research-paradigm]] | 2 sources |
-| [[vertical-models-and-usage-data]] | 1 source |
+| [[vertical-models-and-usage-data]] | 2 sources |
 
 ## Maintenance
 

@@ -13,6 +13,7 @@ The emerging pattern where product companies build domain-specific AI models by 
 - Eoghan McCabe references Andrej Karpathy's "speciation" prediction: smaller models with cognitive core, optimized for specific tasks ([[ai-daily-brief-anthropic-mythos-vertical-models]])
 - Richard Sutton's "Bitter Lesson Revisited" on Dwarkesh podcast may have predicted this: systems trained from experience supersede those built on human knowledge — vertical models are post-trained from experience (usage data) ([[ai-daily-brief-anthropic-mythos-vertical-models]])
 - "API tax starting to look like the cloud markup of 10 years ago" — observation that per-token pricing to frontier labs becomes uneconomical compared to in-house training ([[ai-daily-brief-anthropic-mythos-vertical-models]])
+- Cursor's March 2026 platform buildout demonstrates vertical integration: 5 layers (Automations → Marketplace → Composer 2 → Self-hosted agents → Agents Window) in 28 days, each building on the last, with Composer 2 (the vertical model) as the "brain layer" that makes the rest of the stack useful ([[medium-cursor-3-agents-window-architecture]])
 
 ## Open Questions
 - Will every product company with sufficient usage data train vertical models, or will this remain limited to well-funded companies with ML expertise?
