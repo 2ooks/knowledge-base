@@ -33,3 +33,8 @@ This AINews roundup (covering March 5–9, 2026) is anchored by what the author 
 - [[ainews-claude-code-source-leak]] — Claude Code architecture underpinning the multi-agent PR review product
 - [[ainews-gemma-4-multimodal]] — open model ecosystem; Gemma 4 rumors referenced here
 - [[nates-newsletter-agent-blind-spots]] — production infrastructure gaps; harness > model thesis
+- [[harness-engineering]]
+- [[autoresearch-and-recursive-self-improvement]]
+- [[agent-security-identity-and-permissions]]
+- [[developer-tooling-competitive-landscape]]
+- [[ai-coding-agents-and-developer-role-shift]]

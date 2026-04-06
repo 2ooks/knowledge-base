@@ -36,3 +36,8 @@ This AINews roundup (covering March 18–19, 2026) is anchored by OpenAI's acqui
 - [[ainews-claude-code-source-leak]] — Claude Code architecture (Anthropic's coding agent strategy)
 - [[ainews-gemma-4-multimodal]] — open model ecosystem and lab strategies
 - [[nates-newsletter-agent-blind-spots]] — production agent infrastructure requirements; "80% plumbing" thesis
+- [[developer-tooling-competitive-landscape]]
+- [[harness-engineering]]
+- [[agent-security-identity-and-permissions]]
+- [[autoresearch-and-recursive-self-improvement]]
+- [[ai-coding-agents-and-developer-role-shift]]

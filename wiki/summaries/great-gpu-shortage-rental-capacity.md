@@ -29,3 +29,6 @@ GPU rental pricing has spiked 40% in 6 months as demand from Claude Code, open-w
 - [[nvidia-inference-kingdom-expands]] — supply-side hardware roadmap
 - [[clouded-judgement-per-token-pricing]] — GPU hours vs token dollars shift
 - [[fourth-industrial-revolution]] — data center infrastructure context
+- [[gpu-and-compute-economics]]
+- [[token-economics-and-pricing]]
+- [[ai-agent-ecosystem]]

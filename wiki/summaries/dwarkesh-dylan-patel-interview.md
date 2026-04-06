@@ -32,3 +32,6 @@ A 2.5-hour deep dive into the three bottlenecks to AI compute scaling: logic (TS
 - [[great-gpu-shortage-rental-capacity]] — demand-side pricing data confirming Dylan's thesis
 - [[clouded-judgement-per-token-pricing]] — token economics downstream of compute constraints
 - [[fourth-industrial-revolution]] — data center infrastructure context
+- [[semiconductor-supply-chain-bottlenecks]]
+- [[gpu-and-compute-economics]]
+- [[inference-architecture-and-scaling]]

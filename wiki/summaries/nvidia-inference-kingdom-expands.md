@@ -28,3 +28,5 @@ SemiAnalysis's deep-dive into Nvidia's GTC 2026 announcements. Nvidia "acquired"
 - [[great-gpu-shortage-rental-capacity]] — demand-side of the inference compute crunch
 - [[fourth-industrial-revolution]] — data center component taxonomy
 - [[clouded-judgement-per-token-pricing]] — inference economics and token monetization
+- [[inference-architecture-and-scaling]]
+- [[semiconductor-supply-chain-bottlenecks]]

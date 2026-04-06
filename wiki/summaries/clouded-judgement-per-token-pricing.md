@@ -28,3 +28,6 @@ The AI industry is shifting from renting GPUs by the hour to monetizing tokens b
 - [[dwarkesh-dylan-patel-interview]] — compute economics and GPU value thesis
 - [[nvidia-inference-kingdom-expands]] — hardware enabling the token shift (Groq LPU, GB300)
 - [[ainews-everything-is-cli]] — agent workloads driving token consumption
+- [[token-economics-and-pricing]]
+- [[gpu-and-compute-economics]]
+- [[inference-architecture-and-scaling]]

@@ -1,0 +1,31 @@
+# Harness Engineering
+
+## Definition
+The discipline of building the middleware layer around foundation models — memory systems, tool registries, orchestration logic, compaction, context management, sandboxes, and evaluation loops — that turns raw model intelligence into production-grade agent behavior. The thesis: the harness, not the model, is the primary differentiator for production AI agents.
+
+## Key Points
+- "Agent = Model + Harness" — the harness is everything that isn't the model itself: system prompts, tools/MCPs, bundled infrastructure, orchestration logic, hooks/middleware ([[langchain-anatomy-of-agent-harness]])
+- LangChain improved from outside Top 30 to Top 5 on Terminal Bench 2.0 by only changing the harness (using Opus 4.6) — best harness for a task is not necessarily the one a model was post-trained with ([[langchain-anatomy-of-agent-harness]])
+- Agent loops are harness-constrained, not model-constrained: Opus 4.6 sustains 12+ hours / 118 experiments; GPT-5.4 "xhigh" fails on "LOOP FOREVER" ([[ainews-autoresearch-sparks-of-recursive]])
+- "80% plumbing, 20% model" — gap between demo-grade and production-grade agents is almost entirely infrastructure [UNVERIFIED] ([[nates-newsletter-agent-blind-spots]])
+- Filesystems are the most foundational harness primitive: workspace, incremental offloading, state persistence, multi-agent collaboration surface ([[langchain-anatomy-of-agent-harness]])
+- Context rot: models degrade as context fills; harnesses manage via compaction, tool call offloading, and progressive disclosure (Skills) ([[langchain-anatomy-of-agent-harness]])
+- Ralph Loop: harness pattern that intercepts model's exit attempt and reinjects original prompt in clean context window ([[langchain-anatomy-of-agent-harness]])
+- Models and harnesses are co-trained in production (Claude Code, Codex), creating overfitting risk — changing apply_patch logic degrades performance ([[langchain-anatomy-of-agent-harness]])
+- Claude Code architecture: 3-layer memory (index → topics → transcripts), KV cache fork-join subagents, 5-level permissions, ~60 tools ([[ainews-claude-code-source-leak]])
+- "Harness engineering" named as a category: middleware, memory, task orchestration, tool interfaces, and evaluation loops around base models are the real product ([[ainews-everything-is-cli]])
+- Continual learning at three layers: Model (weights), Harness (Meta-Harness: traces → evaluate → coding agent fixes), Context (CLAUDE.md / SOUL.md) ([[langchain-continual-learning-for-ai-agents]])
+- Meta-Harness pattern: harness that analyzes own traces to fix its own failures — active research frontier ([[langchain-anatomy-of-agent-harness]])
+- 12 infrastructure primitives most builders skip: tool registry, memory, orchestration, observability, security, session persistence, workflow state, permissions, agent identity, testing, error handling, versioning [UNVERIFIED] ([[nates-newsletter-agent-blind-spots]])
+
+## Open Questions
+- Will harness patterns converge into a standard (like web frameworks did), or remain fragmented?
+- Can the Meta-Harness pattern (agents fixing their own harness) work reliably in production?
+- Does harness co-training with models create lock-in that disadvantages open-source alternatives?
+- How should Microsoft/GitHub position in the harness layer — build vs partner vs acquire?
+
+## Related Concepts
+- [[ai-agent-ecosystem]] — the broader ecosystem context
+- [[developer-tooling-competitive-landscape]] — harness differences as competitive differentiators
+- [[autoresearch-and-recursive-self-improvement]] — harnesses enabling autonomous improvement loops
+- [[agent-security-identity-and-permissions]] — security as a harness primitive

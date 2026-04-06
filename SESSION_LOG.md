@@ -511,3 +511,52 @@ Added content freshness tracking to all 19 wiki summaries. Each summary now has 
 - None. All 19 summaries updated, both config files updated.
 - Future ingestions should include `last_validated` and `decay_rate` in new summary frontmatter at creation time. This is not yet codified in the ingestion prompt — consider adding in a future session.
 
+---
+
+## Session: 2026-04-06 (8) — Concept Restructuring: Audit, Decompose, Create
+
+### Context
+Ran a full concept audit (thin concepts, missing concepts, overlaps). Then implemented all recommendations: merged 1 concept, created 5 new concepts, decomposed the overloaded ai-agent-ecosystem, fixed backlinks in 11 summaries, and updated the index.
+
+**Agent:** GitHub Copilot (VS Code)
+
+### Changes
+
+#### Concept Merged (1)
+- `data-center-infrastructure` → merged into `inference-architecture-and-scaling` as "Physical Infrastructure" section. Old file deleted.
+
+#### New Concepts Created (5)
+| Concept | Sources | Rationale |
+|---------|---------|-----------|
+| `harness-engineering` | 7 | Extracted from ai-agent-ecosystem; "Agent = Model + Harness" thesis, Ralph Loop, context rot, Meta-Harness |
+| `agent-security-identity-and-permissions` | 5 | Agentic identity, zero-trust, Claude Code 5-level permissions, NemoClaw |
+| `developer-tooling-competitive-landscape` | 5 | Lab toolchain acquisitions, 4-way architectural divergence, PR review battleground |
+| `ai-coding-agents-and-developer-role-shift` | 5 | Writing→reviewing shift, vibe coding, labor market impact |
+| `autoresearch-and-recursive-self-improvement` | 4 | Karpathy autoresearch, SkyPilot scaling, MiniMax self-improvement, Meta-Harness |
+
+#### Concept Decomposed (1)
+- `ai-agent-ecosystem` trimmed from ~60 key points to ~13 — retained ecosystem-level points (CLIs, MCP, fleet management, multi-agent orchestration). Extracted content distributed across the 5 new concepts.
+
+#### Summary Backlinks Fixed (11 files)
+All 11 summaries created in the original batch now have concept wikilinks in their Related sections (previously linked only to other summaries):
+- ainews-everything-is-cli (+3 concepts)
+- ainews-claude-code-source-leak (+3)
+- ainews-gemma-4-multimodal (+2)
+- nvidia-inference-kingdom-expands (+2)
+- great-gpu-shortage-rental-capacity (+3)
+- dwarkesh-dylan-patel-interview (+3)
+- clouded-judgement-per-token-pricing (+3)
+- fourth-industrial-revolution (+1)
+- ainews-autoresearch-sparks-of-recursive (+5)
+- nates-newsletter-agent-blind-spots (+2)
+- ainews-every-lab-serious-enough-about (+5)
+
+#### Index Updated
+- Sources table: all 19 entries updated with accurate concept mappings
+- Concepts table: expanded from 9 to 13 concepts with correct source counts
+- Removed all references to deleted `data-center-infrastructure`
+
+### Issues / Limitations
+- None. All audit recommendations implemented.
+- The concept restructuring brings the wiki from 9 concepts (1 overloaded) to 13 (evenly distributed). The largest concept `ai-agent-ecosystem` went from 14 source references to 10, and from ~60 key points to ~13.
+

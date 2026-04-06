@@ -25,3 +25,6 @@ Stripe launched Projects.dev, a CLI for agents to instantly provision backend se
 - [[ainews-claude-code-source-leak]] — Claude Code's agent harness architecture
 - [[ainews-gemma-4-multimodal]] — open models powering local agent stacks
 - [[clouded-judgement-per-token-pricing]] — agent workloads driving token demand
+- [[harness-engineering]]
+- [[ai-agent-ecosystem]]
+- [[developer-tooling-competitive-landscape]]

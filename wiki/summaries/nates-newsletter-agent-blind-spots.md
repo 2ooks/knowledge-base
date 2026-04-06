@@ -28,3 +28,5 @@ Nate Jones argues that building production-grade AI agents is "80% plumbing, 20%
 - [[ainews-claude-code-source-leak]] — source architecture analyzed in this article; 3-layer memory, KV fork-join, 18-module bash security
 - [[ainews-everything-is-cli]] — harness engineering as the competitive moat
 - [[great-gpu-shortage-rental-capacity]] — agent workloads driving compute demand assumes production-grade agents exist
+- [[harness-engineering]]
+- [[agent-security-identity-and-permissions]]

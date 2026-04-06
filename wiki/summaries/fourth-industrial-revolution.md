@@ -26,3 +26,4 @@ Ball frames the current AI wave as the Fourth Industrial Revolution, following m
 - [[nvidia-inference-kingdom-expands]] — specific hardware innovations (LPX, Kyber, Vera, STX)
 - [[dwarkesh-dylan-patel-interview]] — power and data center scaling in detail
 - [[great-gpu-shortage-rental-capacity]] — demand pressures on this infrastructure
+- [[inference-architecture-and-scaling]]

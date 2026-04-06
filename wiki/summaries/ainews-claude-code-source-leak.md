@@ -26,3 +26,6 @@ Anthropic accidentally exposed 500K+ lines of Claude Code source via shipped sou
 - [[ainews-everything-is-cli]] — agent harness engineering trends
 - [[ainews-gemma-4-multimodal]] — open model ecosystem for local agents
 - [[clouded-judgement-per-token-pricing]] — Anthropic ARR context
+- [[harness-engineering]]
+- [[agent-security-identity-and-permissions]]
+- [[ai-agent-ecosystem]]

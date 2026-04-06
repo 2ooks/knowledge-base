@@ -27,3 +27,5 @@ Google DeepMind released Gemma 4 under Apache 2.0 — a major licensing shift. T
 - [[ainews-everything-is-cli]] — open models powering agent stacks
 - [[ainews-claude-code-source-leak]] — contrast with closed-source agent approaches
 - [[dwarkesh-dylan-patel-interview]] — context on compute constraints for model training
+- [[open-models-and-local-inference]]
+- [[ai-agent-ecosystem]]
