@@ -355,3 +355,35 @@ This session re-ingests the Dwarkesh Patel "Thoughts on AI Progress (Dec 2025)" 
 ### Issues / Limitations
 - None — all [UNVERIFIED] tags found via exhaustive scan of wiki/summaries/ and wiki/connections.md
 - Concept files also reference [UNVERIFIED] claims but inherit them from summaries; the queue tracks source-level origin
+
+---
+
+## Session: 2026-04-06 (6) — Re-Ingestion with Full Article Text
+
+### Context
+
+This session re-ingests the Forbes "How to Vibe Code a New Revenue Stream" article, which was previously ingested in Session 2026-04-05 (4) from secondary sources only (forbes.com was blocked). The full article text was provided in the issue description, enabling complete removal of all [UNVERIFIED] flags and significant expansion of the founder examples.
+
+### Articles Processed
+
+| Article | Retrieval Quality |
+|---------|-----------------|
+| [How to Vibe Code a New Revenue Stream Using What You Already Know](https://www.forbes.com/sites/jodiecook/2026/04/05/how-to-vibe-code-a-new-revenue-stream-using-what-you-already-know/) | **Full article text available** — Complete article text provided in issue description. This is a re-ingestion, replacing the previous secondary-sources-only version from Session 2026-04-05 (4). All claims are now directly attributable to the primary source. Date confirmed as April 5, 2026. |
+
+### Summaries Updated
+- `wiki/summaries/forbes-vibe-code-revenue-stream.md` — completely rewritten with verified claims; removed all [UNVERIFIED] flags; expanded key claims from 7 to 9 with direct quotes and specific examples from four founders (Evan G., Arthur Kerekes, Dhanyal Radha Gopi, Chad Thomas); added specific product names (patty.com, brooke.com, racingminds.com, bananacam.ai, contentsidekick.ai); confirmed "cost of being wrong dropped to almost nothing" economics framing; added Wispr Flow and Claude Cowork tool mentions
+
+### Raw Articles Created
+- `raw/articles/forbes-vibe-code-revenue-stream.md` — saved complete article text for reference
+
+### Verification Queue Updated
+- `wiki/verification-queue.md` — marked 6 of 7 Forbes claims as verified (rows 23-29); 1 claim marked as unverifiable (AI code vulnerability discussion not present in article); updated row 43 to reflect resolution of vibe coding pattern verification
+
+### Connections Updated
+- **Updated pattern**: "Vibe Coding and the Democratization of Product Creation" — removed all [UNVERIFIED] flags; enriched with specific founder examples (Evan G.'s three simultaneous startups, Arthur Kerekes's four production systems); added direct quote on economics change ("cost of being wrong dropped to almost nothing"); specified micro-SaaS monetization examples (bananacam.ai subscriptions, framework productization)
+
+### Issues / Limitations
+- None — full article text was available in the issue description. All claims are attributed to the primary source with no [UNVERIFIED] flags needed.
+- This re-ingestion transforms the vibe coding pattern from secondary/unverified to primary/verified, significantly improving the reliability of the connection analyzing GitHub's positioning in the non-technical founder market segment.
+- The article provides concrete founder examples (four named individuals with specific products and claims about development speed) that substantially strengthen the "vibe coding expands developer tooling TAM" thesis.
+- One claim from the original secondary-sources summary (AI-generated code vulnerabilities) was not present in the actual article and has been marked as unverifiable — likely this was commentary from secondary sources rather than from the Forbes article itself.
