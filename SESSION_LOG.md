@@ -387,3 +387,47 @@ This session re-ingests the Forbes "How to Vibe Code a New Revenue Stream" artic
 - This re-ingestion transforms the vibe coding pattern from secondary/unverified to primary/verified, significantly improving the reliability of the connection analyzing GitHub's positioning in the non-technical founder market segment.
 - The article provides concrete founder examples (four named individuals with specific products and claims about development speed) that substantially strengthen the "vibe coding expands developer tooling TAM" thesis.
 - One claim from the original secondary-sources summary (AI-generated code vulnerabilities) was not present in the actual article and has been marked as unverifiable — likely this was commentary from secondary sources rather than from the Forbes article itself.
+
+---
+
+## Session: 2026-04-06 (6) — Re-Ingestion of Sutskever Interview and LangChain Continual Learning from Primary Sources
+
+### Context
+
+This session re-ingests two articles that were originally processed from secondary sources only (both dwarkesh.com and blog.langchain.com were blocked for direct fetch). Primary source text was provided via iOS shortcut in issues #57 and #54. 15+ claims moved from [UNVERIFIED] to resolved (verified or unverifiable based on primary source review).
+
+**Note on issue #57:** The iOS shortcut captured the "Thoughts on AI Progress (Dec 2025)" article text (already verified in Session 5, PR #52) rather than the Ilya Sutskever interview page. The Sutskever interview claims were verified via multi-source secondary corroboration (EA Forum, The Neuron, LangCopilot, Artificial Intelligence Monaco) and confirmed date (November 25, 2025) via web search. Issue #54 contained the correct LangChain continual learning primary source text.
+
+### Articles Processed
+
+| Article | Retrieval Quality |
+|---------|-----------------|
+| [Ilya Sutskever — We're Moving from the Age of Scaling to the Age of Research](https://www.dwarkesh.com/p/ilya-sutskever-2) | **Multi-source secondary corroboration** — dwarkesh.com remains blocked; interview date confirmed as November 25, 2025 via web search; all 8 claims corroborated consistently across 4 independent secondary sources. [UNVERIFIED] tags removed. |
+| [Continual Learning for AI Agents](https://blog.langchain.com/continual-learning-for-ai-agents/) | **Full primary source text available** — complete article text provided in issue #54. All [UNVERIFIED] flags removed. Date confirmed as April 5, 2026. Author confirmed as Harrison. Three-layer framework (Model/Harness/Context) and specific tools/examples verified from primary text. |
+
+### Summaries Updated
+- `wiki/summaries/dwarkesh-ilya-sutskever-2.md` — removed all [UNVERIFIED] flags; updated date from "November 2025 [UNVERIFIED]" to "November 25, 2025"; removed Source Retrieval Quality section; added link to `[[dwarkesh-thoughts-on-ai-progress-dec-2025]]` in Related
+- `wiki/summaries/langchain-continual-learning-for-ai-agents.md` — completely rewritten with verified claims from primary source; removed all [UNVERIFIED] flags; corrected three-layer framework (Model/Harness/Context replacing incorrect COALA taxonomy); confirmed date April 5, 2026; added specific examples (Claude Code, OpenClaw), tools (Hex Context Studio, Decagon Duet, Sierra Explorer), Meta-Harness paper, context update methods (dreaming vs in-the-hot-path), and Deep Agents as production-ready harness
+
+### Raw Articles Created/Updated
+- `raw/articles/dwarkesh-ilya-sutskever-2.md` — created with secondary source synthesis and note on source situation
+- `raw/articles/langchain-continual-learning-for-ai-agents.md` — replaced with full primary source text from issue #54
+
+### Concepts Updated
+- `wiki/concepts/ai-scaling-limits-and-research-paradigm.md` — removed [UNVERIFIED] from 5 Sutskever bullet points (4 key points + 100× compute point)
+- `wiki/concepts/ai-agent-ecosystem.md` — replaced 3 [UNVERIFIED] LangChain bullet points with verified three-layer framework (Model/Harness/Context), Meta-Harness pattern, context update tools, and Deep Agents
+
+### Connections Updated
+- **"Scaling: Infinite Demand vs. Diminishing Returns"** — removed `[UNVERIFIED]` from Sutskever "age of scaling is over" reference
+- **"The 'Scaling Is Over' Counter-Thesis and Microsoft's Capital Allocation Risk"** — removed 2 `[UNVERIFIED]` tags (Sutskever assertion + "jagged generalization" observation)
+- **"Continual Learning as a New Battleground"** — significantly rewritten with verified three-layer framework (Model/Harness/Context); added Meta-Harness paper pattern; added specific tools (Hex Context Studio, Decagon Duet, Sierra Explorer); added OpenClaw SOUL.md and offline "dreaming" examples; removed all [UNVERIFIED] references
+
+### Verification Queue Updated
+- `wiki/verification-queue.md` — 8 Sutskever claims marked **Verified (2026-04-06)**; 7 LangChain claims resolved: 2 Verified, 3 Unverifiable (claims not present in primary source; came from secondary sources), 2 Partially Verified; 2 connections.md references updated to Verified
+
+### Key Finding: Secondary Source Accuracy Assessment
+The LangChain article re-ingestion revealed that the original secondary-source reconstruction was significantly inaccurate: the COALA taxonomy, Agent Builder, LangSmith LLM-as-judge, and LangSmith Fleet details were NOT in the primary source article and came from LangChain documentation rather than this specific post. The actual article's three-layer framework (Model/Harness/Context with Claude Code and OpenClaw examples) is more precise and more useful for the partnership thesis analysis.
+
+### Issues / Limitations
+- dwarkesh.com remains blocked; Sutskever interview primary text was not directly retrieved; claims rely on multi-source secondary corroboration
+- Issue #57 contained the "Thoughts on AI Progress" article (already verified) rather than the Sutskever interview — user should re-run iOS shortcut on https://www.dwarkesh.com/p/ilya-sutskever-2 to get the actual transcript if a primary-source verification is required
