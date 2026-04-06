@@ -355,3 +355,35 @@ This session re-ingests the Dwarkesh Patel "Thoughts on AI Progress (Dec 2025)" 
 ### Issues / Limitations
 - None — all [UNVERIFIED] tags found via exhaustive scan of wiki/summaries/ and wiki/connections.md
 - Concept files also reference [UNVERIFIED] claims but inherit them from summaries; the queue tracks source-level origin
+
+---
+
+## Session: 2026-04-06 (6)
+
+### Context
+
+This session received a new-source issue for Dwarkesh Patel's "Thoughts on AI Progress (Dec 2025)" article. However, this article was already fully re-ingested in Session 2026-04-06 (5) with complete primary source text, removing all [UNVERIFIED] flags. This session is a duplicate detection.
+
+### Verification Results
+
+| Check | Status |
+|-------|--------|
+| Raw article exists with full text | ✅ PASS — `/raw/articles/dwarkesh-thoughts-on-ai-progress-dec-2025.md` (11,575 bytes) |
+| Summary exists with no [UNVERIFIED] flags | ✅ PASS — `wiki/summaries/dwarkesh-thoughts-on-ai-progress-dec-2025.md` (4,550 bytes, 11 key claims, confirmed date: December 23, 2025) |
+| Concept file updated | ✅ PASS — `ai-scaling-limits-and-research-paradigm.md` has 9 verified key points from article (lines 11-20) |
+| Connections updated | ✅ PASS — extensive analysis in lines 45-100 including major contradiction and research gap |
+| Index listing | ✅ PASS — entry #13 in index.md |
+
+### Actions Taken
+
+No changes needed. The article has already been fully processed with:
+- Complete raw article text (11,575 bytes)
+- Comprehensive summary with 11 key claims, no [UNVERIFIED] flags
+- Concept file fully updated with 9 verified points
+- Connections file extensively updated with ~55 lines of strategic analysis
+- Proper index listing
+
+### Issues / Limitations
+
+- This is a duplicate issue. The article was previously fully ingested in Session 2026-04-06 (5) from the same source URL with complete primary text.
+- No action required beyond duplicate detection and logging.
