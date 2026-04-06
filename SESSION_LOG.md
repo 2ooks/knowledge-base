@@ -325,3 +325,33 @@ This session re-ingests the Dwarkesh Patel "Thoughts on AI Progress (Dec 2025)" 
 - This re-ingestion transforms one of the most important strategic arguments in the wiki (RL scaling skepticism) from secondary/unverified to primary/verified, significantly improving the reliability of the "Scaling: Infinite Demand vs. Diminishing Returns" contradiction and the associated Microsoft/GitHub capital allocation risk analysis.
 - The article provides the most detailed published critique of the "RL scaling will quickly yield AGI" thesis, with concrete examples (robotics, macrophage identification, economic diffusion) and quantitative anchors (Toby Ord's 1,000,000x estimate, "4 orders of magnitude" revenue gap).
 
+
+---
+
+## Session: 2026-04-06 (5) — Verification Queue Creation
+
+### Created
+- `wiki/verification-queue.md` — 37 [UNVERIFIED] claims extracted from 6 files into a structured verification queue
+
+### Files with [UNVERIFIED] claims
+| File | Claims |
+|------|--------|
+| `wiki/summaries/dwarkesh-ilya-sutskever-2.md` | 8 |
+| `wiki/summaries/dwarkesh-thoughts-on-ai-progress-dec-2025.md` | 7 |
+| `wiki/summaries/forbes-vibe-code-revenue-stream.md` | 7 |
+| `wiki/summaries/langchain-continual-learning-for-ai-agents.md` | 7 |
+| `wiki/summaries/nates-newsletter-agent-blind-spots.md` | 5 |
+| `wiki/connections.md` | 3 |
+
+### Other Updates
+- `wiki/index.md` — added "Maintenance" section with link to verification-queue
+- `WIKI_RULES.md` — added rule 8 for [UNVERIFIED] resolution workflow
+
+### Verification Patterns Observed
+- All [UNVERIFIED] claims originate from blocked domains: dwarkesh.com, forbes.com, blog.langchain.com, natesnewsletter.substack.com (paywall)
+- The most efficient resolution path: user provides article text directly (as done for langchain-anatomy-of-agent-harness and ai-daily-brief-anthropic-mythos-vertical-models)
+- Dwarkesh sources (15 claims) are highest priority — they underpin the scaling-limits concept and multiple connections
+
+### Issues / Limitations
+- None — all [UNVERIFIED] tags found via exhaustive scan of wiki/summaries/ and wiki/connections.md
+- Concept files also reference [UNVERIFIED] claims but inherit them from summaries; the queue tracks source-level origin

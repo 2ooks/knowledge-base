@@ -18,3 +18,6 @@
 5. Flag contradictions between sources explicitly.
 6. Summaries are factual. Concept articles are analytical.
 7. Never delete — mark outdated info with [OUTDATED: reason].
+8. When resolving an [UNVERIFIED] tag, update both the source
+   file and verification-queue.md. Change Status to Verified or
+   Unverifiable with date.

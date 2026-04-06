@@ -1,0 +1,44 @@
+# Verification Queue
+Claims tagged [UNVERIFIED] across the wiki. Review periodically
+and resolve by either verifying against primary sources or
+upgrading the tag to [UNVERIFIABLE: reason].
+
+| Claim | Source File | What Would Verify It | Status |
+|-------|-------------|----------------------|--------|
+| "The age of scaling is over" — pre-training on static internet data has reached diminishing returns | `wiki/summaries/dwarkesh-ilya-sutskever-2.md` | Find original Dwarkesh Podcast transcript/video of Ilya Sutskever interview (~Nov 2025) and confirm exact quote | Open |
+| Progress now requires "age of research": new algorithmic breakthroughs, synthetic data, models that learn from deployment | `wiki/summaries/dwarkesh-ilya-sutskever-2.md` | Same Dwarkesh/Sutskever transcript — confirm this framing is Sutskever's | Open |
+| Models exhibit "jagged generalization" — solving graduate-level problems but failing basic reasoning; RL risks benchmark overfitting | `wiki/summaries/dwarkesh-ilya-sutskever-2.md` | Same transcript — confirm Sutskever uses "jagged generalization" phrasing | Open |
+| RL consuming increasing compute relative to pre-training but yields only modest learning gains | `wiki/summaries/dwarkesh-ilya-sutskever-2.md` | Same transcript — confirm specific claim about RL compute vs. gains | Open |
+| SSI structured research-first; alignment/safety as core design constraints; goal of AI "caring for sentient life" | `wiki/summaries/dwarkesh-ilya-sutskever-2.md` | Same transcript — confirm SSI structure and "caring for sentient life" quote | Open |
+| A "specific, currently unknown machine learning principle" needed for robust generalization | `wiki/summaries/dwarkesh-ilya-sutskever-2.md` | Same transcript — confirm exact phrasing | Open |
+| 100× compute scaling might move the needle but would not fundamentally transform capabilities | `wiki/summaries/dwarkesh-ilya-sutskever-2.md` | Same transcript — confirm 100× claim and context | Open |
+| Superintelligence deployment should be gradual, with systems learning from real-world use | `wiki/summaries/dwarkesh-ilya-sutskever-2.md` | Same transcript — confirm deployment thesis | Open |
+| Current AI progress relies on massive expert labor (PhDs writing Q&A, behavioral cloning) not genuine autonomous learning | `wiki/summaries/dwarkesh-thoughts-on-ai-progress-dec-2025.md` | Access dwarkesh.com/p/thoughts-on-ai-progress-dec-2025-video or find transcript; confirm expert labor framing | Open |
+| Simply scaling RL atop LLMs will not quickly produce AGI; "critical core" of generalizable learning is missing | `wiki/summaries/dwarkesh-thoughts-on-ai-progress-dec-2025.md` | Same Dwarkesh blog/video — confirm "critical core" argument | Open |
+| Robotics as litmus test: humans operate new hardware with minimal practice; AI requires thousands of handcrafted RL tasks | `wiki/summaries/dwarkesh-thoughts-on-ai-progress-dec-2025.md` | Same source — confirm robotics comparison | Open |
+| ~60% probability of AGI by 2040 | `wiki/summaries/dwarkesh-thoughts-on-ai-progress-dec-2025.md` | Same source — confirm exact probability and year | Open |
+| "Moderately bearish" short-term, "explosively bullish" long-term | `wiki/summaries/dwarkesh-thoughts-on-ai-progress-dec-2025.md` | Same source — confirm exact phrasing | Open |
+| Scaling laws uncertain whether they yield improvements toward general intelligence or plateau | `wiki/summaries/dwarkesh-thoughts-on-ai-progress-dec-2025.md` | Same source — confirm scaling law uncertainty claim | Open |
+| Robotics is primarily an algorithms problem, not hardware or data | `wiki/summaries/dwarkesh-thoughts-on-ai-progress-dec-2025.md` | Same source — confirm algorithms-first framing | Open |
+| Founders use Claude Code to build full applications from natural language, reducing dev time from months to days | `wiki/summaries/forbes-vibe-code-revenue-stream.md` | Access forbes.com article directly and confirm specific claims about Claude Code usage and timelines | Open |
+| Evan simultaneously runs multiple startups (patty.com, brooke.com, racingminds.com) without writing traditional code | `wiki/summaries/forbes-vibe-code-revenue-stream.md` | Same Forbes article — confirm Evan example and specific startup names | Open |
+| Cost and risk of product experimentation drops dramatically with vibe coding | `wiki/summaries/forbes-vibe-code-revenue-stream.md` | Same Forbes article — confirm cost/risk framing | Open |
+| Claude Code, Wispr Flow, and Replit include "one-click deploy" features | `wiki/summaries/forbes-vibe-code-revenue-stream.md` | Same Forbes article — confirm specific tools and deploy features mentioned | Open |
+| Monetization strategies: micro-SaaS, service automation, freelance vibe coding services | `wiki/summaries/forbes-vibe-code-revenue-stream.md` | Same Forbes article — confirm monetization categories | Open |
+| AI-generated code can contain vulnerabilities or maintenance challenges | `wiki/summaries/forbes-vibe-code-revenue-stream.md` | Same Forbes article — confirm risk/limitation discussion | Open |
+| Vibe coding allows founders to leverage existing audience, expertise, and customer feedback | `wiki/summaries/forbes-vibe-code-revenue-stream.md` | Same Forbes article — confirm leverage framing | Open |
+| Agents implement "continual learning" without weight updates via persistent memory injected into context | `wiki/summaries/langchain-continual-learning-for-ai-agents.md` | Access blog.langchain.com/continual-learning-for-ai-agents/ directly and confirm core thesis | Open |
+| LangChain models memory using COALA paper types: procedural, semantic, episodic | `wiki/summaries/langchain-continual-learning-for-ai-agents.md` | Same LangChain article — confirm COALA paper reference and three memory types | Open |
+| Agent Builder implements memory as virtual filesystem; agents read/write own instruction files | `wiki/summaries/langchain-continual-learning-for-ai-agents.md` | Same LangChain article — confirm Agent Builder filesystem implementation | Open |
+| LangSmith converts traces to test datasets; "LLM as judge" for automated scoring | `wiki/summaries/langchain-continual-learning-for-ai-agents.md` | Same LangChain article — confirm LangSmith trace-to-test and LLM judge features | Open |
+| DeepAgents (March 2026) is open-source harness with planning, filesystem, sub-agents, context summarization | `wiki/summaries/langchain-continual-learning-for-ai-agents.md` | Same LangChain article + DeepAgents GitHub repo — confirm release date and feature set | Open |
+| LangSmith Fleet manages agent fleets with identity, permissions, audit trails | `wiki/summaries/langchain-continual-learning-for-ai-agents.md` | Same LangChain article — confirm Fleet product details | Open |
+| Production feedback cycle (agent acts → user corrects → agent updates instructions) requires no re-deployment | `wiki/summaries/langchain-continual-learning-for-ai-agents.md` | Same LangChain article — confirm feedback loop description | Open |
+| Agents are "80% plumbing, 20% model" | `wiki/summaries/nates-newsletter-agent-blind-spots.md` | Access natesnewsletter.substack.com article (may require subscription) and confirm exact ratio claim | Open |
+| 12 foundational components most teams miss (tool registry, memory, orchestration, observability, security, etc.) | `wiki/summaries/nates-newsletter-agent-blind-spots.md` | Same Nate's Newsletter article — confirm exact list of 12 components | Open |
+| Claude Code's bash tool has an 18-module security architecture | `wiki/summaries/nates-newsletter-agent-blind-spots.md` | Same article — confirm 18-module security claim | Open |
+| Most teams focus exclusively on prompt engineering and model selection while ignoring plumbing | `wiki/summaries/nates-newsletter-agent-blind-spots.md` | Same article — confirm team focus observation | Open |
+| Gap between demo-grade and production-grade agents is almost entirely infrastructure, not model capability | `wiki/summaries/nates-newsletter-agent-blind-spots.md` | Same article — confirm infrastructure gap thesis | Open |
+| Sutskever's "age of scaling is over" assertion (referenced in connections) | `wiki/connections.md` | Resolve via dwarkesh-ilya-sutskever-2.md verification above | Open |
+| "Vibe coding" phenomenon (referenced in connections) | `wiki/connections.md` | Resolve via forbes-vibe-code-revenue-stream.md verification above | Open |
+| LangChain's "continual learning" framing (referenced in connections) | `wiki/connections.md` | Resolve via langchain-continual-learning-for-ai-agents.md verification above | Open |
