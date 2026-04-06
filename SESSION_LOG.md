@@ -197,3 +197,35 @@ Updated `.github/workflows/auto-merge-ingestion.yml`:
 - The exact publication date of the article is unknown; marked as ~2026.
 - The specific article may have different emphasis than what was reconstructed from secondary sources. If the user can share the article text directly, all [UNVERIFIED] claims should be reviewed and confirmed.
 - DeepAgents launch date (March 15, 2026) is from MarktechPost coverage — also secondary and should be confirmed.
+
+---
+
+## Session: 2026-04-06 (2)
+
+### Articles Processed
+
+| Article | Retrieval Quality |
+|---------|-----------------|
+| [The Anatomy of an Agent Harness](https://blog.langchain.com/the-anatomy-of-an-agent-harness/) | **Full article text available** — blog.langchain.com is blocked for direct fetch (ERR_BLOCKED_BY_CLIENT), but the complete article text was provided in the issue description. Web search confirmed the article exists and corroborated key concepts. All claims are directly attributable to the primary source provided by the user. |
+
+### Summaries Created
+- `wiki/summaries/langchain-anatomy-of-agent-harness.md`
+
+### Raw Articles Created
+- `raw/articles/langchain-anatomy-of-agent-harness.md`
+
+### Concepts Updated
+- `wiki/concepts/ai-agent-ecosystem.md` — added nine new key points: "Agent = Model + Harness" definition, filesystems as foundational harness primitive, bash/code execution as general-purpose tool, sandboxes for safe execution, context rot management strategies (compaction, tool call offloading, progressive disclosure), Ralph Loop pattern, model-harness co-training and overfitting, Terminal Bench 2.0 improvement (Top 30 → Top 5 via harness changes only), and active harness engineering research areas
+
+### Connections Updated
+- **Updated pattern**: "Harness > Model" — significantly expanded with LangChain's canonical framework defining "Agent = Model + Harness" and systematic derivation of core harness components; added empirical evidence from Terminal Bench 2.0 (Top 30 → Top 5 via harness optimization only); surfaced model-harness co-training tension (overfitting vs. generalization)
+- **Updated pattern**: "Continual Learning as a New Battleground — Self-Modifying Agents and Governance Gaps" — added architectural foundation from the harness article explaining how filesystems enable continual learning via memory file standards (AGENTS.md), making governance question more urgent as this becomes a standard harness component
+- **New pattern**: "The Model-Harness Co-Training Feedback Loop and GitHub's Positioning" — explores the feedback cycle where harness primitives are discovered, added, then used in training next-gen models; creates overfitting but also proves harness engineering remains valuable; frames the developer toolchain land grab as a training-time decision creating path dependency; positions GitHub's neutral toolchain stance as both strength and potential liability
+
+### Index Updated
+- `wiki/index.md` — added entry #17 for langchain-anatomy-of-agent-harness; updated ai-agent-ecosystem source count to 12
+
+### Issues / Limitations
+- None — full article text was provided by the user in the issue description. All claims are attributed to the primary source with no [UNVERIFIED] flags needed.
+- This article provides the most comprehensive and systematic definition of agent harness engineering to date, serving as the canonical framework for the "harness > model" thesis that runs throughout the wiki.
+
