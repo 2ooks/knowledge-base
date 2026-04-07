@@ -18,6 +18,7 @@ const { marked } = require('marked');
 
 const ROOT_DIR   = __dirname;
 const WIKI_DIR   = path.join(ROOT_DIR, 'wiki');
+const OUTPUTS_DIR = path.join(ROOT_DIR, 'outputs');
 const OUT_DIR    = path.join(ROOT_DIR, '_site');
 
 // ── Slug map: slug → path-from-site-root (e.g. "summaries/foo.html") ────────
@@ -37,6 +38,7 @@ function addSlugDir(dir, prefix) {
 addSlugDir(path.join(WIKI_DIR, 'summaries'), 'summaries');
 addSlugDir(path.join(WIKI_DIR, 'concepts'),  'concepts');
 addSlugDir(WIKI_DIR, ''); // index.md, connections.md
+addSlugDir(OUTPUTS_DIR, 'outputs'); // briefings, Q&A answers
 
 // ── Wikilink resolution ──────────────────────────────────────────────────────
 // depth=0 → file is at site root; depth=1 → file is one level deep
@@ -77,6 +79,7 @@ function buildNavData() {
   return {
     summaries: read(path.join(WIKI_DIR, 'summaries'), 'summaries'),
     concepts:  read(path.join(WIKI_DIR, 'concepts'),  'concepts'),
+    outputs:   read(OUTPUTS_DIR, 'outputs'),
   };
 }
 
@@ -93,6 +96,12 @@ function renderNav(navData, rootPrefix) {
         <a class="nav-top-link" href="${rp}connections.html">
           <span class="nav-icon">🔗</span> Connections
         </a>
+        <a class="nav-top-link" href="${rp}graph.html">
+          <span class="nav-icon">🕸️</span> Graph
+        </a>
+        <a class="nav-top-link" href="${rp}ask.html">
+          <span class="nav-icon">💬</span> Ask
+        </a>
       </div>
       <div class="nav-section">
         <div class="nav-heading">Concepts <span class="nav-count">${navData.concepts.length}</span></div>
@@ -105,7 +114,13 @@ function renderNav(navData, rootPrefix) {
         <ul class="nav-list">
         ${li(navData.summaries)}
         </ul>
-      </div>`;
+      </div>
+      ${navData.outputs.length > 0 ? `<div class="nav-section">
+        <div class="nav-heading">Outputs <span class="nav-count">${navData.outputs.length}</span></div>
+        <ul class="nav-list">
+        ${li(navData.outputs)}
+        </ul>
+      </div>` : ''}`;
 }
 
 // ── HTML template ────────────────────────────────────────────────────────────
@@ -621,6 +636,26 @@ function build() {
     }
   }
 
+  // Outputs (briefings, Q&A answers)
+  if (fs.existsSync(OUTPUTS_DIR)) {
+    for (const f of fs.readdirSync(OUTPUTS_DIR)) {
+      if (!f.endsWith('.md') || f.startsWith('.') || f === '.gitkeep') continue;
+      processFile({
+        srcPath: path.join(OUTPUTS_DIR, f),
+        outPath: path.join(OUT_DIR, 'outputs', f.slice(0, -3) + '.html'),
+        depth:   1,
+        navData,
+        searchIndex,
+      });
+    }
+  }
+
+  // ── Graph page ──────────────────────────────────────────────────────────
+  buildGraphPage(navData, searchIndex);
+
+  // ── Ask page ────────────────────────────────────────────────────────────
+  buildAskPage(navData);
+
   // Write search index
   fs.writeFileSync(
     path.join(OUT_DIR, 'search-index.json'),
@@ -629,6 +664,331 @@ function build() {
   );
 
   console.log(`✅  Built ${searchIndex.length} pages → ${OUT_DIR}/`);
+}
+
+// ── Build graph data from wikilinks ──────────────────────────────────────────
+
+function buildGraphData() {
+  const nodes = [];
+  const edges = [];
+  const seen  = new Set();
+
+  function scanDir(dir, type, prefix) {
+    if (!fs.existsSync(dir)) return;
+    for (const f of fs.readdirSync(dir)) {
+      if (!f.endsWith('.md') || f.startsWith('.') || f === '.gitkeep') continue;
+      const slug = f.slice(0, -3);
+      const md   = fs.readFileSync(path.join(dir, f), 'utf8');
+      const title = extractTitle(md, slug);
+      nodes.push({ id: slug, label: title, type, href: `${prefix}/${slug}.html` });
+      seen.add(slug);
+
+      // Extract wikilinks
+      const links = [];
+      md.replace(/\[\[([^\]]+)\]\]/g, (_m, target) => {
+        links.push(target);
+      });
+      for (const target of links) {
+        edges.push({ source: slug, target });
+      }
+    }
+  }
+
+  scanDir(path.join(WIKI_DIR, 'summaries'), 'summary', 'summaries');
+  scanDir(path.join(WIKI_DIR, 'concepts'),  'concept', 'concepts');
+
+  // Filter edges to only include nodes that exist
+  const validEdges = edges.filter(e => seen.has(e.source) && seen.has(e.target));
+
+  return { nodes, edges: validEdges };
+}
+
+function buildGraphPage(navData, _searchIndex) {
+  const graphData = buildGraphData();
+  const nav = renderNav(navData, '');
+
+  const html = `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0d1117">
+  <title>Graph | Knowledge Base</title>
+  <style>
+    :root {
+      --bg: #0d1117; --bg-nav: #161b22; --bg-surface: #1c2128;
+      --text: #c9d1d9; --text-strong: #e6edf3; --text-muted: #8b949e;
+      --accent: #58a6ff; --border: #30363d; --nav-w: 265px; --bar-h: 52px;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: var(--bg); color: var(--text); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; overflow: hidden; }
+    .topbar { position: fixed; inset: 0 0 auto 0; z-index: 100; height: var(--bar-h); background: var(--bg-nav); border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 10px; padding: 0 14px; }
+    .topbar-title { flex: 1; font-size: 15px; font-weight: 600; color: var(--text-strong); }
+    #graph-canvas { position: fixed; top: var(--bar-h); left: 0; right: 0; bottom: 0; }
+    .graph-legend { position: fixed; bottom: 16px; right: 16px; background: var(--bg-surface); border: 1px solid var(--border); border-radius: 8px; padding: 12px 16px; font-size: 13px; z-index: 10; }
+    .legend-item { display: flex; align-items: center; gap: 8px; margin-bottom: 4px; }
+    .legend-dot { width: 10px; height: 10px; border-radius: 50%; }
+    .tooltip { position: fixed; background: var(--bg-surface); border: 1px solid var(--border); border-radius: 6px; padding: 8px 12px; font-size: 13px; color: var(--text-strong); pointer-events: none; z-index: 50; display: none; max-width: 300px; }
+  </style>
+</head>
+<body>
+<div class="topbar">
+  <span class="topbar-title">🕸️ Knowledge Graph</span>
+  <span style="font-size:12px;color:var(--text-muted)">Drag to pan · Scroll to zoom · Click a node to open</span>
+</div>
+<canvas id="graph-canvas"></canvas>
+<div class="graph-legend">
+  <div class="legend-item"><span class="legend-dot" style="background:#58a6ff"></span> Concept</div>
+  <div class="legend-item"><span class="legend-dot" style="background:#7ee787"></span> Summary</div>
+</div>
+<div class="tooltip" id="tooltip"></div>
+<script>
+var GRAPH = ${JSON.stringify(graphData)};
+
+var canvas = document.getElementById('graph-canvas');
+var ctx = canvas.getContext('2d');
+var tooltip = document.getElementById('tooltip');
+var dpr = window.devicePixelRatio || 1;
+var W, H;
+
+function resize() {
+  var bar = ${JSON.stringify(52)};
+  W = window.innerWidth; H = window.innerHeight - bar;
+  canvas.width = W * dpr; canvas.height = H * dpr;
+  canvas.style.width = W + 'px'; canvas.style.height = H + 'px';
+  ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+}
+resize();
+window.addEventListener('resize', function() { resize(); draw(); });
+
+// Force layout
+var nodes = GRAPH.nodes.map(function(n, i) {
+  var angle = (i / GRAPH.nodes.length) * Math.PI * 2;
+  var r = Math.min(W, H) * 0.35;
+  return { id: n.id, label: n.label, type: n.type, href: n.href,
+           x: W/2 + Math.cos(angle) * r * (0.5 + Math.random() * 0.5),
+           y: H/2 + Math.sin(angle) * r * (0.5 + Math.random() * 0.5),
+           vx: 0, vy: 0 };
+});
+var nodeMap = {};
+nodes.forEach(function(n) { nodeMap[n.id] = n; });
+var edges = GRAPH.edges.filter(function(e) { return nodeMap[e.source] && nodeMap[e.target]; });
+
+// Simple force simulation
+function tick() {
+  var k = 0.01;
+  // Repulsion
+  for (var i = 0; i < nodes.length; i++) {
+    for (var j = i + 1; j < nodes.length; j++) {
+      var dx = nodes[j].x - nodes[i].x;
+      var dy = nodes[j].y - nodes[i].y;
+      var d = Math.sqrt(dx*dx + dy*dy) || 1;
+      var f = 8000 / (d * d);
+      nodes[i].vx -= dx/d * f; nodes[i].vy -= dy/d * f;
+      nodes[j].vx += dx/d * f; nodes[j].vy += dy/d * f;
+    }
+  }
+  // Attraction (edges)
+  edges.forEach(function(e) {
+    var s = nodeMap[e.source], t = nodeMap[e.target];
+    if (!s || !t) return;
+    var dx = t.x - s.x, dy = t.y - s.y;
+    var d = Math.sqrt(dx*dx + dy*dy) || 1;
+    var f = (d - 120) * k;
+    s.vx += dx/d * f; s.vy += dy/d * f;
+    t.vx -= dx/d * f; t.vy -= dy/d * f;
+  });
+  // Center gravity
+  nodes.forEach(function(n) {
+    n.vx += (W/2 - n.x) * 0.001;
+    n.vy += (H/2 - n.y) * 0.001;
+    n.vx *= 0.85; n.vy *= 0.85;
+    n.x += n.vx; n.y += n.vy;
+  });
+}
+
+// Pan/zoom
+var panX = 0, panY = 0, zoom = 1;
+var dragging = false, dragStart = null;
+
+canvas.addEventListener('wheel', function(e) {
+  e.preventDefault();
+  var f = e.deltaY > 0 ? 0.92 : 1.08;
+  zoom *= f;
+  zoom = Math.max(0.2, Math.min(5, zoom));
+  draw();
+}, { passive: false });
+
+canvas.addEventListener('mousedown', function(e) {
+  dragging = true; dragStart = { x: e.clientX, y: e.clientY, px: panX, py: panY };
+});
+canvas.addEventListener('mousemove', function(e) {
+  if (dragging && dragStart) {
+    panX = dragStart.px + (e.clientX - dragStart.x);
+    panY = dragStart.py + (e.clientY - dragStart.y);
+    draw();
+  }
+  // Tooltip
+  var mx = (e.clientX - panX) / zoom, my = (e.clientY - 52 - panY) / zoom;
+  var hit = null;
+  nodes.forEach(function(n) {
+    var d = Math.sqrt((n.x - mx)*(n.x - mx) + (n.y - my)*(n.y - my));
+    if (d < (n.type === 'concept' ? 12 : 8)) hit = n;
+  });
+  if (hit) {
+    tooltip.style.display = 'block';
+    tooltip.style.left = (e.clientX + 12) + 'px';
+    tooltip.style.top = (e.clientY + 12) + 'px';
+    tooltip.textContent = hit.label;
+    canvas.style.cursor = 'pointer';
+  } else {
+    tooltip.style.display = 'none';
+    canvas.style.cursor = dragging ? 'grabbing' : 'grab';
+  }
+});
+canvas.addEventListener('mouseup', function() { dragging = false; });
+canvas.addEventListener('click', function(e) {
+  if (dragging) return;
+  var mx = (e.clientX - panX) / zoom, my = (e.clientY - 52 - panY) / zoom;
+  nodes.forEach(function(n) {
+    var d = Math.sqrt((n.x - mx)*(n.x - mx) + (n.y - my)*(n.y - my));
+    if (d < (n.type === 'concept' ? 12 : 8)) {
+      window.location.href = n.href;
+    }
+  });
+});
+
+function draw() {
+  ctx.clearRect(0, 0, W, H);
+  ctx.save();
+  ctx.translate(panX, panY);
+  ctx.scale(zoom, zoom);
+
+  // Edges
+  ctx.strokeStyle = 'rgba(88,166,255,0.15)';
+  ctx.lineWidth = 1;
+  edges.forEach(function(e) {
+    var s = nodeMap[e.source], t = nodeMap[e.target];
+    if (!s || !t) return;
+    ctx.beginPath(); ctx.moveTo(s.x, s.y); ctx.lineTo(t.x, t.y); ctx.stroke();
+  });
+
+  // Nodes
+  nodes.forEach(function(n) {
+    var r = n.type === 'concept' ? 10 : 6;
+    var color = n.type === 'concept' ? '#58a6ff' : '#7ee787';
+    ctx.beginPath();
+    ctx.arc(n.x, n.y, r, 0, Math.PI * 2);
+    ctx.fillStyle = color;
+    ctx.fill();
+    ctx.strokeStyle = 'rgba(255,255,255,0.1)';
+    ctx.lineWidth = 1;
+    ctx.stroke();
+  });
+
+  // Labels for concepts only at default zoom, all at higher zoom
+  ctx.font = '11px -apple-system, sans-serif';
+  ctx.textAlign = 'center';
+  ctx.textBaseline = 'top';
+  nodes.forEach(function(n) {
+    if (n.type === 'concept' || zoom > 1.2) {
+      ctx.fillStyle = n.type === 'concept' ? 'rgba(230,237,243,0.9)' : 'rgba(200,200,200,0.6)';
+      var label = n.label.length > 30 ? n.label.slice(0, 28) + '…' : n.label;
+      ctx.fillText(label, n.x, n.y + (n.type === 'concept' ? 14 : 10));
+    }
+  });
+
+  ctx.restore();
+}
+
+// Run simulation
+var simSteps = 0;
+function animate() {
+  tick();
+  draw();
+  simSteps++;
+  if (simSteps < 300) requestAnimationFrame(animate);
+}
+animate();
+</script>
+</body>
+</html>`;
+
+  fs.writeFileSync(path.join(OUT_DIR, 'graph.html'), html, 'utf8');
+}
+
+// ── Build Ask page ──────────────────────────────────────────────────────────
+
+function buildAskPage(navData) {
+  const nav = renderNav(navData, '');
+
+  const askContent = [
+    '<h1>Ask the Wiki</h1>',
+    '<p>Submit a question and it will be answered using the knowledge base as context.',
+    'Your question creates a GitHub Issue; Copilot reads the wiki and posts an answer.',
+    'Answers are saved to <code>outputs/</code> and appear on this site.</p>',
+    '',
+    '<div style="margin: 24px 0;">',
+    '  <textarea id="question" rows="4" placeholder="e.g. Which companies have acquired developer toolchain assets, and what does this mean for GitHub?"',
+    '    style="width:100%;background:var(--bg-surface);color:var(--text-strong);border:1px solid var(--border);border-radius:8px;padding:14px;font-size:15px;font-family:inherit;resize:vertical;"></textarea>',
+    '  <div style="margin-top:12px;display:flex;gap:12px;align-items:center;flex-wrap:wrap;">',
+    '    <button id="ask-btn" onclick="submitQuestion()"',
+    '      style="background:var(--accent);color:#0d1117;border:none;border-radius:6px;padding:10px 24px;font-size:15px;font-weight:600;cursor:pointer;">',
+    '      Ask Question',
+    '    </button>',
+    '    <button id="brief-btn" onclick="submitBriefing()"',
+    '      style="background:var(--bg-surface);color:var(--accent);border:1px solid var(--accent);border-radius:6px;padding:10px 24px;font-size:15px;font-weight:600;cursor:pointer;">',
+    '      Generate Briefing',
+    '    </button>',
+    '    <span id="status" style="font-size:13px;color:var(--text-muted);"></span>',
+    '  </div>',
+    '</div>',
+    '',
+    '<div id="instructions" style="margin-top:24px;padding:16px;background:var(--bg-surface);border:1px solid var(--border);border-radius:8px;">',
+    '  <h3 style="color:var(--text-strong);margin-bottom:8px;">How it works</h3>',
+    '  <ol style="color:var(--text-muted);font-size:14px;padding-left:1.4em;">',
+    '    <li>Your question is posted as a GitHub Issue with the <code>qa</code> label</li>',
+    "    <li>You'll get a push notification — assign Copilot to the issue (one tap)</li>",
+    '    <li>Copilot reads the wiki, writes an answer, and commits it to <code>outputs/</code></li>',
+    '    <li>The site rebuilds and the answer appears in the Outputs section</li>',
+    '  </ol>',
+    '  <p style="margin-top:12px;font-size:13px;color:var(--text-muted);">',
+    '    Briefings follow the same flow but use the Briefing Generator prompt for a structured &lt;800 word executive summary.',
+    '  </p>',
+    '</div>',
+    '',
+    '<script>',
+    "var REPO = '2ooks/knowledge-base';",
+    "var QA_BODY_TEMPLATE = 'Read WIKI_RULES.md, DELEGATION_SPEC.md, and wiki/index.md.\\n\\nAnswer this question by reading whatever wiki files you need:\\n\\n**QUESTION**\\n\\nWrite your answer as a new markdown file in outputs/ with a descriptive filename. Include [[wikilinks]] to the wiki articles you drew from. At the end, note any gaps where the wiki didn\\'t have enough info to fully answer.';",
+    "var BRIEF_BODY = 'Read WIKI_RULES.md, DELEGATION_SPEC.md, wiki/connections.md, and wiki/index.md.\\n\\nGenerate a structured briefing document in outputs/ with filename briefing-' + new Date().toISOString().slice(0,10) + '.md covering:\\n\\n## Key Findings (3-5 max)\\nFor each: one-sentence headline, 2-3 sentences evidence, \"So what for us:\" connecting to Microsoft/GitHub.\\n\\n## Active Contradictions (2-3 max)\\n\\n## Open Questions (2-3 max)\\n\\n## Confidence Notes\\n\\nKeep under 800 words.';",
+    '',
+    'function submitQuestion() {',
+    "  var q = document.getElementById('question').value.trim();",
+    "  if (!q) { document.getElementById('status').textContent = 'Please enter a question.'; return; }",
+    "  var body = QA_BODY_TEMPLATE.replace('QUESTION', q);",
+    "  var title = 'Q&A: ' + (q.length > 80 ? q.slice(0, 77) + '...' : q);",
+    "  var url = 'https://github.com/' + REPO + '/issues/new?title=' + encodeURIComponent(title) + '&body=' + encodeURIComponent(body) + '&labels=qa';",
+    "  window.open(url, '_blank');",
+    "  document.getElementById('status').textContent = 'Issue opened in new tab \\u2014 assign Copilot to get your answer.';",
+    '}',
+    '',
+    'function submitBriefing() {',
+    "  var title = 'Briefing: ' + new Date().toISOString().slice(0,10);",
+    "  var url = 'https://github.com/' + REPO + '/issues/new?title=' + encodeURIComponent(title) + '&body=' + encodeURIComponent(BRIEF_BODY) + '&labels=briefing';",
+    "  window.open(url, '_blank');",
+    "  document.getElementById('status').textContent = 'Briefing issue opened \\u2014 assign Copilot to generate it.';",
+    '}',
+    '</script>',
+  ].join('\n');
+
+  const html = buildHtml({
+    title: 'Ask the Wiki',
+    content: askContent,
+    nav,
+    rootPrefix: '',
+  });
+
+  fs.writeFileSync(path.join(OUT_DIR, 'ask.html'), html, 'utf8');
 }
 
 build();

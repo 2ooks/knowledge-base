@@ -1,0 +1,25 @@
+# Prepares Q&A and briefing issues for Copilot processing.
+# Adds the appropriate label and @mentions the owner for Copilot assignment.
+name: Prepare Q&A issues
+
+on:
+  issues:
+    types: [opened]
+
+permissions:
+  issues: write
+
+jobs:
+  prepare-qa:
+    runs-on: ubuntu-latest
+    if: |
+      contains(join(github.event.issue.labels.*.name, ','), 'qa') ||
+      contains(join(github.event.issue.labels.*.name, ','), 'briefing')
+    steps:
+      - name: Notify owner to assign Copilot
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh issue comment ${{ github.event.issue.number }} \
+            --repo ${{ github.repository }} \
+            --body "@${{ github.repository_owner }} 📱 **Wiki question received.** Open this issue and tap **Assignees → Copilot** to generate the answer."
