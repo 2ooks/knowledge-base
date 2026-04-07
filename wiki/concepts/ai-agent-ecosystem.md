@@ -22,6 +22,7 @@ The structural patterns and coordination primitives of the emerging AI agent eco
 - Deployment decoupling: Hermes runs locally, VPS, Docker, SSH, serverless, GPU-backed; interact via messaging apps (Telegram, Discord, Slack, WhatsApp, Signal) or CLI with TUI ([[turingpost-hermes-agent-openclaw-rival]])
 - Scheduled automation: cron/scheduled tasks running in fresh sessions, delivering outputs automatically without human intervention ([[turingpost-hermes-agent-openclaw-rival]])
 - Long-running agent sessions: multi-hour or multi-day autonomous development enabled by context reset mechanisms and structured handoffs between sessions [UNVERIFIED] ([[anthropic-harness-design-long-running-apps]])
+- MCP (Model Context Protocol) emerging as Anthropic's standard for agent-to-external-data bridges: addresses gap where LLMs have public internet knowledge but cannot access personal/organizational data; multi-language SDK support (TypeScript, Python) [UNVERIFIED] ([[thenewstack-mcp-server-tutorial]])
 
 ## Open Questions
 - Will CLIs or MCP become the dominant agent interface standard?

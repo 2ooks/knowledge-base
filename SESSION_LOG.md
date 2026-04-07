@@ -668,3 +668,36 @@ Scored all 13 Emerging Patterns in connections.md on a 1-3 scale (3 = non-obviou
 
 ---
 
+
+
+## Session: 2026-04-07 (3)
+
+### Articles Processed
+
+| Article | Retrieval Quality |
+|---------|-----------------|
+| [MCP servers turn Claude into a reasoning engine for your data](https://thenewstack.io/build-mcp-server-tutorial/) | **Secondary summary only** — thenewstack.io is blocked for direct fetch (ERR_BLOCKED_BY_CLIENT). Claims sourced from multiple web search results that reference and summarize the article. All specific technical details, code examples, and quotes marked [UNVERIFIED]. |
+
+### Summaries Created
+- `wiki/summaries/thenewstack-mcp-server-tutorial.md`
+
+### Raw Articles Created
+- `raw/articles/thenewstack-mcp-server-tutorial.md`
+
+### Concepts Updated
+- `wiki/concepts/harness-engineering.md` — added two new key points: MCP (Model Context Protocol) as standardized tool/resource registry primitive with three primitives (Tools, Resources, Prompts) and TypeScript/Python SDK support; MCP server architecture pattern (schema definition with Zod, handler implementation, production requirements)
+- `wiki/concepts/ai-agent-ecosystem.md` — added one new key point: MCP emerging as Anthropic's standard for agent-to-external-data bridges addressing LLM access gap for personal/organizational data
+
+### Connections Added
+- **New pattern**: "MCP as Anthropic's Developer Tooling Moat" — Model Context Protocol positioned as standardization play for how LLMs connect to external data/tools; "HTTP for AI agents" with developer-friendly SDKs; converges with "harness > model" thesis as tool/resource registries are fundamental harness components; strategic timing as CLIs emerge and labs acquire toolchains; tutorial-focused rollout mirrors Stripe's bottom-up developer adoption strategy; implications for GitHub/Microsoft include MCP competing with Graph API/Azure AI patterns, need for native MCP support in GitHub, Anthropic creating protocol layer that could become cross-agent standard similar to OAuth for API authorization
+
+### Index Updated
+- `wiki/index.md` — added entry #22 for thenewstack-mcp-server-tutorial; updated source count to 22; updated concept source counts: ai-agent-ecosystem to 13, harness-engineering to 10
+
+### Issues / Limitations
+- thenewstack.io remains blocked for direct fetch. All claims are [UNVERIFIED] and sourced from web search secondary summaries. The article should be reviewed and all [UNVERIFIED] flags removed if the user can share the full article text.
+- The article is a TypeScript tutorial for building MCP servers with step-by-step code examples that could not be verified from secondary sources; specific implementation details (npm commands, Zod schemas, tool definitions) marked [UNVERIFIED].
+- MCP represents Anthropic's attempt to standardize the tool/resource connection layer for AI agents, with potential network effects if adoption reaches critical mass among developers building agent integrations.
+- Strategic positioning: Anthropic releasing MCP with developer education (tutorial on The New Stack) parallels how Stripe built bottom-up adoption; if MCP becomes de facto standard, it creates infrastructure moat independent of model performance.
+
+---

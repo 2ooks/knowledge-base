@@ -25,6 +25,8 @@ The discipline of building the middleware layer around foundation models — mem
 - Structured context handoffs: serialized artifacts (plans, code, specs) persist state between agent sessions; fresh agents receive explicit state to maintain continuity without overfilling context windows [UNVERIFIED] ([[anthropic-harness-design-long-running-apps]])
 - Iterative evaluation cycles: 5–15 generation/evaluation iterations per task using Playwright MCP and weighted rubrics for both objective (functionality) and subjective (design, craft) quality [UNVERIFIED] ([[anthropic-harness-design-long-running-apps]])
 - Git-based coordination for multi-day workflows: state and artifacts preserved across long autonomous development sessions [UNVERIFIED] ([[anthropic-harness-design-long-running-apps]])
+- MCP (Model Context Protocol) as standardized tool/resource registry primitive: Anthropic's protocol for connecting LLMs to external data/APIs/tools via three primitives (Tools: callable functions, Resources: file-like data for context, Prompts: task templates); TypeScript and Python SDKs available; all operations require explicit user approval [UNVERIFIED] ([[thenewstack-mcp-server-tutorial]])
+- MCP server architecture pattern: define tool schemas with validation (e.g., Zod), implement handlers, serve via MCP protocol; production requires error handling, authentication, logging (stderr for STDIO servers), input validation [UNVERIFIED] ([[thenewstack-mcp-server-tutorial]])
 
 ## Open Questions
 - Will harness patterns converge into a standard (like web frameworks did), or remain fragmented?
