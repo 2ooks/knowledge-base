@@ -392,6 +392,11 @@ function buildHtml({ title, content, nav, rootPrefix }) {
     </svg>
   </button>
   <span class="topbar-title">${escHtml(title)}</span>
+  <button class="icon-btn" aria-label="Read aloud" id="tts-btn" onclick="toggleTTS()" title="Read aloud">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+    </svg>
+  </button>
   <button class="icon-btn" aria-label="Search" onclick="openSearch()">
     <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
          stroke="currentColor" stroke-width="2" aria-hidden="true">
@@ -536,6 +541,54 @@ function buildHtml({ title, content, nav, rootPrefix }) {
     }
     return out;
   }
+
+  /* ── Text-to-Speech ─────────────────────────────────────────────────── */
+  var ttsActive = false;
+  var ttsBtn = document.getElementById('tts-btn');
+
+  function toggleTTS() {
+    if (ttsActive) { stopTTS(); return; }
+    var content = document.querySelector('.content');
+    if (!content) return;
+    var text = content.innerText || content.textContent;
+    if (!text.trim()) return;
+
+    // Split into chunks (speechSynthesis has a ~200 char limit on some browsers)
+    var chunks = [];
+    var sentences = text.replace(/\\n+/g, ' ').split(/(?<=[.!?])\\s+/);
+    var current = '';
+    for (var s = 0; s < sentences.length; s++) {
+      if ((current + ' ' + sentences[s]).length > 180) {
+        if (current) chunks.push(current.trim());
+        current = sentences[s];
+      } else {
+        current += ' ' + sentences[s];
+      }
+    }
+    if (current.trim()) chunks.push(current.trim());
+
+    ttsActive = true;
+    ttsBtn.style.color = 'var(--accent)';
+    speakChunks(chunks, 0);
+  }
+
+  function speakChunks(chunks, i) {
+    if (!ttsActive || i >= chunks.length) { stopTTS(); return; }
+    var u = new SpeechSynthesisUtterance(chunks[i]);
+    u.rate = 1.1;
+    u.onend = function() { speakChunks(chunks, i + 1); };
+    u.onerror = function() { stopTTS(); };
+    window.speechSynthesis.speak(u);
+  }
+
+  function stopTTS() {
+    window.speechSynthesis.cancel();
+    ttsActive = false;
+    if (ttsBtn) ttsBtn.style.color = '';
+  }
+
+  // Stop TTS on navigation
+  window.addEventListener('beforeunload', stopTTS);
 </script>
 </body>
 </html>`;
