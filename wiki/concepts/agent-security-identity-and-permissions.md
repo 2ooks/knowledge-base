@@ -12,6 +12,7 @@ The emerging infrastructure requirements for AI agent identity, authentication, 
 - OpenAI acquired Promptfoo (agent security/evals) — consolidation of evals and security tooling ([[ainews-autoresearch-sparks-of-recursive]])
 - As third-party agents (Perplexity Computer, Devin) operate autonomously on GitHub repos, the question of identity/permissions governance becomes urgent ([[ainews-autoresearch-sparks-of-recursive]])
 - LangSmith Fleet provides enterprise workspace with memory, permissions, identity, and audit trails for managed agent fleets ([[ainews-every-lab-serious-enough-about]])
+- Hermes Agent safer-by-default design: user authorization, approval checks, isolation, credential filtering, context scanning as architectural principles ([[turingpost-hermes-agent-openclaw-rival]])
 
 ## Open Questions
 - How should GitHub distinguish commits from different AI agents vs human developers?

@@ -13,6 +13,8 @@ The competitive dynamics of AI-powered developer tooling platforms — which lab
 - Cursor acquired Graphite (code review platform) because "reviewing code was becoming the bottleneck" ([[cursor-3-agent-management-console]])
 - Google Antigravity acquisition: $2.4B in licensing fees to Windsurf + hiring CEO and engineers into DeepMind ([[cursor-3-agent-management-console]])
 - Perplexity "Computer" integrates Claude Code + GitHub CLI for end-to-end fork → implement → PR automation ([[ainews-autoresearch-sparks-of-recursive]])
+- Hermes Agent (Nous Research) vs OpenClaw: architectural divergence in self-hosted agents — OpenClaw control-plane-first (Gateway owns state), Hermes agent-loop-first (self-improvement cycle as core) ([[turingpost-hermes-agent-openclaw-rival]])
+- Nous Research positioning: open-source-first, decentralization-focused; DisTrO (distributed training across consumer GPUs), Hermes models, large-scale simulation environments (WorldSim, Doomscroll), Atropos RL, Forge API ([[turingpost-hermes-agent-openclaw-rival]])
 
 ## Open Questions
 - Is GitHub/Microsoft's position as the neutral developer infrastructure layer sustainable now that all labs own toolchains?

@@ -17,6 +17,9 @@ The discipline of building the middleware layer around foundation models — mem
 - Continual learning at three layers: Model (weights), Harness (Meta-Harness: traces → evaluate → coding agent fixes), Context (CLAUDE.md / SOUL.md) ([[langchain-continual-learning-for-ai-agents]])
 - Meta-Harness pattern: harness that analyzes own traces to fix its own failures — active research frontier ([[langchain-anatomy-of-agent-harness]])
 - 12 infrastructure primitives most builders skip: tool registry, memory, orchestration, observability, security, session persistence, workflow state, permissions, agent identity, testing, error handling, versioning [UNVERIFIED] ([[nates-newsletter-agent-blind-spots]])
+- Hermes Agent procedural memory: converts successful workflows into reusable skills automatically, treating memory as layered system (persistent notes, searchable session history in SQLite, user modeling, skills as procedures) ([[turingpost-hermes-agent-openclaw-rival]])
+- Architectural divergence in self-hosted agents: OpenClaw uses Gateway control plane (central coordinator); Hermes uses AIAgent loop as core with gateway/cron/tooling/ACP structured around it — different centers of gravity ([[turingpost-hermes-agent-openclaw-rival]])
+- Agent Communication Protocol (ACP): standardized way for external tools (e.g., code editors) to talk to agents — Hermes integration demonstrates interoperability pattern ([[turingpost-hermes-agent-openclaw-rival]])
 
 ## Open Questions
 - Will harness patterns converge into a standard (like web frameworks did), or remain fragmented?

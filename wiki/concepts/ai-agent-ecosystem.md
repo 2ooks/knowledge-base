@@ -17,6 +17,10 @@ The structural patterns and coordination primitives of the emerging AI agent eco
 - Cursor's Automations: agents triggered by GitHub events, Slack messages, and timers without human intervention ([[cursor-3-agent-management-console]])
 - Cursor 3's multi-repo workspace: unified sidebar showing all local and cloud agents from every surface (mobile, web, Slack, GitHub, Linear) ([[cursor-3-agent-management-console]])
 - Cloud Handoff: seamless session portability between local and cloud mid-task ([[cursor-3-agent-management-console]])
+- Hermes Agent from Nous Research: self-hosted, model-agnostic agent built around self-improving loop that automatically generates skills from successful workflows; first major OpenClaw alternative with architectural differences (agent-loop-centric vs control-plane-centric) ([[turingpost-hermes-agent-openclaw-rival]])
+- Model-agnostic runtime pattern: Hermes switches providers (OpenAI, OpenRouter, Kimi, MiniMax, GLM, Nous Portal, custom) via configuration without code changes ([[turingpost-hermes-agent-openclaw-rival]])
+- Deployment decoupling: Hermes runs locally, VPS, Docker, SSH, serverless, GPU-backed; interact via messaging apps (Telegram, Discord, Slack, WhatsApp, Signal) or CLI with TUI ([[turingpost-hermes-agent-openclaw-rival]])
+- Scheduled automation: cron/scheduled tasks running in fresh sessions, delivering outputs automatically without human intervention ([[turingpost-hermes-agent-openclaw-rival]])
 
 ## Open Questions
 - Will CLIs or MCP become the dominant agent interface standard?

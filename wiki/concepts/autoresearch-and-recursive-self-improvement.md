@@ -12,6 +12,8 @@ AI systems autonomously improving their own training recipes, harnesses, or inst
 - Meta-Harness pattern: harness analyzes own traces to fix its own failures — agents improving the infrastructure that runs them ([[langchain-anatomy-of-agent-harness]])
 - Context-layer learning: agents updating their own instructions (CLAUDE.md / SOUL.md) from user feedback without redeployment ([[langchain-continual-learning-for-ai-agents]])
 - Opus 4.6 sustains 12+ hours / 118 experiments in autonomous research loops; GPT-5.4 cannot — harness quality determines autoresearch ceiling ([[ainews-autoresearch-sparks-of-recursive]])
+- Hermes Agent self-improvement loop: evaluates what worked/didn't work after each interaction and automatically converts successful workflows into reusable skills (procedural memory) ([[turingpost-hermes-agent-openclaw-rival]])
+- Skills generation contrast: OpenClaw skills are mostly human-authored; Hermes skills are automatically generated from successful workflow patterns, representing different approach to capability accumulation ([[turingpost-hermes-agent-openclaw-rival]])
 
 ## Open Questions
 - Can autoresearch loops be made robust enough for production ML pipelines beyond toy benchmarks?

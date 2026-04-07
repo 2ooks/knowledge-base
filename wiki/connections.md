@@ -176,4 +176,29 @@ The divergence also creates different competitive moats:
 
 The architectural divergence will shape which company captures developer loyalty for the next decade. The article's closing analogy makes the stakes clear: "just as the cloud control plane wars of the early 2010s determined who owned infrastructure," the agent orchestration layer architecture will determine who owns developer tooling. GitHub needs to decide which architecture to back — and whether its answer is an agent-first surface like Cursor 3, a neutral orchestration layer, or a deeper integration of Copilot into the IDE that preserves the editor as primary.
 
+### Self-Hosted Agent Architecture: Control Plane vs Self-Improvement Loop
+
+Within the self-hosted personal agent category, a different architectural split is emerging between OpenClaw and Hermes Agent ([[turingpost-hermes-agent-openclaw-rival]]). Both are open-source, self-hosted, model-agnostic agents, but their centers of gravity differ fundamentally:
+
+- **OpenClaw: Gateway as control plane** — a single long-running process that owns sessions, routing, tool execution, and state. Everything flows through the Gateway. Skills are reusable, mostly human-authored tool/workflow instructions loaded from workspace/personal/shared/plugin scopes.
+
+- **Hermes Agent: AIAgent loop as core** — the agent's execution loop itself is the synchronous orchestration engine, with gateway, cron scheduler, tooling runtime, Agent Communication Protocol (ACP) integration, SQLite-backed session persistence, and RL environments structured around it. The focus is on the "do, learn, improve" cycle. Skills are automatically generated from successful workflows (procedural memory).
+
+The difference reflects workflow philosophy: OpenClaw centers on control and explicit human guidance; Hermes centers on self-improvement and automatic capability accumulation. OpenClaw skills are human-authored; Hermes converts successful workflows into skills automatically, storing them in a layered memory stack (persistent notes, searchable session history in SQLite, optional user modeling, procedural knowledge as reusable procedures).
+
+Nous Research's positioning reinforces this: they're open-source-first and decentralization-focused, with DisTrO (distributed training across consumer GPUs), large-scale simulation environments (WorldSim, Doomscroll), Atropos RL environments, Forge API for multi-step reasoning, and Hermes 4 (hybrid reasoning + large-scale synthetic data generation). Hermes Agent is the synthesis of these threads — a self-improving agent designed to compound through use, not just execute tasks.
+
+**The combination reveals** two distinct paths for personal agent architecture:
+1. **Control-plane-first (OpenClaw):** Central coordinator model, tight manual control, human-authored capabilities — maps naturally to GitHub Actions orchestration and scoped tokens
+2. **Agent-loop-first (Hermes):** Self-improvement cycle as core, automatic skill generation, layered memory stack — would require GitHub to provide memory/skill storage primitives and ACP support
+
+Hermes also demonstrates deployment flexibility as a strategic pattern: runs portably (local, VPS, Docker, SSH, serverless, GPU-backed) with interaction via messaging apps (Telegram, Discord, Slack, WhatsApp, Signal) or CLI with TUI (multiline editing, autocomplete, interrupting/redirecting tasks, streaming output). This decouples compute from interface — a flexibility GitHub should match if Copilot Workspace is to compete in the self-hosted agent category.
+
+The model-agnostic runtime is another key differentiator: Hermes switches between providers (OpenAI, OpenRouter, Kimi Moonshot, MiniMax, GLM, Nous Portal, custom endpoints) via configuration command ("hermes model") without code changes. This infrastructure-decoupling pattern reduces vendor lock-in and lets users optimize for cost-performance across models.
+
+**Strategic implications for GitHub:**
+- GitHub's Actions orchestration naturally supports OpenClaw's control-plane pattern, but Hermes-style self-improvement loops would require native memory/skill storage (similar to GitHub Packages for artifacts) and standardized agent communication primitives
+- The safer-by-default design (user authorization, approval checks, isolation, credential filtering, context scanning) that Hermes emphasizes aligns with GitHub's existing security infrastructure (CODEOWNERS, scoped tokens, branch protection) — GitHub could extend these to become the safety layer for self-hosted agents
+- If automatic skill generation from successful workflows becomes standard (vs human-authored skills), GitHub's version control could be the natural storage/versioning layer for agent capabilities — skills as versioned artifacts with diffs, rollback, and collaboration
+
 
