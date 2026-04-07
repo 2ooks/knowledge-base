@@ -2,7 +2,7 @@
 This index is maintained automatically. Each entry links to its summary
 and lists related concepts.
 
-## Sources (22)
+## Sources (23)
 
 | # | Summary | Source | Date | Concepts |
 |---|---------|--------|------|----------|
@@ -28,17 +28,18 @@ and lists related concepts.
 | 20 | [[turingpost-hermes-agent-openclaw-rival]] | Turing Post | 2026-04-01 | [[harness-engineering]], [[ai-agent-ecosystem]], [[autoresearch-and-recursive-self-improvement]], [[agent-security-identity-and-permissions]], [[developer-tooling-competitive-landscape]] |
 | 21 | [[anthropic-harness-design-long-running-apps]] | Anthropic Engineering Blog | ~2026 | [[harness-engineering]], [[ai-agent-ecosystem]] |
 | 22 | [[thenewstack-mcp-server-tutorial]] | The New Stack | 2026-04-06 | [[harness-engineering]], [[ai-agent-ecosystem]] |
+| 23 | [[openai-harness-engineering]] | OpenAI Blog | ~2026-02 | [[harness-engineering]], [[ai-coding-agents-and-developer-role-shift]], [[ai-agent-ecosystem]] |
 
 ## Concepts (13)
 
 | Concept | Sources |
 |---------|---------|
-| [[ai-agent-ecosystem]] | 13 sources |
-| [[harness-engineering]] | 10 sources |
+| [[ai-agent-ecosystem]] | 14 sources |
+| [[harness-engineering]] | 11 sources |
 | [[developer-tooling-competitive-landscape]] | 6 sources |
 | [[agent-security-identity-and-permissions]] | 6 sources |
 | [[autoresearch-and-recursive-self-improvement]] | 5 sources |
-| [[ai-coding-agents-and-developer-role-shift]] | 5 sources |
+| [[ai-coding-agents-and-developer-role-shift]] | 6 sources |
 | [[gpu-and-compute-economics]] | 5 sources |
 | [[semiconductor-supply-chain-bottlenecks]] | 2 sources |
 | [[inference-architecture-and-scaling]] | 5 sources |
