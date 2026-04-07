@@ -635,3 +635,36 @@ Scored all 13 Emerging Patterns in connections.md on a 1-3 scale (3 = non-obviou
 
 ---
 
+## Session: 2026-04-07 (2)
+
+### Articles Processed
+
+| Article | Retrieval Quality |
+|---------|-----------------|
+| [Harness Design for Long-Running Application Development](https://www.anthropic.com/engineering/harness-design-long-running-apps) | **Secondary summary only** — anthropic.com is blocked for direct fetch (ERR_BLOCKED_BY_CLIENT). Claims sourced from multiple secondary summaries (InfoQ, Epsilla, Geeky Gadgets, OpenTools.ai) via web search. All specific claims marked [UNVERIFIED]. |
+
+### Summaries Created
+- `wiki/summaries/anthropic-harness-design-long-running-apps.md`
+
+### Raw Articles Created
+- `raw/articles/anthropic-harness-design-long-running-apps.md`
+
+### Concepts Updated
+- `wiki/concepts/harness-engineering.md` — added six new key points: three-agent GAN-inspired architecture (Planner/Generator/Evaluator), context anxiety and task drift challenges, structured context handoffs (serialized artifacts for state persistence), iterative evaluation cycles (5–15 loops using Playwright MCP with weighted rubrics), Git-based coordination for multi-day workflows; added one new open question on whether the three-agent architecture can scale beyond coding to other long-running workflows
+- `wiki/concepts/ai-agent-ecosystem.md` — added one new key point: long-running agent sessions enabled by context reset mechanisms and structured handoffs
+
+### Connections Added
+- **New pattern**: "Long-Running Agent Architecture and the Multi-Day Development Problem" — Anthropic's three-agent GAN-inspired architecture (Planner/Generator/Evaluator) addresses critical unsolved problem of enabling coherent multi-hour/multi-day autonomous sessions without context anxiety, task drift, or coherence loss [UNVERIFIED]; separates planning, generation, and evaluation to prevent bias; uses context resets (fresh agents receive serialized state), iterative evaluation cycles (5–15 loops with Playwright MCP and weighted rubrics), and Git-based coordination [UNVERIFIED]; directly extends "Harness > Model" thesis by demonstrating session continuity is harness problem not model capability; converges with autoresearch evidence where Opus 4.6 runs 118 experiments over 12 hours while GPT-5.4 "xhigh" fails on "LOOP FOREVER" — Anthropic's architecture appears to enable Opus 4.6's loop reliability [UNVERIFIED]; strategic implications for GitHub: Git as natural state management layer (branches as session snapshots, commits as checkpoints, PRs as agent-human handoff), PR review as Evaluator checkpoint, structured context handoffs map to GitHub Actions artifacts, GAN architecture reveals training-time moat via model-harness co-training; GitHub's version control primitives already the right abstractions for long-running agent workflows
+
+### Index Updated
+- `wiki/index.md` — added entry #21 for anthropic-harness-design-long-running-apps; updated source count to 21; updated concept source counts: ai-agent-ecosystem to 12, harness-engineering to 9
+
+### Issues / Limitations
+- anthropic.com remains blocked for direct fetch. All claims are [UNVERIFIED] and sourced from secondary summaries (InfoQ, Epsilla, Geeky Gadgets, OpenTools.ai). The article should be reviewed and all [UNVERIFIED] flags removed if the user can share the full article text.
+- Publication date unknown; marked as ~2026 [UNVERIFIED].
+- The three-agent architecture (Planner/Generator/Evaluator) represents a significant advancement in long-running agent capabilities and directly addresses the session continuity problem that has limited multi-day autonomous work.
+- This article provides strong evidence for the "Harness > Model" thesis by demonstrating that long-running reliability is achieved through architectural patterns (separating planning/generation/evaluation, context resets, structured handoffs) rather than raw model capability improvements.
+- The strategic implications for GitHub are substantial: Git-based coordination, PR review as evaluation checkpoint, and Actions-style artifact passing all map directly to Anthropic's architecture, positioning GitHub as the natural platform layer for long-running autonomous development.
+
+---
+
