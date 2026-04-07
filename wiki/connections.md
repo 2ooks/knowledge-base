@@ -202,3 +202,26 @@ The model-agnostic runtime is another key differentiator: Hermes switches betwee
 - If automatic skill generation from successful workflows becomes standard (vs human-authored skills), GitHub's version control could be the natural storage/versioning layer for agent capabilities — skills as versioned artifacts with diffs, rollback, and collaboration
 
 
+### Long-Running Agent Architecture and the Multi-Day Development Problem
+
+Anthropic's three-agent GAN-inspired architecture ([[anthropic-harness-design-long-running-apps]]) [UNVERIFIED] addresses a critical unsolved problem in the agent ecosystem: how to enable autonomous agents to work coherently over multi-hour or multi-day sessions without losing thread, drifting from the task, or suffering from "context anxiety" (premature task completion). The solution — separating planning, generation, and evaluation into distinct agents (Planner/Generator/Evaluator) — mirrors adversarial training where no single agent both generates and evaluates work, reducing bias and overfitting [UNVERIFIED].
+
+This architecture directly extends the "Harness > Model" thesis ([[harness-engineering]], [[langchain-anatomy-of-agent-harness]]) by demonstrating that session continuity is a harness problem, not a model capability problem. The key primitives [UNVERIFIED]:
+- **Context resets**: Fresh agents receive explicit, structured state (serialized plans, code, specs) to maintain continuity without overfilling context windows
+- **Iterative evaluation cycles**: 5–15 generation/evaluation loops per task using Playwright MCP with weighted rubrics for both objective (functionality) and subjective (design taste, craft) quality
+- **Git-based coordination**: State and artifacts preserved across sessions as version-controlled files
+
+The combination with the autoresearch evidence ([[ainews-autoresearch-sparks-of-recursive]]) is revealing: GPT-5.4 "xhigh" fails on "LOOP FOREVER" while Opus 4.6 runs 118 experiments over 12 hours. Anthropic's three-agent architecture appears to be the harness engineering that enables Opus 4.6's loop reliability [UNVERIFIED]. This is not a model-level difference — it's harness reliability determining whether cutting-edge AI R&D workflows are even possible.
+
+**Strategic implications for GitHub:**
+1. **Git as the natural state management layer for long-running agents**: Anthropic's use of Git-based coordination [UNVERIFIED] for multi-day workflows positions GitHub as more than a code host — it's the session persistence layer for autonomous development. If agents need to preserve state across days, branches become session snapshots, commits become checkpoints, and PRs become the handoff interface between agents and humans.
+
+2. **PR review as the human-in-the-loop checkpoint**: The Evaluator agent applying weighted rubrics [UNVERIFIED] is conceptually similar to PR review — assessing quality against established criteria and gating progress. GitHub already owns this surface; the question is whether Copilot becomes the Evaluator agent (automated review with rubrics) or whether GitHub provides the neutral platform where vendor Evaluator agents (Anthropic, OpenAI, Cursor) operate.
+
+3. **Structured context handoffs map to GitHub Actions orchestration**: The pattern of serializing state (plans, specs) and passing it between agents [UNVERIFIED] is identical to GitHub Actions workflows passing artifacts between jobs. This suggests GitHub Actions could be extended to become the orchestration layer for multi-agent, multi-day development — not just CI/CD, but "continuous autonomous development."
+
+4. **The GAN architecture reveals a competitive moat**: If separating planning/generation/evaluation into distinct agents is the key to long-running reliability [UNVERIFIED], then the companies that shipped this architecture first (Anthropic with Claude Code, potentially others) have a training-time advantage via the model-harness co-training feedback loop ([[langchain-anatomy-of-agent-harness]]). GitHub's opportunity is to provide the neutral orchestration layer that supports *any* multi-agent architecture, preventing vendor lock-in at the harness level.
+
+The pattern also converges with Hermes Agent's self-improvement loop ([[turingpost-hermes-agent-openclaw-rival]]) and LangChain's continual learning framework ([[langchain-continual-learning-for-ai-agents]]) — long-running sessions require memory persistence, session recovery, and the ability to learn from past runs. If Anthropic's architecture becomes the standard [UNVERIFIED], GitHub's version control primitives (commits, branches, diffs, merges) are already the right abstractions for this workflow. The strategic question is whether GitHub surfaces this as a first-class "agentic development platform" feature before LangSmith, Azure AI Studio, or a new vendor builds it independently.
+
+

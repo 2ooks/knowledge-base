@@ -20,12 +20,18 @@ The discipline of building the middleware layer around foundation models — mem
 - Hermes Agent procedural memory: converts successful workflows into reusable skills automatically, treating memory as layered system (persistent notes, searchable session history in SQLite, user modeling, skills as procedures) ([[turingpost-hermes-agent-openclaw-rival]])
 - Architectural divergence in self-hosted agents: OpenClaw uses Gateway control plane (central coordinator); Hermes uses AIAgent loop as core with gateway/cron/tooling/ACP structured around it — different centers of gravity ([[turingpost-hermes-agent-openclaw-rival]])
 - Agent Communication Protocol (ACP): standardized way for external tools (e.g., code editors) to talk to agents — Hermes integration demonstrates interoperability pattern ([[turingpost-hermes-agent-openclaw-rival]])
+- Three-agent GAN-inspired architecture (Planner/Generator/Evaluator): Anthropic's approach to long-running development sessions, separating planning, generation, and evaluation to prevent bias and enable multi-hour/multi-day autonomous work [UNVERIFIED] ([[anthropic-harness-design-long-running-apps]])
+- Context anxiety and task drift: challenges in long-running agents where models prematurely conclude tasks or lose coherence as context fills; addressed via structured context handoffs and context reset mechanisms [UNVERIFIED] ([[anthropic-harness-design-long-running-apps]])
+- Structured context handoffs: serialized artifacts (plans, code, specs) persist state between agent sessions; fresh agents receive explicit state to maintain continuity without overfilling context windows [UNVERIFIED] ([[anthropic-harness-design-long-running-apps]])
+- Iterative evaluation cycles: 5–15 generation/evaluation iterations per task using Playwright MCP and weighted rubrics for both objective (functionality) and subjective (design, craft) quality [UNVERIFIED] ([[anthropic-harness-design-long-running-apps]])
+- Git-based coordination for multi-day workflows: state and artifacts preserved across long autonomous development sessions [UNVERIFIED] ([[anthropic-harness-design-long-running-apps]])
 
 ## Open Questions
 - Will harness patterns converge into a standard (like web frameworks did), or remain fragmented?
 - Can the Meta-Harness pattern (agents fixing their own harness) work reliably in production?
 - Does harness co-training with models create lock-in that disadvantages open-source alternatives?
 - How should Microsoft/GitHub position in the harness layer — build vs partner vs acquire?
+- Can the three-agent GAN-inspired architecture (Planner/Generator/Evaluator) scale beyond coding to other long-running autonomous workflows?
 
 ## Related Concepts
 - [[ai-agent-ecosystem]] — the broader ecosystem context

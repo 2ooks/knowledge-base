@@ -21,6 +21,7 @@ The structural patterns and coordination primitives of the emerging AI agent eco
 - Model-agnostic runtime pattern: Hermes switches providers (OpenAI, OpenRouter, Kimi, MiniMax, GLM, Nous Portal, custom) via configuration without code changes ([[turingpost-hermes-agent-openclaw-rival]])
 - Deployment decoupling: Hermes runs locally, VPS, Docker, SSH, serverless, GPU-backed; interact via messaging apps (Telegram, Discord, Slack, WhatsApp, Signal) or CLI with TUI ([[turingpost-hermes-agent-openclaw-rival]])
 - Scheduled automation: cron/scheduled tasks running in fresh sessions, delivering outputs automatically without human intervention ([[turingpost-hermes-agent-openclaw-rival]])
+- Long-running agent sessions: multi-hour or multi-day autonomous development enabled by context reset mechanisms and structured handoffs between sessions [UNVERIFIED] ([[anthropic-harness-design-long-running-apps]])
 
 ## Open Questions
 - Will CLIs or MCP become the dominant agent interface standard?
