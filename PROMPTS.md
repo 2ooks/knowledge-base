@@ -79,7 +79,8 @@ if I want to continue with the rest.
 Read these files first:
 1. WIKI_RULES.md
 2. DELEGATION_SPEC.md (for partnership context)
-3. wiki/index.md
+3. QUALITY_EXAMPLES.md (for calibration)
+4. wiki/index.md
 
 Answer this question by reading whatever wiki files you need:
 
@@ -87,8 +88,26 @@ Answer this question by reading whatever wiki files you need:
 
 Write your answer as a new markdown file in outputs/ with a descriptive
 filename. Include [[wikilinks]] to the wiki articles you drew from.
-At the end, note any gaps where the wiki didn't have enough info to
-fully answer.
+
+Frame your answer through the Microsoft/GitHub partnership lens from
+DELEGATION_SPEC.md. If the question touches on partnerships or strategy,
+end with a concrete recommendation (not an open question).
+
+At the end, include:
+- **Sources used:** list wiki files consulted
+- **Gaps:** where the wiki didn't have enough info
+- **Confidence:** flag any claims from [UNVERIFIED] sources
+
+--- SELF-REVIEW (run before committing the file) ---
+
+Before saving, check:
+1. Does any claim assert something "doesn't exist" without checking
+   if Microsoft/Azure/GitHub already offers it?
+2. Does any recommendation name a specific partner or action, or
+   does it punt with "Should GitHub consider..."? Fix the latter.
+3. Is any quantitative claim (dollar figures, percentages, counts)
+   sourced from the wiki, or was it generated? Flag or remove
+   unsourced numbers.
 ```
 
 ---
@@ -189,6 +208,91 @@ didn't make the cut — explain why they're not top-3 yet.
 
 Keep under 800 words. Every sentence must pass: "Would a BD VP
 act on this, or would they say 'so what?'"
+
+--- SELF-REVIEW (run before committing the file) ---
+
+Before saving the briefing, check your own work:
+
+1. RECOMMENDATIONS CHECK: Does every insight end with a named
+   partner, acquisition target, or deal shape? If any end with
+   "Should GitHub...?" — rewrite with a recommendation.
+
+2. EXISTING PORTFOLIO CHECK: For every recommendation involving
+   Azure or GitHub building something, verify it doesn't already
+   exist in the Microsoft portfolio (Azure ML, AI Foundry, GitHub
+   Advanced Security, Copilot Workspace, etc.). If it does, reframe
+   the recommendation around what's actually missing.
+
+3. SINGLE-SOURCE CHECK: Does any recommendation rely on only one
+   wiki summary? If so, either find corroborating evidence from a
+   second source or flag it as "emerging signal (single source)."
+
+4. RANK CHECK: Is insight #1 genuinely the sharpest? Would you lead
+   a 5-minute standup with it? If #2 or #3 is stronger, reorder.
+
+5. TREND vs STRATEGY CHECK: Does any insight read as a trend
+   observation ("X is growing") rather than a strategic action
+   ("We should do Y because X is growing")? Rewrite.
+
+If any check fails, fix it before committing.
+```
+
+---
+
+## Review Prompt (adversarial quality check on any output)
+
+```
+Read these files first:
+1. DELEGATION_SPEC.md (quality standards and failure modes)
+2. QUALITY_EXAMPLES.md (calibration examples)
+3. The file to review: outputs/[FILENAME]
+
+You are an adversarial reviewer for a BD professional at Microsoft/GitHub.
+Your job is to find weaknesses before a CVP or Corp Dev partner does.
+
+Score the document on these dimensions (1-5 each):
+
+### 1. Actionability (1=trend report, 5=ready to pitch)
+- Does every insight end with a named recommendation?
+- Are partner names, deal shapes, or acquisition targets specified?
+- Could someone act on this without asking follow-up questions?
+
+### 2. Portfolio Awareness (1=recommends existing products, 5=deeply informed)
+- Does any recommendation suggest building something Microsoft already ships?
+- Check: Azure ML/AI Foundry, GitHub Advanced Security, Copilot Workspace,
+  GitHub Actions, Azure AI Studio, VS Code extensions ecosystem
+- Are competitive dynamics accurate (who owns what toolchain)?
+
+### 3. Evidence Quality (1=single-source, 5=multi-source triangulated)
+- How many independent sources support each key claim?
+- Are any claims marked [UNVERIFIED] being presented as established fact?
+- Are quantitative claims (dollar figures, percentages) sourced or generated?
+
+### 4. Prioritization (1=everything equal, 5=clear force-ranking)
+- Is the strongest insight first?
+- Are weak insights demoted to Watch List or cut entirely?
+- Would you lead a 5-minute standup with insight #1?
+
+### 5. Adversarial Robustness (1=falls apart under questioning, 5=survives scrutiny)
+- For each recommendation: what's the strongest counterargument?
+- Are there obvious objections a skeptic would raise?
+- Does the document acknowledge uncertainty where it exists?
+
+### Output Format
+
+**Overall Score: X/25**
+
+**Top 3 Issues** (ranked by severity):
+For each: what's wrong, which section, specific fix.
+
+**What's Working:**
+1-2 sentences on what to keep.
+
+**Rewrite Suggestion:**
+If the score is below 18/25, suggest a restructured outline
+that would score higher.
+
+Do NOT modify the original file. Report only.
 ```
 
 ---

@@ -19,3 +19,5 @@ Each: headline → evidence → **Recommendation** (name the partner/deal) → *
 ## Confidence Notes
 
 Keep under 800 words.
+
+SELF-REVIEW before committing: (1) Every insight ends with a named partner/action, not "Should GitHub...?" (2) No recommendation suggests building something Azure/GitHub already ships. (3) No recommendation relies on a single wiki source. (4) Insight #1 is genuinely the strongest. (5) No insight reads as a trend observation rather than a strategic action.
