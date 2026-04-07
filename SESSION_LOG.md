@@ -701,3 +701,37 @@ Scored all 13 Emerging Patterns in connections.md on a 1-3 scale (3 = non-obviou
 - Strategic positioning: Anthropic releasing MCP with developer education (tutorial on The New Stack) parallels how Stripe built bottom-up adoption; if MCP becomes de facto standard, it creates infrastructure moat independent of model performance.
 
 ---
+
+
+## Session: 2026-04-07 (4) — Re-Ingestion of MCP Tutorial with Full Article Text
+
+### Context
+
+This session re-ingests The New Stack MCP tutorial article, which was previously ingested in Session 2026-04-07 (3) from secondary sources only (thenewstack.io was blocked). The full article text was provided in the issue description, enabling complete removal of all [UNVERIFIED] flags and significant expansion of verified details from the hands-on tutorial.
+
+### Articles Processed
+
+| Article | Retrieval Quality |
+|---------|-----------------|
+| [MCP servers turn Claude into a reasoning engine for your data](https://thenewstack.io/build-mcp-server-tutorial/) | **Full article text available** — Complete article text provided in issue description. This is a re-ingestion, replacing the previous secondary-sources-only version from Session 2026-04-07 (3). All claims are now directly attributable to the primary source. Date confirmed as April 6, 2026. Author confirmed as Jessica Wachtel. |
+
+### Summaries Updated
+- `wiki/summaries/thenewstack-mcp-server-tutorial.md` — completely rewritten with verified claims from hands-on tutorial; removed all [UNVERIFIED] flags and "Source Retrieval Quality" section; expanded key claims from 9 to 12 with direct quotes and specific technical details; confirmed tutorial structure (npm init → TypeScript + Zod → tool definition → stdio transport → Claude Desktop integration); added pedagogical context ("focus on what's really important here: rules and best practices for building an MCP server"); confirmed "Anthropic made it pretty easy for companies to build MCP servers. The ecosystem has grown quickly in response."
+
+### Raw Articles Created/Updated
+- `raw/articles/thenewstack-mcp-server-tutorial.md` — replaced secondary summary with full primary source text including complete TypeScript code examples, setup commands, tsconfig.json, claude_desktop_config.json configuration, and step-by-step explanations
+
+### Concepts Updated
+- `wiki/concepts/harness-engineering.md` — replaced 2 [UNVERIFIED] bullet points with verified MCP implementation details: confirmed TypeScript and Python as "most commonly used MCP SDKs"; added `server.tool()` as "heart of MCP" with name/description/Zod schema/handler pattern; confirmed user consent via "always allow, allow once, or deny" approval flow; added structured response format `{content: [{type: "text", text: ...}]}`; confirmed `StdioServerTransport` for stdio communication; added production requirements (error handling, authentication, logging to stderr, Zod validation); confirmed Claude Desktop config-only-on-startup behavior requiring quit/relaunch
+- `wiki/concepts/ai-agent-ecosystem.md` — replaced [UNVERIFIED] MCP bullet point with verified framing from article: added direct quote "Claude knows virtually everything that's ever been publicly available on the internet by default. But it knows absolutely nothing about you or your data"; confirmed MCP as "reasoning engine for your data"; confirmed TypeScript and Python as "most commonly used MCP SDKs"; added ecosystem growth quote
+
+### Connections Updated
+- **"MCP as Anthropic's Developer Tooling Moat"** — significantly expanded with verified tutorial details; removed all [UNVERIFIED] flags; added explicit framing of data access problem Claude solves; confirmed `server.tool()` method as "heart of MCP" with specific Zod schema pattern; confirmed user consent model with three-choice approval flow ("always allow, allow once, or deny"); added pedagogical approach detail (calculator app to "focus on...rules and best practices"); added direct quote on ecosystem growth response; strengthened Stripe-like bottom-up adoption parallel with confirmed tutorial-focused education strategy
+
+### Issues / Limitations
+- None — full article text was available in the issue description. All claims are attributed to the primary source with no [UNVERIFIED] flags needed.
+- This re-ingestion transforms the MCP tutorial from secondary/unverified to primary/verified, providing concrete implementation details (npm commands, Zod schemas, stdio transport, Claude Desktop config pattern) that significantly strengthen the "MCP as Anthropic's developer tooling moat" strategic analysis.
+- The tutorial's hands-on approach and explicit pedagogical choices (simple calculator to avoid business logic complexity) reveal Anthropic's developer adoption strategy: make integration easy via clear documentation and patterns, similar to how Stripe captured bottom-up developer adoption.
+- The VS Code `tsconfig.json` quirk (file deletion/recreation required) and Claude Desktop config-only-on-startup behavior are production-relevant implementation details that strengthen the practical credibility of the strategic analysis.
+
+---

@@ -9,25 +9,24 @@ decay_rate: fast
 **Date:** April 6, 2026
 **Author:** Jessica Wachtel
 
-## Source Retrieval Quality
-
-**Secondary summary only** — thenewstack.io is blocked for direct fetch (ERR_BLOCKED_BY_CLIENT). Claims sourced from multiple web search results that reference and summarize the article. All specific technical details, code examples, and quotes marked [UNVERIFIED].
-
 ## Summary
 
-Jessica Wachtel's tutorial walks developers through building a TypeScript-based MCP (Model Context Protocol) server that connects Claude to external data and tools. Using a simple calculator app as an example, the tutorial demonstrates how to use the `@modelcontextprotocol/sdk`, Zod validation, and the MCP primitives (tools, resources, prompts) to turn Claude into a "reasoning engine" for private or enterprise data. The tutorial covers project setup, TypeScript implementation, security model (user consent for all operations), and connection to Claude Desktop, positioning MCP as Anthropic's standard for bridging LLMs to external data sources.
+Jessica Wachtel's hands-on tutorial walks developers through building a TypeScript-based MCP (Model Context Protocol) server from scratch, using a calculator app as a pedagogical example. The article explicitly positions MCP as solving the data access problem: "Claude knows virtually everything that's ever been publicly available on the internet by default. But it knows absolutely nothing about you or your data." The tutorial demonstrates the complete development workflow — from `npm init` through TypeScript configuration, Zod schema definition, tool handler implementation, and Claude Desktop integration via `claude_desktop_config.json`. Wachtel emphasizes that the calculator example deliberately avoids business logic complexity to "focus on what's really important here: rules and best practices for building an MCP server."
 
 ## Key Claims
 
-- MCP (Model Context Protocol) is Anthropic's standard for connecting LLMs like Claude to external data, APIs, and tools [UNVERIFIED]
-- The tutorial uses TypeScript and the `@modelcontextprotocol/sdk` to build a calculator server as a learning example [UNVERIFIED]
-- MCP servers expose three primitives: Tools (callable functions), Resources (file-like data), and Prompts (task templates) [UNVERIFIED]
-- All MCP operations require explicit user approval, maintaining privacy and control [UNVERIFIED]
-- Development workflow: npm init, install MCP SDK and Zod, define tool schemas, implement handlers, connect to Claude Desktop [UNVERIFIED]
-- MCP SDKs are available in multiple languages including TypeScript and Python [UNVERIFIED]
-- The calculator example demonstrates MCP patterns without complex business logic to focus on learning the protocol [UNVERIFIED]
-- Production deployments require error handling, authentication, logging (to stderr for STDIO servers), and input validation [UNVERIFIED]
-- MCP addresses the gap where Claude has public internet knowledge but cannot access personal/organizational data without custom bridges [UNVERIFIED]
+- MCP (Model Context Protocol) by Anthropic connects external data/APIs/tools directly to Claude, turning it into a "reasoning engine for your data"
+- TypeScript and Python SDKs are "the most commonly used MCP SDKs" with `@modelcontextprotocol/sdk` as the TypeScript implementation
+- The tutorial uses a calculator app specifically to "pull the focus away from connecting to an external API or complicated business logic" and concentrate on MCP fundamentals
+- The `server.tool()` method's "name, description, Zod schema, and handler function are the heart of MCP"
+- MCP requires explicit user consent for all tool operations via Claude Desktop's "always allow, allow once, or deny" approval flow
+- Complete development workflow: `mkdir calculator-mcp-server`, `npm init -y`, install `@modelcontextprotocol/sdk`, TypeScript + Zod, define tool schemas with Zod validation, implement handlers, configure `claude_desktop_config.json`, restart Claude Desktop
+- MCP servers connect via stdio transport (`StdioServerTransport`) and communicate through standard input/output
+- Production considerations include error handling, authentication, logging to stderr (for STDIO servers), and Zod-based input validation
+- Claude Desktop must be quit and relaunched after config changes since it "only reads the config on startup"
+- The author encountered a VS Code quirk where `tsconfig.json` throws "no inputs were found" error, requiring file deletion and recreation with identical content
+- "Anthropic made it pretty easy for companies to build MCP servers. The ecosystem has grown quickly in response."
+- After building an MCP server, "the fundamentals like defining tools with clear schemas, writing handlers that return structured responses, and connecting your server to Claude via a config file remain the same" for more complex applications
 
 ## Tags
 
