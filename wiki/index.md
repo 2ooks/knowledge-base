@@ -2,7 +2,7 @@
 This index is maintained automatically. Each entry links to its summary
 and lists related concepts.
 
-## Sources (20)
+## Sources (21)
 
 | # | Summary | Source | Date | Concepts |
 |---|---------|--------|------|----------|
@@ -26,13 +26,14 @@ and lists related concepts.
 | 18 | [[ai-daily-brief-anthropic-mythos-vertical-models]] | AI Daily Brief | 2026-03-27 | [[developer-tooling-competitive-landscape]], [[vertical-models-and-usage-data]], [[token-economics-and-pricing]] |
 | 19 | [[cursor-3-agent-management-console]] | The New Stack | 2026-04-05 | [[developer-tooling-competitive-landscape]], [[ai-coding-agents-and-developer-role-shift]], [[vertical-models-and-usage-data]] |
 | 20 | [[turingpost-hermes-agent-openclaw-rival]] | Turing Post | 2026-04-01 | [[harness-engineering]], [[ai-agent-ecosystem]], [[autoresearch-and-recursive-self-improvement]], [[agent-security-identity-and-permissions]], [[developer-tooling-competitive-landscape]] |
+| 21 | [[anthropic-harness-design-long-running-apps]] | Anthropic Engineering Blog | ~2026 | [[harness-engineering]], [[ai-agent-ecosystem]] |
 
 ## Concepts (13)
 
 | Concept | Sources |
 |---------|---------|
-| [[ai-agent-ecosystem]] | 11 sources |
-| [[harness-engineering]] | 8 sources |
+| [[ai-agent-ecosystem]] | 12 sources |
+| [[harness-engineering]] | 9 sources |
 | [[developer-tooling-competitive-landscape]] | 6 sources |
 | [[agent-security-identity-and-permissions]] | 6 sources |
 | [[autoresearch-and-recursive-self-improvement]] | 5 sources |
