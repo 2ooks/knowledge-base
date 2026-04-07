@@ -145,33 +145,50 @@ Read these files first:
 2. DELEGATION_SPEC.md
 3. wiki/connections.md
 4. wiki/index.md
+5. QUALITY_EXAMPLES.md (for calibration on what "good" looks like)
+
+Then read all concept files in wiki/concepts/ and any summaries you
+need to support your analysis.
 
 Generate a structured briefing document in outputs/ with filename
-briefing-YYYY-MM-DD.md covering:
+briefing-YYYY-MM-DD.md.
 
-## Key Findings (3-5 max)
-For each finding:
-- One-sentence headline framed as "what changed and why it matters"
-- 2-3 sentences of supporting evidence from wiki sources
-- "So what for us:" — one sentence connecting to Microsoft/GitHub
-  partnership context from DELEGATION_SPEC.md
+CRITICAL RULES:
+- This is a BD partnership-positioning doc, not a trend report
+- Every insight must end with a RECOMMENDATION, not a question
+- Name specific partners, acquisition targets, or deal shapes
+- Lead with the sharpest, most actionable insight — not the broadest
+- If a "gap" from connections.md is sharper than a finding, promote
+  it to a top-level insight
 
-## Active Contradictions (2-3 max)
-Unresolved tensions between sources that affect strategic decisions.
-For each: the two positions, which sources support each, and what
-would resolve it.
+STRUCTURE:
 
-## Open Questions (2-3 max)
-Highest-priority research gaps from connections.md, framed as
-questions a senior leader would ask.
+## Top 3 Insights (exactly 3 — force-rank by actionability)
+
+For each insight:
+1. One-sentence headline: "[What changed] → [What we should do]"
+2. 2-3 sentences of evidence citing specific wiki sources
+3. **Recommendation:** A concrete action — name the partner, the
+   deal shape, the acquisition target, or the internal investment.
+   "We should explore..." is not a recommendation.
+   "We should approach [Company] about [specific deal]" is.
+4. **Contrarian check:** One sentence on what would make this wrong
+
+Rank by: "If I could only bring one slide to the CVP, which insight
+would it be?" That's #1.
+
+## Watch List (2-3 items)
+Trends that aren't yet actionable but could become top-3 within
+90 days. One sentence each. These are the demoted insights that
+didn't make the cut — explain why they're not top-3 yet.
 
 ## Confidence Notes
-Flag any findings that rely on [UNVERIFIED] claims.
-Note any summaries past their review window.
+- Flag findings relying on [UNVERIFIED] claims
+- Note summaries past their review window
+- Note where evidence comes from a single source vs multiple
 
-Keep the total document under 800 words. This is a briefing, not
-a report — every sentence should pass the "would I say this in a
-5-minute standup?" test.
+Keep under 800 words. Every sentence must pass: "Would a BD VP
+act on this, or would they say 'so what?'"
 ```
 
 ---

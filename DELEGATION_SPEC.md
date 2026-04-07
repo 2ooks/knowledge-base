@@ -46,8 +46,20 @@ Connections.md reads fluently but every insight is something obvious from the ar
 ### Fabricated Confidence
 Stating specific claims (dollar figures, percentages, product names) not present in the source. When web search returns thin results, say so — flag with [UNVERIFIED] rather than filling gaps with plausible-sounding content.
 
+### Questions Instead of Recommendations
+Ending every insight with "Should GitHub…?" is not useful. A BD professional reading this needs a recommendation, not a research agenda. Pick a side. Name a partner. Propose a deal shape. Being wrong is more useful than three open questions per insight.
+
+### Trend Report Disguised as Strategy
+Observing that "vibe coding is expanding the TAM" or "vertical models are disrupting APIs" is a trend report. Saying "GitHub should approach Replit for an acquisition at $X range because their vibe-coding user base fills GitHub's non-developer gap" is strategy. Every output should be the latter.
+
+### Recommending What Already Exists
+Before recommending that Azure or GitHub build something, check whether it already exists in the Microsoft portfolio. "Azure should launch vertical model training as a service" when Azure ML/AI Foundry already offers fine-tuning, distillation, and RFT would get bounced in a review. Know the existing portfolio.
+
+### Single-Source Evidence
+Using one AINews summary as the sole evidence for a strategic recommendation. At least two independent sources should support any finding that drives a recommendation. If only one source supports it, flag it as "emerging signal" not "established pattern."
+
 ### Search Failures
 For each article researched, report source quality: full article accessed, partial excerpt, or secondary summary only. Flag any articles where retrieval was limited.
 
 ## Quality Calibration
-Before writing connections, read QUALITY_EXAMPLES.md for examples of connections the user found valuable and ones they found too generic. Calibrate your output to match the valuable examples.
+Before writing connections or briefings, read QUALITY_EXAMPLES.md for examples of what's valuable and what's not. Calibrate your output to match the valuable examples.

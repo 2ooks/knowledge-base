@@ -5,16 +5,16 @@ title: "Briefing: "
 labels: briefing
 ---
 
-Read WIKI_RULES.md, DELEGATION_SPEC.md, wiki/connections.md, and wiki/index.md.
+Read WIKI_RULES.md, DELEGATION_SPEC.md, QUALITY_EXAMPLES.md, wiki/connections.md, wiki/index.md, and all concept files.
 
-Generate a structured briefing document in outputs/ with filename briefing-YYYY-MM-DD.md covering:
+Generate a structured briefing in outputs/ with filename briefing-YYYY-MM-DD.md.
 
-## Key Findings (3-5 max)
-For each: one-sentence headline, 2-3 sentences evidence, "So what for us:" connecting to Microsoft/GitHub.
+RULES: This is a BD partnership-positioning doc. Every insight ends with a RECOMMENDATION naming a specific partner, acquisition target, or deal shape. No open questions as conclusions. Force-rank 3 insights by actionability. Lead with the sharpest.
 
-## Active Contradictions (2-3 max)
+## Top 3 Insights (force-ranked)
+Each: headline → evidence → **Recommendation** (name the partner/deal) → **Contrarian check**
 
-## Open Questions (2-3 max)
+## Watch List (2-3 demoted trends, one sentence each)
 
 ## Confidence Notes
 

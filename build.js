@@ -569,14 +569,37 @@ function buildHtml({ title, content, nav, rootPrefix }) {
 
     ttsActive = true;
     ttsBtn.style.color = 'var(--accent)';
-    speakChunks(chunks, 0);
+
+    // Pick the best available voice
+    var voices = window.speechSynthesis.getVoices();
+    var preferredVoice = null;
+    // Prefer premium/enhanced English voices
+    var prefs = ['Ava', 'Samantha', 'Zoe', 'Allison', 'Google UK English Female', 'Microsoft Aria', 'Microsoft Jenny'];
+    for (var p = 0; p < prefs.length; p++) {
+      for (var v = 0; v < voices.length; v++) {
+        if (voices[v].name.indexOf(prefs[p]) !== -1 && voices[v].lang.indexOf('en') === 0) {
+          preferredVoice = voices[v]; break;
+        }
+      }
+      if (preferredVoice) break;
+    }
+    // Fallback: any English voice
+    if (!preferredVoice) {
+      for (var v2 = 0; v2 < voices.length; v2++) {
+        if (voices[v2].lang.indexOf('en') === 0) { preferredVoice = voices[v2]; break; }
+      }
+    }
+
+    speakChunks(chunks, 0, preferredVoice);
   }
 
-  function speakChunks(chunks, i) {
+  function speakChunks(chunks, i, voice) {
     if (!ttsActive || i >= chunks.length) { stopTTS(); return; }
     var u = new SpeechSynthesisUtterance(chunks[i]);
-    u.rate = 1.1;
-    u.onend = function() { speakChunks(chunks, i + 1); };
+    u.rate = 1.05;
+    u.pitch = 1.0;
+    if (voice) u.voice = voice;
+    u.onend = function() { speakChunks(chunks, i + 1, voice); };
     u.onerror = function() { stopTTS(); };
     window.speechSynthesis.speak(u);
   }
