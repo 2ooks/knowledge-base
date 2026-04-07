@@ -2,7 +2,7 @@
 This index is maintained automatically. Each entry links to its summary
 and lists related concepts.
 
-## Sources (19)
+## Sources (20)
 
 | # | Summary | Source | Date | Concepts |
 |---|---------|--------|------|----------|
@@ -25,17 +25,18 @@ and lists related concepts.
 | 17 | [[langchain-anatomy-of-agent-harness]] | LangChain Blog | 2026-03-10 | [[harness-engineering]], [[agent-security-identity-and-permissions]], [[ai-agent-ecosystem]] |
 | 18 | [[ai-daily-brief-anthropic-mythos-vertical-models]] | AI Daily Brief | 2026-03-27 | [[developer-tooling-competitive-landscape]], [[vertical-models-and-usage-data]], [[token-economics-and-pricing]] |
 | 19 | [[cursor-3-agent-management-console]] | The New Stack | 2026-04-05 | [[developer-tooling-competitive-landscape]], [[ai-coding-agents-and-developer-role-shift]], [[vertical-models-and-usage-data]] |
+| 20 | [[turingpost-hermes-agent-openclaw-rival]] | Turing Post | 2026-04-01 | [[harness-engineering]], [[ai-agent-ecosystem]], [[autoresearch-and-recursive-self-improvement]], [[agent-security-identity-and-permissions]], [[developer-tooling-competitive-landscape]] |
 
 ## Concepts (13)
 
 | Concept | Sources |
 |---------|---------|
-| [[ai-agent-ecosystem]] | 10 sources |
-| [[harness-engineering]] | 7 sources |
-| [[developer-tooling-competitive-landscape]] | 5 sources |
+| [[ai-agent-ecosystem]] | 11 sources |
+| [[harness-engineering]] | 8 sources |
+| [[developer-tooling-competitive-landscape]] | 6 sources |
+| [[agent-security-identity-and-permissions]] | 6 sources |
+| [[autoresearch-and-recursive-self-improvement]] | 5 sources |
 | [[ai-coding-agents-and-developer-role-shift]] | 5 sources |
-| [[agent-security-identity-and-permissions]] | 5 sources |
-| [[autoresearch-and-recursive-self-improvement]] | 4 sources |
 | [[gpu-and-compute-economics]] | 5 sources |
 | [[semiconductor-supply-chain-bottlenecks]] | 2 sources |
 | [[inference-architecture-and-scaling]] | 5 sources |

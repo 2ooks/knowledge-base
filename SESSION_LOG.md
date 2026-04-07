@@ -597,3 +597,41 @@ Scored all 13 Emerging Patterns in connections.md on a 1-3 scale (3 = non-obviou
 ### Issues / Limitations
 - QUALITY_EXAMPLES.md is still empty — should be populated with examples of the score-3 patterns and the before/after of sharpened patterns to calibrate future sessions.
 
+
+---
+
+## Session: 2026-04-07
+
+### Articles Processed
+
+| Article | Retrieval Quality |
+|---------|-----------------|
+| [Hermes Agent – OpenClaw's Rival? Differences and Best Use Cases](Turing Post AI 101 AI Agents) | **Full article text available** — Complete article text provided in issue description. All claims are directly attributable to the primary source. Date confirmed as April 1, 2026. Authors: Alyona Vert. & Ksenia Se. |
+
+### Summaries Created
+- `wiki/summaries/turingpost-hermes-agent-openclaw-rival.md`
+
+### Raw Articles Created
+- `raw/articles/turingpost-hermes-agent-openclaw-rival.md`
+
+### Concepts Updated
+- `wiki/concepts/harness-engineering.md` — added four new key points: Hermes Agent procedural memory (converts successful workflows into reusable skills automatically), architectural divergence in self-hosted agents (OpenClaw Gateway control plane vs Hermes AIAgent loop as core), Agent Communication Protocol (ACP) as interoperability pattern, layered memory stack (persistent notes, SQLite session history, user modeling, skills as procedures)
+- `wiki/concepts/ai-agent-ecosystem.md` — added five new key points: Hermes Agent as first major OpenClaw alternative with agent-loop-centric vs control-plane-centric architecture, model-agnostic runtime pattern (configuration-based model switching), deployment decoupling (local/VPS/Docker/SSH/serverless with messaging app or CLI interaction), scheduled automation (cron tasks in fresh sessions), Nous Research background
+- `wiki/concepts/autoresearch-and-recursive-self-improvement.md` — added two new key points: Hermes self-improvement loop (evaluates what worked/didn't, auto-generates skills), skills generation contrast (OpenClaw human-authored vs Hermes automatic from workflow patterns)
+- `wiki/concepts/agent-security-identity-and-permissions.md` — added one new key point: Hermes safer-by-default design (user authorization, approval checks, isolation, credential filtering, context scanning)
+- `wiki/concepts/developer-tooling-competitive-landscape.md` — added two new key points: Hermes vs OpenClaw architectural divergence, Nous Research positioning (open-source-first, decentralization-focused, DisTrO, Hermes models, simulation environments, Atropos RL, Forge API)
+
+### Connections Added
+- **New pattern**: "Self-Hosted Agent Architecture: Control Plane vs Self-Improvement Loop" — OpenClaw (Gateway control plane, human-authored skills) vs Hermes (AIAgent loop as core, automatic skill generation from successful workflows); reveals two distinct paths for personal agent architecture with different strategic implications for GitHub: control-plane-first maps to Actions orchestration, agent-loop-first requires memory/skill storage primitives and ACP support; Hermes demonstrates deployment flexibility (portable across environments) and model-agnostic runtime (configuration-based provider switching) as strategic patterns; GitHub could extend existing security infrastructure (CODEOWNERS, scoped tokens, branch protection) to become safety layer for self-hosted agents; if automatic skill generation becomes standard, GitHub's version control could be natural storage/versioning layer for agent capabilities
+
+### Index Updated
+- `wiki/index.md` — added entry #20 for turingpost-hermes-agent-openclaw-rival; updated source count to 20; updated concept source counts: ai-agent-ecosystem to 11, harness-engineering to 8, developer-tooling-competitive-landscape to 6, agent-security-identity-and-permissions to 6, autoresearch-and-recursive-self-improvement to 5
+
+### Issues / Limitations
+- None — full article text was available in the issue description. All claims are attributed to the primary source with no [UNVERIFIED] flags needed.
+- This article reveals an important architectural divergence within the self-hosted personal agent category: OpenClaw's control-plane-first approach (Gateway owns state, human-authored skills) vs Hermes's agent-loop-first approach (self-improvement cycle as core, automatic skill generation). This represents a different dimension from the broader IDE vs terminal vs agent-console divergence covered in cursor-3-agent-management-console.
+- The Hermes Agent architecture demonstrates several strategic patterns: model-agnostic runtime (configuration-based model switching without code changes), deployment portability (local/VPS/Docker/SSH/serverless/GPU-backed with messaging app or CLI interaction), safer-by-default security design, and Agent Communication Protocol (ACP) for standardized tool-to-agent communication.
+- Nous Research's background (open-source-first, DisTrO distributed training, simulation environments, RL research) positions Hermes as philosophically different from venture-backed closed-source alternatives, creating a third competitive axis alongside Anthropic/OpenAI/Google (frontier labs) and Cursor/Windsurf (IDE-integrated).
+
+---
+
