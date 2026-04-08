@@ -2,7 +2,7 @@
 This index is maintained automatically. Each entry links to its summary
 and lists related concepts.
 
-## Sources (26)
+## Sources (27)
 
 | # | Summary | Source | Date | Concepts |
 |---|---------|--------|------|----------|
@@ -32,16 +32,16 @@ and lists related concepts.
 | 24 | [[anthropic-project-glasswing]] | Anthropic | 2026-04-07 | [[agent-security-identity-and-permissions]], [[ai-agent-ecosystem]] |
 | 25 | [[devblogs-dotnet-modernization-assessment]] | Microsoft DevBlogs | ~2026 | [[harness-engineering]], [[ai-coding-agents-and-developer-role-shift]] |
 | 26 | [[devblogs-aspire-agentic-dev-aspirations]] | Microsoft DevBlogs | ~2026-04-05 | [[harness-engineering]], [[ai-agent-ecosystem]], [[developer-tooling-competitive-landscape]] |
+| 27 | [[ainews-anthropic-mythos-glasswing-april-2026]] | Latent.Space | 2026-04-07 | [[agent-security-identity-and-permissions]], [[ai-agent-ecosystem]], [[developer-tooling-competitive-landscape]] |
 
 ## Concepts (13)
 
 | Concept | Sources |
 |---------|---------|
-| [[ai-agent-ecosystem]] | 16 sources |
+| [[ai-agent-ecosystem]] | 17 sources |
 | [[harness-engineering]] | 13 sources |
-| [[developer-tooling-competitive-landscape]] | 7 sources |
-| [[ai-coding-agents-and-developer-role-shift]] | 7 sources |
-| [[agent-security-identity-and-permissions]] | 7 sources |
+| [[agent-security-identity-and-permissions]] | 8 sources |
+| [[developer-tooling-competitive-landscape]] | 8 sources |
 | [[autoresearch-and-recursive-self-improvement]] | 5 sources |
 | [[gpu-and-compute-economics]] | 5 sources |
 | [[semiconductor-supply-chain-bottlenecks]] | 2 sources |

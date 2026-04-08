@@ -8,7 +8,7 @@ The competitive dynamics of AI-powered developer tooling platforms — which lab
 - Four-way architectural divergence in AI-assisted development: Anthropic (terminal-first, no IDE), OpenAI (omni-surface orchestration), Google Antigravity (dual-mode coequal), Cursor (agent console default, IDE fallback) ([[cursor-3-agent-management-console]])
 - PR review is a battleground: Claude Code, OpenAI Codex, and Devin all shipped PR review agents in the same week ([[ainews-autoresearch-sparks-of-recursive]])
 - OpenAI unifies ChatGPT + Codex into "superapp," explicitly prioritizing Enterprise and Coding ([[ainews-every-lab-serious-enough-about]])
-- Claude Mythos revealed as new tier above Opus — step change for coding and cybersecurity ([[ai-daily-brief-anthropic-mythos-vertical-models]])
+- Anthropic revenue jumped from $19B ARR (March 2026) to $30B ARR (April 1, 2026), announced strategically against OpenAI's $24B ARR and IPO timing; Mythos formally confirmed as tier above Opus with unprecedented capabilities but restricted to consortium rather than public release ([[ai-daily-brief-anthropic-mythos-vertical-models]], [[ainews-anthropic-mythos-glasswing-april-2026]])
 - Cursor 3 demotes traditional IDE to fallback: "the prompt box sits where the file tree used to be" ([[cursor-3-agent-management-console]])
 - Cursor acquired Graphite (code review platform) because "reviewing code was becoming the bottleneck" ([[cursor-3-agent-management-console]])
 - Google Antigravity acquisition: $2.4B in licensing fees to Windsurf + hiring CEO and engineers into DeepMind ([[cursor-3-agent-management-console]])
