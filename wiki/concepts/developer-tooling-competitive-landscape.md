@@ -15,6 +15,7 @@ The competitive dynamics of AI-powered developer tooling platforms — which lab
 - Perplexity "Computer" integrates Claude Code + GitHub CLI for end-to-end fork → implement → PR automation ([[ainews-autoresearch-sparks-of-recursive]])
 - Hermes Agent (Nous Research) vs OpenClaw: architectural divergence in self-hosted agents — OpenClaw control-plane-first (Gateway owns state), Hermes agent-loop-first (self-improvement cycle as core) ([[turingpost-hermes-agent-openclaw-rival]])
 - Nous Research positioning: open-source-first, decentralization-focused; DisTrO (distributed training across consumer GPUs), Hermes models, large-scale simulation environments (WorldSim, Doomscroll), Atropos RL, Forge API ([[turingpost-hermes-agent-openclaw-rival]])
+- Microsoft Aspire 13.2 as agent orchestration platform: TypeScript AppHost (polyglot), agent-native CLI with structured output, detached/isolated run modes; Microsoft Agent Framework unifies Semantic Kernel + AutoGen for production multi-agent orchestration; positions Microsoft as owner of .NET agent infrastructure layer end-to-end (framework → orchestration → observability → deployment) [UNVERIFIED] ([[devblogs-aspire-agentic-dev-aspirations]])
 
 ## Open Questions
 - Is GitHub/Microsoft's position as the neutral developer infrastructure layer sustainable now that all labs own toolchains?
