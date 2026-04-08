@@ -13,6 +13,7 @@ The emerging infrastructure requirements for AI agent identity, authentication, 
 - As third-party agents (Perplexity Computer, Devin) operate autonomously on GitHub repos, the question of identity/permissions governance becomes urgent ([[ainews-autoresearch-sparks-of-recursive]])
 - LangSmith Fleet provides enterprise workspace with memory, permissions, identity, and audit trails for managed agent fleets ([[ainews-every-lab-serious-enough-about]])
 - Hermes Agent safer-by-default design: user authorization, approval checks, isolation, credential filtering, context scanning as architectural principles ([[turingpost-hermes-agent-openclaw-rival]])
+- Project Glasswing: Anthropic's Claude Mythos Preview withheld from public release due to dual-use cybersecurity concerns; restricted to consortium members (AWS, Apple, Microsoft, Google, NVIDIA, etc.) for defensive vulnerability discovery only; already found thousands of high-severity bugs including 27-year-old OpenBSD and 16-year-old FFmpeg vulnerabilities; first major frontier model with explicit offensive-capability restriction [UNVERIFIED] ([[anthropic-project-glasswing]])
 
 ## Open Questions
 - How should GitHub distinguish commits from different AI agents vs human developers?
