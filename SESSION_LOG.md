@@ -806,3 +806,37 @@ This session re-ingests the OpenAI "Harness engineering: leveraging Codex in an 
 - Key strategic insight: harness patterns are being co-trained into models (Codex generating initial AGENTS.md, repository scaffold, CI configs), meaning the toolchain land grab isn't just about runtime tooling but about which harness patterns become canonical in model training—GitHub's harness primitives (Actions YAML, CODEOWNERS, branch protection) should be represented in all major labs' post-training datasets.
 
 ---
+
+## Session: 2026-04-08
+
+### Articles Processed
+
+| Article | Retrieval Quality |
+|---------|-----------------|
+| [Project Glasswing: Securing critical software for the AI era](https://www.anthropic.com/glasswing) | **Secondary summary only** — anthropic.com is blocked for direct fetch (ERR_BLOCKED_BY_CLIENT). Claims sourced from multiple secondary sources published April 7, 2026: Bloomberg ("Anthropic Lets Apple, Amazon Test More Powerful Mythos AI Model"), ZDNet ("Apple, Google, and Microsoft join Anthropic's Project Glasswing"), VentureBeat ("Anthropic says its most powerful AI cyber model is too dangerous to release"), CyberScoop ("Tech giants launch AI-powered 'Project Glasswing'"), CSO Online ("What Anthropic Glasswing reveals about the future of vulnerability discovery"), CNBC ("Anthropic limits rollout of Mythos AI model over cyberattack fears"). All specific claims marked [UNVERIFIED]. |
+
+### Summaries Created
+- `wiki/summaries/anthropic-project-glasswing.md`
+
+### Raw Articles Created
+- `raw/articles/anthropic-project-glasswing.md`
+
+### Concepts Updated
+- `wiki/concepts/agent-security-identity-and-permissions.md` — added one new key point: Project Glasswing represents first major frontier model with explicit distribution restriction due to dual-use cybersecurity concerns; Claude Mythos Preview withheld from public release and provided only to consortium members (AWS, Apple, Microsoft, Google, NVIDIA, ~40 organizations) for defensive vulnerability discovery; already found thousands of high-severity bugs including 27-year-old OpenBSD and 16-year-old FFmpeg vulnerabilities [UNVERIFIED]
+- `wiki/concepts/ai-agent-ecosystem.md` — added one new key point: Claude Mythos Preview as unreleased frontier model tier above Opus specialized for cybersecurity; restricted access via Project Glasswing consortium rather than public API; demonstrates model capability can be so powerful that distribution model shifts from API-first to consortium-only [UNVERIFIED]
+
+### Connections Added
+- **New pattern**: "Project Glasswing and the Consortium Model for Dual-Use AI" — Anthropic's first major frontier model with explicit distribution restriction: Claude Mythos Preview withheld from public API despite being "a step change above Opus"; provided only to cross-competitor consortium for defensive cybersecurity; model has found thousands of vulnerabilities including 27-year and 16-year-old bugs; represents new distribution model where offensive dual-use capability considered too severe for even API access; consortium includes Microsoft, Google, AWS, Apple, NVIDIA—Microsoft's participation validates defensive AI as board-level priority; creates internal demand for GitHub Advanced Security/Azure security tooling integration with AI-discovered vulnerabilities; restricted access shifts frontier model economics from per-token pricing to consortium fees/usage credits for premium capabilities; strategic implications include: (1) GitHub Advanced Security positioning as remediation bottleneck when AI finds vulnerabilities at scale, (2) defensive AI as customer value tier upgrade opportunity, (3) open-source security funding precedent ($4M donations) scalable via GitHub Sponsors, (4) model capability as liability requiring explicit withholding frameworks, (5) consortium membership positioning Microsoft for future cross-industry security initiatives; window-of-exposure framing (minimizing time-to-patch) reinforces GitHub's automation advantage with Actions/Dependabot/Copilot Autofix as infrastructure enabling defensive AI at enterprise scale [all UNVERIFIED]
+
+### Index Updated
+- `wiki/index.md` — added entry #24 for anthropic-project-glasswing; updated source count from 23 to 24; updated concept source counts: ai-agent-ecosystem from 14 to 15 sources, agent-security-identity-and-permissions from 6 to 7 sources
+
+### Issues / Limitations
+- anthropic.com remains blocked for direct fetch. All claims are [UNVERIFIED] and sourced from secondary summaries published April 7, 2026. The article should be reviewed and all [UNVERIFIED] flags removed if the user can share the full article text.
+- Publication date set to April 7, 2026 based on consistent secondary source publication dates [UNVERIFIED].
+- This represents a significant shift in frontier model distribution strategy: first explicit restriction of a major model due to dual-use offensive capabilities, even withholding API access entirely.
+- The consortium-based access model validates enterprise willingness to pay for early access to defensive AI capabilities, creating precedent for future restricted-distribution models in cybersecurity and potentially other dual-use domains (synthetic biology, financial fraud, disinformation).
+- Strategic positioning: Microsoft's consortium membership validates defensive AI as strategic priority and creates natural integration points for GitHub Advanced Security and Azure security tooling with AI-powered vulnerability discovery workflows.
+
+---
+
