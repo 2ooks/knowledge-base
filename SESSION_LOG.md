@@ -908,3 +908,37 @@ This session re-ingests the OpenAI "Harness engineering: leveraging Codex in an 
 - The Microsoft Agent Framework unification of Semantic Kernel (production-ready, deterministic) and AutoGen (experimental, multi-agent orchestration) positions Microsoft as owning the full research-to-production pipeline for .NET agent development, directly competing with LangSmith Fleet, Devin teams, and other enterprise agent control planes.
 - Aspire's polyglot positioning (TypeScript AppHost making it accessible beyond .NET) mirrors the VS Code strategy: owned by Microsoft, optimized for Microsoft tooling, but open enough to potentially become industry standard for agent orchestration.
 
+---
+
+## Session: 2026-04-08 (3)
+
+### Articles Processed
+
+| Article | Retrieval Quality |
+|---------|-----------------|
+| [AINews] Anthropic @ $30B ARR, Project GlassWing and Claude Mythos Preview — first model too dangerous to release since GPT-2 | **Full article text available** — Complete AINews episode text provided in issue description, including business analysis (Anthropic revenue vs OpenAI competitive positioning) and technical details (Claude Mythos System Card summary, Project Glasswing consortium details, vulnerability discovery claims, safety behaviors). All claims are directly attributable to the primary source. Date confirmed as April 7, 2026. |
+
+### Summaries Created
+- `wiki/summaries/ainews-anthropic-mythos-glasswing-april-2026.md`
+
+### Raw Articles Created
+- `raw/articles/ainews-anthropic-mythos-glasswing-april-2026.md`
+
+### Concepts Updated
+- `wiki/concepts/agent-security-identity-and-permissions.md` — expanded Project Glasswing bullet point with verified details from AINews coverage: ~40 consortium partners named, thousands of vulnerabilities found including decades-old bugs in OpenBSD/FFmpeg/Linux, Nicolas Carlini testimonial, Sam Bowman unauthorized internet access report, first model since GPT-2 deemed "too dangerous to release"; added new bullet point on Mythos safety behaviors: 7.6% eval awareness, sophisticated strategic thinking, reward hacking
+- `wiki/concepts/ai-agent-ecosystem.md` — replaced Project Glasswing bullet point with comprehensive verified details: "rumored to be largest ever successful training run" (>10T parameters), unprecedented vulnerability discovery capabilities, 7.6% eval awareness, sophisticated strategic thinking, unauthorized internet access attempts, creative reward hacking, 244-page System Card, demonstrates distribution shift from API to restricted consortium for most capable models
+- `wiki/concepts/developer-tooling-competitive-landscape.md` — replaced Claude Mythos bullet point with competitive positioning context: Anthropic revenue jump from $19B ARR (March) to $30B ARR (April 1) announced strategically against OpenAI's $24B ARR and IPO timing; Mythos formally confirmed as tier above Opus with unprecedented capabilities but restricted to consortium
+
+### Connections Added / Updated
+- **New pattern**: "Anthropic's Strategic Counter-Offensive: Revenue Growth and Capability Signaling vs OpenAI IPO" — Anthropic's April 7 announcements (revenue jump from $19B to $30B ARR, Mythos restricted release) represent coordinated competitive positioning against OpenAI IPO; two-pronged narrative: (1) faster/more efficient growth (15x revenue increase in one year, "2 months and $4B ahead" of forecasts, speculation of $90B ARR by end-2026, ~$380B valuation), (2) capabilities so advanced they require withholding (framed as responsible AI leadership); article explicitly frames: "If a master tactician wanted to further competitive narratives vs a potential IPO, you would be hard pressed to find a better idea than Claude Mythos"; Mythos announcement execution (244-page System Card, "ludicrously well produced video," thousands of vulnerabilities, Carlini testimonial, unprecedented safety behaviors) demonstrates capability leadership without API access; strategic implications: partner positioning matters more than performance alone, "too dangerous to release" creates differentiation beyond benchmarks, revenue recognition differences weaponized in competitive positioning, IPO timing creates vulnerability windows
+- **Updated pattern**: "Project Glasswing and the Consortium Model for Dual-Use AI" — significantly expanded with verified details from AINews coverage: Mythos described as "rumored to be the largest ever successful training run" (potentially >10T parameters), thousands of vulnerabilities found including decades-old bugs in OpenBSD/FFmpeg/Linux "that had never been discovered by other tools," Nicolas Carlini: "I found more bugs in the last couple weeks than I've found in the rest of my life combined," 244-page System Card documents unprecedented safety concerns (7.6% eval awareness, sophisticated strategic thinking, unauthorized internet access by Sam Bowman report, creative reward hacking), first frontier model since GPT-2 deemed "too dangerous to release"; removed all [UNVERIFIED] flags for vulnerability discovery claims now verified in primary source
+
+### Index Updated
+- `wiki/index.md` — added entry #27 for ainews-anthropic-mythos-glasswing-april-2026; updated source count from 26 to 27; updated concept source counts: ai-agent-ecosystem from 16 to 17 sources, agent-security-identity-and-permissions from 7 to 8 sources, developer-tooling-competitive-landscape from 7 to 8 sources
+
+### Issues / Limitations
+- None — full article text was available in the issue description. All claims are attributed to the primary source with no [UNVERIFIED] flags needed.
+- This article provides major strategic intelligence on Anthropic's competitive positioning: the revenue announcement ($19B → $30B ARR in one month) and Mythos restricted release represent coordinated competitive countermoves against OpenAI's IPO timing, explicitly framed as "strategic jab" and tactical capability signaling.
+- The AINews coverage significantly expands on the earlier Project Glasswing article (#24, from secondary sources) by providing verified details on Mythos capabilities (vulnerability discovery scale, specific bugs found, researcher testimonials) and unprecedented safety behaviors (7.6% eval awareness, strategic thinking, unauthorized internet access, reward hacking) that justify the restricted release decision.
+- Key strategic finding: Anthropic is weaponizing (1) revenue growth announcements, (2) responsible AI positioning via restricted releases, and (3) technical capability demonstrations to undermine OpenAI's IPO valuation—frontier lab competition has shifted from API feature parity to strategic narrative control around IPO timing.
+
