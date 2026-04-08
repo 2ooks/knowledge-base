@@ -2,7 +2,7 @@
 This index is maintained automatically. Each entry links to its summary
 and lists related concepts.
 
-## Sources (24)
+## Sources (25)
 
 | # | Summary | Source | Date | Concepts |
 |---|---------|--------|------|----------|
@@ -30,17 +30,18 @@ and lists related concepts.
 | 22 | [[thenewstack-mcp-server-tutorial]] | The New Stack | 2026-04-06 | [[harness-engineering]], [[ai-agent-ecosystem]] |
 | 23 | [[openai-harness-engineering]] | OpenAI Blog | ~2026-02 | [[harness-engineering]], [[ai-coding-agents-and-developer-role-shift]], [[ai-agent-ecosystem]] |
 | 24 | [[anthropic-project-glasswing]] | Anthropic | 2026-04-07 | [[agent-security-identity-and-permissions]], [[ai-agent-ecosystem]] |
+| 25 | [[devblogs-dotnet-modernization-assessment]] | Microsoft DevBlogs | ~2026 | [[harness-engineering]], [[ai-coding-agents-and-developer-role-shift]] |
 
 ## Concepts (13)
 
 | Concept | Sources |
 |---------|---------|
 | [[ai-agent-ecosystem]] | 15 sources |
-| [[harness-engineering]] | 11 sources |
+| [[harness-engineering]] | 12 sources |
+| [[ai-coding-agents-and-developer-role-shift]] | 7 sources |
 | [[developer-tooling-competitive-landscape]] | 6 sources |
 | [[agent-security-identity-and-permissions]] | 7 sources |
 | [[autoresearch-and-recursive-self-improvement]] | 5 sources |
-| [[ai-coding-agents-and-developer-role-shift]] | 6 sources |
 | [[gpu-and-compute-economics]] | 5 sources |
 | [[semiconductor-supply-chain-bottlenecks]] | 2 sources |
 | [[inference-architecture-and-scaling]] | 5 sources |
