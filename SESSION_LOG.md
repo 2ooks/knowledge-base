@@ -1000,3 +1000,40 @@ This session re-ingests the OpenAI "Harness engineering: leveraging Codex in an 
 - Publication date approximated as ~April 2026 based on secondary sources and partnership announcement timing; marked [UNVERIFIED].
 - The strategic partnership details between Cognition and Infosys are sourced from press coverage (Economic Times, Office Chai) rather than the primary blog post, but these are reliable secondary sources for partnership announcements.
 - Key strategic finding: Legacy modernization represents a two-tier market where GitHub Copilot can own the assessment/planning layer while partnering with specialized execution agents (Devin for COBOL) rather than building natively for every legacy stack — aligns with GitHub's historical neutrality and platform positioning.
+
+## Session: 2026-04-09
+
+### Articles Processed
+
+| Article | Retrieval Quality |
+|---------|-----------------|
+| [Enterprise developers question Claude Code's reliability for complex engineering](https://www.infoworld.com/article/4154973/enterprise-developers-question-claude-codes-reliability-for-complex-engineering.html) | **Secondary summary only** — InfoWorld domain is blocked (ERR_BLOCKED_BY_CLIENT). Claims sourced from web search returning comprehensive secondary coverage from WinBuzzer, Tamiltech, NewsBreak, DEV Community, and MSN. All specific numerical claims, quotes, and dates are marked [UNVERIFIED] as they cannot be confirmed from the primary source. |
+
+### Summaries Created
+- `wiki/summaries/infoworld-enterprise-claude-code-reliability.md`
+
+### Concepts Updated
+- `wiki/concepts/harness-engineering.md` — added two new key points on Claude Code performance regression tied to capacity constraints and default vs high-effort modes as capacity management; added new open question on balancing production reliability against capacity economics
+- `wiki/concepts/ai-coding-agents-and-developer-role-shift.md` — added two new key points on enterprise trust barrier and agent evaluation as new developer skill
+- `wiki/concepts/developer-tooling-competitive-landscape.md` — added one new key point on Claude Code enterprise reliability concerns demonstrating competitive vulnerability
+
+### Connections Added / Updated
+- **New pattern**: "Enterprise Reliability as Competitive Battleground: Claude Code's AMD Crisis" — AMD's quantified abandonment of Claude Code reveals that agent reliability is harness-constrained and infrastructure-economic, not model-capability-constrained; creates competitive window for vertically-integrated compute providers (Microsoft/Azure); validates that enterprise procurement evaluates harness quality (reliability, observability, policy enforcement, capacity guarantees) over raw model benchmarks
+- **Sharpened existing thesis**: The new connection triangulates with GitHub's reliability crisis (90% uptime) and harness > model thesis to reveal systemic vulnerability: production reliability degrades when capacity gets expensive or scarce, even when underlying models remain unchanged
+
+### Issues / Limitations
+- Full InfoWorld article text unavailable (domain blocked). All key claims are [UNVERIFIED] and should be reviewed and confirmed if the user can share the full article text.
+- Publication date approximated as ~April 2026 based on secondary sources and timing of AMD's public statements; marked [UNVERIFIED].
+- Specific individuals named (Stella Laurenzo, Senior Director at AMD AI Group) and metrics (~7,000 sessions, 230,000+ tool calls, 10 stop-hook violations/day) are from secondary sources only; all marked [UNVERIFIED].
+
+### Strategic Insights
+The InfoWorld article provides critical competitive intelligence rarely documented in public:
+1. **Enterprise evaluation rigor**: AMD's quantitative methodology (~7,000 sessions, specific metrics tracking) represents emerging best practice that other enterprises will adopt
+2. **Switching behavior**: AMD publicly switching to undisclosed competitor demonstrates enterprises actively shopping alternatives when reliability degrades—not just complaining but acting
+3. **Capacity economics as vulnerability**: Anthropic's acknowledgment that default mode provides less reasoning depth reveals tiered quality as business model choice, creating opening for vertically-integrated competitors
+4. **Harness reliability > model capability**: AMD abandoned Claude Code not because model became less intelligent, but because harness (context management, authorization controls, reasoning depth allocation) degraded—validates GitHub's infrastructure focus as correct strategic bet
+
+### Next Steps / Open Questions
+- Monitor for AMD's eventual public disclosure of which competitor they switched to (Cursor, Codex, Devin likely candidates)
+- Track whether other enterprises adopt AMD-style quantitative evaluation methodologies
+- If full InfoWorld article becomes available, re-ingest to remove all [UNVERIFIED] flags and add any additional details missed in secondary summaries

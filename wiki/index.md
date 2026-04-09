@@ -2,7 +2,7 @@
 This index is maintained automatically. Each entry links to its summary
 and lists related concepts.
 
-## Sources (29)
+## Sources (30)
 
 | # | Summary | Source | Date | Concepts |
 |---|---------|--------|------|----------|
@@ -35,15 +35,16 @@ and lists related concepts.
 | 27 | [[ainews-anthropic-mythos-glasswing-april-2026]] | Latent.Space | 2026-04-07 | [[agent-security-identity-and-permissions]], [[ai-agent-ecosystem]], [[developer-tooling-competitive-landscape]] |
 | 28 | [[pragmatic-engineer-github-ai-native-development]] | The Pragmatic Engineer | 2026-04-03 | [[developer-tooling-competitive-landscape]], [[ai-agent-ecosystem]], [[harness-engineering]] |
 | 29 | [[cognition-devin-cobol-modernization]] | Cognition AI | ~2026-04 | [[ai-coding-agents-and-developer-role-shift]], [[ai-agent-ecosystem]] |
+| 30 | [[infoworld-enterprise-claude-code-reliability]] | InfoWorld | ~2026-04 | [[harness-engineering]], [[ai-coding-agents-and-developer-role-shift]], [[developer-tooling-competitive-landscape]], [[ai-agent-ecosystem]] |
 
 ## Concepts (13)
 
 | Concept | Sources |
 |---------|---------|
-| [[ai-agent-ecosystem]] | 19 sources |
-| [[harness-engineering]] | 14 sources |
+| [[ai-agent-ecosystem]] | 20 sources |
+| [[harness-engineering]] | 15 sources |
 | [[agent-security-identity-and-permissions]] | 8 sources |
-| [[developer-tooling-competitive-landscape]] | 9 sources |
+| [[developer-tooling-competitive-landscape]] | 10 sources |
 | [[autoresearch-and-recursive-self-improvement]] | 5 sources |
 | [[gpu-and-compute-economics]] | 5 sources |
 | [[semiconductor-supply-chain-bottlenecks]] | 2 sources |
@@ -52,7 +53,7 @@ and lists related concepts.
 | [[open-models-and-local-inference]] | 2 sources |
 | [[ai-scaling-limits-and-research-paradigm]] | 2 sources |
 | [[vertical-models-and-usage-data]] | 2 sources |
-| [[ai-coding-agents-and-developer-role-shift]] | 10 sources |
+| [[ai-coding-agents-and-developer-role-shift]] | 11 sources |
 
 ## Maintenance
 
