@@ -34,7 +34,7 @@ and lists related concepts.
 | 26 | [[devblogs-aspire-agentic-dev-aspirations]] | Microsoft DevBlogs | ~2026-04-05 | [[harness-engineering]], [[ai-agent-ecosystem]], [[developer-tooling-competitive-landscape]] |
 | 27 | [[ainews-anthropic-mythos-glasswing-april-2026]] | Latent.Space | 2026-04-07 | [[agent-security-identity-and-permissions]], [[ai-agent-ecosystem]], [[developer-tooling-competitive-landscape]] |
 | 28 | [[pragmatic-engineer-github-ai-native-development]] | The Pragmatic Engineer | 2026-04-03 | [[developer-tooling-competitive-landscape]], [[ai-agent-ecosystem]], [[harness-engineering]] |
-| 29 | [[cognition-devin-cobol-modernization]] | Cognition AI | ~2026-04 | [[ai-coding-agents-and-developer-role-shift]], [[ai-agent-ecosystem]] |
+| 29 | [[cognition-devin-cobol-modernization]] | Cognition AI | 2026-04-08 | [[ai-coding-agents-and-developer-role-shift]], [[ai-agent-ecosystem]], [[harness-engineering]] |
 
 ## Concepts (13)
 
