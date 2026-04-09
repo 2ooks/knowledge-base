@@ -742,9 +742,117 @@ function build() {
   console.log(`✅  Built ${searchIndex.length} pages → ${OUT_DIR}/`);
 }
 
-// ── Build graph data from wikilinks ──────────────────────────────────────────
+// ── Build graph data (graphify-enhanced or wikilink fallback) ────────────────
+
+const GRAPHIFY_PATH = path.join(ROOT_DIR, 'graphify-out', 'graph.json');
+
+// Community color palette (18 colors)
+const COMMUNITY_COLORS = [
+  '#58a6ff', '#7ee787', '#d2a8ff', '#f0883e', '#ff7b72',
+  '#79c0ff', '#56d364', '#bc8cff', '#ffa657', '#ffa198',
+  '#a5d6ff', '#aff5b4', '#d8b4fe', '#ffd8b1', '#ffc6c4',
+  '#39d353', '#e3b341', '#db61a2'
+];
+
+const COMMUNITY_LABELS = {
+  0: 'Agent Harness Architecture', 1: 'Continual Learning & Memory',
+  2: 'Claude Code Internals', 3: 'AI Infrastructure & Compute',
+  4: 'Anthropic Business & Geopolitics', 5: 'Vertical Models & Dev Tooling',
+  6: 'Agent Orchestration Platforms', 7: 'Anthropic Frontier & Safety',
+  8: 'Post-Scaling Research', 9: 'Vibe Coding & GPU Economics',
+  10: 'RL Limitations', 11: 'AI Economic Diffusion',
+  12: 'Gemma 4', 13: 'Model-Harness Co-Evolution',
+  14: 'LangSmith Observability', 15: 'Kimi K2.5',
+  16: 'Article Index', 17: 'Dwarkesh Patel'
+};
 
 function buildGraphData() {
+  // Try graphify-enhanced graph first
+  if (fs.existsSync(GRAPHIFY_PATH)) {
+    return buildGraphifyData();
+  }
+  return buildWikilinkData();
+}
+
+function buildGraphifyData() {
+  const raw = JSON.parse(fs.readFileSync(GRAPHIFY_PATH, 'utf8'));
+
+  // Build sets of wiki pages for href resolution
+  const summaryDir = path.join(WIKI_DIR, 'summaries');
+  const conceptDir = path.join(WIKI_DIR, 'concepts');
+  const summarySlugs = new Set();
+  const conceptSlugs = new Set();
+  if (fs.existsSync(summaryDir)) {
+    for (const f of fs.readdirSync(summaryDir)) {
+      if (f.endsWith('.md')) summarySlugs.add(f.slice(0, -3));
+    }
+  }
+  if (fs.existsSync(conceptDir)) {
+    for (const f of fs.readdirSync(conceptDir)) {
+      if (f.endsWith('.md')) conceptSlugs.add(f.slice(0, -3));
+    }
+  }
+
+  const nodes = raw.nodes.map(n => {
+    const stem = n.source_file ? path.basename(n.source_file, '.md') : '';
+    let href = null;
+    if (summarySlugs.has(stem)) href = `summaries/${stem}.html`;
+    else if (conceptSlugs.has(stem)) href = `concepts/${stem}.html`;
+    return {
+      id: n.id,
+      label: n.label || n.id,
+      community: n.community != null ? n.community : -1,
+      type: 'graphify',
+      href,
+      source_file: n.source_file || '',
+      confidence: null
+    };
+  });
+
+  const nodeIds = new Set(nodes.map(n => n.id));
+
+  // Also add wiki concept nodes not already in the graphify graph
+  if (fs.existsSync(conceptDir)) {
+    for (const f of fs.readdirSync(conceptDir)) {
+      if (!f.endsWith('.md')) continue;
+      const slug = f.slice(0, -3);
+      if (!nodeIds.has(slug)) {
+        const md = fs.readFileSync(path.join(conceptDir, f), 'utf8');
+        const title = extractTitle(md, slug);
+        nodes.push({
+          id: slug,
+          label: title,
+          community: -1,
+          type: 'wiki-concept',
+          href: `concepts/${slug}.html`,
+          source_file: '',
+          confidence: null
+        });
+        nodeIds.add(slug);
+      }
+    }
+  }
+
+  const edges = (raw.links || [])
+    .filter(e => nodeIds.has(e.source) && nodeIds.has(e.target))
+    .map(e => ({
+      source: e.source,
+      target: e.target,
+      relation: e.relation || '',
+      confidence: e.confidence || 'EXTRACTED',
+      confidence_score: e.confidence_score != null ? e.confidence_score : 1.0
+    }));
+
+  const communitySet = new Set(nodes.map(n => n.community).filter(c => c >= 0));
+
+  return {
+    nodes, edges,
+    mode: 'graphify',
+    communities: Array.from(communitySet).sort((a, b) => a - b)
+  };
+}
+
+function buildWikilinkData() {
   const nodes = [];
   const edges = [];
   const seen  = new Set();
@@ -758,12 +866,8 @@ function buildGraphData() {
       const title = extractTitle(md, slug);
       nodes.push({ id: slug, label: title, type, href: `${prefix}/${slug}.html` });
       seen.add(slug);
-
-      // Extract wikilinks
       const links = [];
-      md.replace(/\[\[([^\]]+)\]\]/g, (_m, target) => {
-        links.push(target);
-      });
+      md.replace(/\[\[([^\]]+)\]\]/g, (_m, target) => { links.push(target); });
       for (const target of links) {
         edges.push({ source: slug, target });
       }
@@ -772,16 +876,35 @@ function buildGraphData() {
 
   scanDir(path.join(WIKI_DIR, 'summaries'), 'summary', 'summaries');
   scanDir(path.join(WIKI_DIR, 'concepts'),  'concept', 'concepts');
-
-  // Filter edges to only include nodes that exist
   const validEdges = edges.filter(e => seen.has(e.source) && seen.has(e.target));
 
-  return { nodes, edges: validEdges };
+  return { nodes, edges: validEdges, mode: 'wikilink', communities: [] };
 }
 
 function buildGraphPage(navData, _searchIndex) {
   const graphData = buildGraphData();
   const nav = renderNav(navData, '');
+  const isGraphify = graphData.mode === 'graphify';
+
+  // Build legend HTML
+  let legendHtml;
+  if (isGraphify) {
+    const activeComms = graphData.communities.slice(0, 12); // top 12 for legend
+    legendHtml = activeComms.map(c => {
+      const color = COMMUNITY_COLORS[c % COMMUNITY_COLORS.length];
+      const label = COMMUNITY_LABELS[c] || `Community ${c}`;
+      return `<div class="legend-item"><span class="legend-dot" style="background:${color}"></span> ${label}</div>`;
+    }).join('\n');
+    if (graphData.communities.length > 12) {
+      legendHtml += `\n<div class="legend-item" style="color:var(--text-muted)">+${graphData.communities.length - 12} more</div>`;
+    }
+    legendHtml += `\n<div class="legend-sep"></div>`;
+    legendHtml += `\n<div class="legend-item"><span class="legend-line solid"></span> Extracted</div>`;
+    legendHtml += `\n<div class="legend-item"><span class="legend-line dashed"></span> Inferred</div>`;
+  } else {
+    legendHtml = `<div class="legend-item"><span class="legend-dot" style="background:#58a6ff"></span> Concept</div>
+  <div class="legend-item"><span class="legend-dot" style="background:#7ee787"></span> Summary</div>`;
+  }
 
   const html = `<!DOCTYPE html>
 <html lang="en">
@@ -800,26 +923,36 @@ function buildGraphPage(navData, _searchIndex) {
     body { background: var(--bg); color: var(--text); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; overflow: hidden; }
     .topbar { position: fixed; inset: 0 0 auto 0; z-index: 100; height: var(--bar-h); background: var(--bg-nav); border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 10px; padding: 0 14px; }
     .topbar-title { flex: 1; font-size: 15px; font-weight: 600; color: var(--text-strong); }
+    .topbar-stats { font-size: 12px; color: var(--text-muted); }
     #graph-canvas { position: fixed; top: var(--bar-h); left: 0; right: 0; bottom: 0; }
-    .graph-legend { position: fixed; bottom: 16px; right: 16px; background: var(--bg-surface); border: 1px solid var(--border); border-radius: 8px; padding: 12px 16px; font-size: 13px; z-index: 10; }
+    .graph-legend { position: fixed; bottom: 16px; right: 16px; background: var(--bg-surface); border: 1px solid var(--border); border-radius: 8px; padding: 12px 16px; font-size: 12px; z-index: 10; max-height: 60vh; overflow-y: auto; }
     .legend-item { display: flex; align-items: center; gap: 8px; margin-bottom: 4px; }
-    .legend-dot { width: 10px; height: 10px; border-radius: 50%; }
-    .tooltip { position: fixed; background: var(--bg-surface); border: 1px solid var(--border); border-radius: 6px; padding: 8px 12px; font-size: 13px; color: var(--text-strong); pointer-events: none; z-index: 50; display: none; max-width: 300px; }
+    .legend-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+    .legend-line { width: 20px; height: 2px; flex-shrink: 0; }
+    .legend-line.solid { background: rgba(200,200,200,0.5); }
+    .legend-line.dashed { background: repeating-linear-gradient(90deg, rgba(200,200,200,0.5) 0 4px, transparent 4px 8px); }
+    .legend-sep { height: 1px; background: var(--border); margin: 6px 0; }
+    .tooltip { position: fixed; background: var(--bg-surface); border: 1px solid var(--border); border-radius: 6px; padding: 8px 12px; font-size: 13px; color: var(--text-strong); pointer-events: none; z-index: 50; display: none; max-width: 320px; line-height: 1.4; }
+    .tooltip .tt-label { font-weight: 600; margin-bottom: 2px; }
+    .tooltip .tt-meta { font-size: 11px; color: var(--text-muted); }
   </style>
 </head>
 <body>
 <div class="topbar">
-  <span class="topbar-title">🕸️ Knowledge Graph</span>
-  <span style="font-size:12px;color:var(--text-muted)">Drag to pan · Scroll to zoom · Click a node to open</span>
+  <span class="topbar-title">Knowledge Graph</span>
+  <span class="topbar-stats">${graphData.nodes.length} nodes &middot; ${graphData.edges.length} edges${isGraphify ? ' &middot; ' + graphData.communities.length + ' communities' : ''}</span>
+  <span style="font-size:12px;color:var(--text-muted)">Drag to pan &middot; Scroll to zoom &middot; Click to open</span>
 </div>
 <canvas id="graph-canvas"></canvas>
 <div class="graph-legend">
-  <div class="legend-item"><span class="legend-dot" style="background:#58a6ff"></span> Concept</div>
-  <div class="legend-item"><span class="legend-dot" style="background:#7ee787"></span> Summary</div>
+${legendHtml}
 </div>
 <div class="tooltip" id="tooltip"></div>
 <script>
 var GRAPH = ${JSON.stringify(graphData)};
+var COLORS = ${JSON.stringify(COMMUNITY_COLORS)};
+var COMM_LABELS = ${JSON.stringify(COMMUNITY_LABELS)};
+var IS_GRAPHIFY = ${isGraphify};
 
 var canvas = document.getElementById('graph-canvas');
 var ctx = canvas.getContext('2d');
@@ -837,44 +970,78 @@ function resize() {
 resize();
 window.addEventListener('resize', function() { resize(); draw(); });
 
-// Force layout
+// Force layout — seed by community cluster
 var nodes = GRAPH.nodes.map(function(n, i) {
-  var angle = (i / GRAPH.nodes.length) * Math.PI * 2;
-  var r = Math.min(W, H) * 0.35;
-  return { id: n.id, label: n.label, type: n.type, href: n.href,
-           x: W/2 + Math.cos(angle) * r * (0.5 + Math.random() * 0.5),
-           y: H/2 + Math.sin(angle) * r * (0.5 + Math.random() * 0.5),
+  var comm = n.community >= 0 ? n.community : i;
+  var cAngle = (comm / Math.max(GRAPH.communities.length, 1)) * Math.PI * 2;
+  var spread = Math.min(W, H) * 0.3;
+  var cx = W/2 + Math.cos(cAngle) * spread;
+  var cy = H/2 + Math.sin(cAngle) * spread;
+  return { id: n.id, label: n.label, community: n.community, type: n.type,
+           href: n.href, source_file: n.source_file || '',
+           x: cx + (Math.random() - 0.5) * 80,
+           y: cy + (Math.random() - 0.5) * 80,
            vx: 0, vy: 0 };
 });
 var nodeMap = {};
 nodes.forEach(function(n) { nodeMap[n.id] = n; });
 var edges = GRAPH.edges.filter(function(e) { return nodeMap[e.source] && nodeMap[e.target]; });
 
-// Simple force simulation
+function getColor(n) {
+  if (IS_GRAPHIFY && n.community >= 0) return COLORS[n.community % COLORS.length];
+  return n.type === 'concept' || n.type === 'wiki-concept' ? '#58a6ff' : '#7ee787';
+}
+
+function getRadius(n) {
+  // Size by degree
+  var deg = 0;
+  edges.forEach(function(e) { if (e.source === n.id || e.target === n.id) deg++; });
+  if (n.type === 'wiki-concept') return 12;
+  return Math.max(4, Math.min(14, 3 + deg * 1.2));
+}
+// Pre-compute radii
+nodes.forEach(function(n) { n._r = getRadius(n); });
+
+// Force simulation
 function tick() {
-  var k = 0.01;
-  // Repulsion
+  var k = 0.008;
   for (var i = 0; i < nodes.length; i++) {
     for (var j = i + 1; j < nodes.length; j++) {
       var dx = nodes[j].x - nodes[i].x;
       var dy = nodes[j].y - nodes[i].y;
       var d = Math.sqrt(dx*dx + dy*dy) || 1;
-      var f = 8000 / (d * d);
+      var f = 6000 / (d * d);
       nodes[i].vx -= dx/d * f; nodes[i].vy -= dy/d * f;
       nodes[j].vx += dx/d * f; nodes[j].vy += dy/d * f;
     }
   }
-  // Attraction (edges)
   edges.forEach(function(e) {
     var s = nodeMap[e.source], t = nodeMap[e.target];
     if (!s || !t) return;
     var dx = t.x - s.x, dy = t.y - s.y;
     var d = Math.sqrt(dx*dx + dy*dy) || 1;
-    var f = (d - 120) * k;
+    var rest = IS_GRAPHIFY ? 100 : 120;
+    var f = (d - rest) * k;
     s.vx += dx/d * f; s.vy += dy/d * f;
     t.vx -= dx/d * f; t.vy -= dy/d * f;
   });
-  // Center gravity
+  // Community cohesion — pull same-community nodes gently together
+  if (IS_GRAPHIFY) {
+    for (var i = 0; i < nodes.length; i++) {
+      for (var j = i + 1; j < nodes.length; j++) {
+        if (nodes[i].community >= 0 && nodes[i].community === nodes[j].community) {
+          var dx = nodes[j].x - nodes[i].x;
+          var dy = nodes[j].y - nodes[i].y;
+          var d = Math.sqrt(dx*dx + dy*dy) || 1;
+          if (d > 60) {
+            var f = (d - 60) * 0.001;
+            nodes[i].vx += dx/d * f; nodes[i].vy += dy/d * f;
+            nodes[j].vx -= dx/d * f; nodes[j].vy -= dy/d * f;
+          }
+        }
+      }
+    }
+  }
   nodes.forEach(function(n) {
     n.vx += (W/2 - n.x) * 0.001;
     n.vy += (H/2 - n.y) * 0.001;
@@ -891,7 +1058,7 @@ canvas.addEventListener('wheel', function(e) {
   e.preventDefault();
   var f = e.deltaY > 0 ? 0.92 : 1.08;
   zoom *= f;
-  zoom = Math.max(0.2, Math.min(5, zoom));
+  zoom = Math.max(0.15, Math.min(5, zoom));
   draw();
 }, { passive: false });
 
@@ -909,14 +1076,23 @@ canvas.addEventListener('mousemove', function(e) {
   var hit = null;
   nodes.forEach(function(n) {
     var d = Math.sqrt((n.x - mx)*(n.x - mx) + (n.y - my)*(n.y - my));
-    if (d < (n.type === 'concept' ? 12 : 8)) hit = n;
+    if (d < n._r + 2) hit = n;
   });
   if (hit) {
+    var ttHtml = '<div class="tt-label">' + hit.label + '</div>';
+    if (IS_GRAPHIFY && hit.community >= 0) {
+      var commName = COMM_LABELS[hit.community] || ('Community ' + hit.community);
+      ttHtml += '<div class="tt-meta">' + commName + '</div>';
+    }
+    if (hit.source_file) {
+      ttHtml += '<div class="tt-meta">' + hit.source_file.replace(/^raw\\/articles\\//, '') + '</div>';
+    }
+    if (hit.href) ttHtml += '<div class="tt-meta" style="color:var(--accent)">Click to open</div>';
+    tooltip.innerHTML = ttHtml;
     tooltip.style.display = 'block';
-    tooltip.style.left = (e.clientX + 12) + 'px';
-    tooltip.style.top = (e.clientY + 12) + 'px';
-    tooltip.textContent = hit.label;
-    canvas.style.cursor = 'pointer';
+    tooltip.style.left = (e.clientX + 14) + 'px';
+    tooltip.style.top = (e.clientY + 14) + 'px';
+    canvas.style.cursor = hit.href ? 'pointer' : 'default';
   } else {
     tooltip.style.display = 'none';
     canvas.style.cursor = dragging ? 'grabbing' : 'grab';
@@ -928,7 +1104,7 @@ canvas.addEventListener('click', function(e) {
   var mx = (e.clientX - panX) / zoom, my = (e.clientY - 52 - panY) / zoom;
   nodes.forEach(function(n) {
     var d = Math.sqrt((n.x - mx)*(n.x - mx) + (n.y - my)*(n.y - my));
-    if (d < (n.type === 'concept' ? 12 : 8)) {
+    if (d < n._r + 2 && n.href) {
       window.location.href = n.href;
     }
   });
@@ -941,36 +1117,53 @@ function draw() {
   ctx.scale(zoom, zoom);
 
   // Edges
-  ctx.strokeStyle = 'rgba(88,166,255,0.15)';
   ctx.lineWidth = 1;
   edges.forEach(function(e) {
     var s = nodeMap[e.source], t = nodeMap[e.target];
     if (!s || !t) return;
-    ctx.beginPath(); ctx.moveTo(s.x, s.y); ctx.lineTo(t.x, t.y); ctx.stroke();
+    var isInferred = e.confidence === 'INFERRED' || e.confidence === 'AMBIGUOUS';
+    var alpha = isInferred ? 0.12 : 0.2;
+    var sameComm = IS_GRAPHIFY && s.community >= 0 && s.community === t.community;
+    if (sameComm) {
+      ctx.strokeStyle = getColor(s).replace(')', ',0.25)').replace('rgb', 'rgba');
+    } else {
+      ctx.strokeStyle = 'rgba(88,166,255,' + alpha + ')';
+    }
+    ctx.beginPath();
+    if (isInferred) {
+      // Dashed line for inferred edges
+      ctx.setLineDash([4, 4]);
+    } else {
+      ctx.setLineDash([]);
+    }
+    ctx.moveTo(s.x, s.y); ctx.lineTo(t.x, t.y); ctx.stroke();
   });
+  ctx.setLineDash([]);
 
   // Nodes
   nodes.forEach(function(n) {
-    var r = n.type === 'concept' ? 10 : 6;
-    var color = n.type === 'concept' ? '#58a6ff' : '#7ee787';
+    var color = getColor(n);
     ctx.beginPath();
-    ctx.arc(n.x, n.y, r, 0, Math.PI * 2);
+    ctx.arc(n.x, n.y, n._r, 0, Math.PI * 2);
     ctx.fillStyle = color;
+    ctx.globalAlpha = n.href ? 1.0 : 0.6;
     ctx.fill();
-    ctx.strokeStyle = 'rgba(255,255,255,0.1)';
+    ctx.globalAlpha = 1.0;
+    ctx.strokeStyle = 'rgba(255,255,255,0.08)';
     ctx.lineWidth = 1;
     ctx.stroke();
   });
 
-  // Labels for concepts only at default zoom, all at higher zoom
-  ctx.font = '11px -apple-system, sans-serif';
+  // Labels — show for larger nodes or when zoomed in
+  ctx.font = '10px -apple-system, sans-serif';
   ctx.textAlign = 'center';
   ctx.textBaseline = 'top';
   nodes.forEach(function(n) {
-    if (n.type === 'concept' || zoom > 1.2) {
-      ctx.fillStyle = n.type === 'concept' ? 'rgba(230,237,243,0.9)' : 'rgba(200,200,200,0.6)';
-      var label = n.label.length > 30 ? n.label.slice(0, 28) + '…' : n.label;
-      ctx.fillText(label, n.x, n.y + (n.type === 'concept' ? 14 : 10));
+    var showLabel = n._r >= 8 || n.type === 'wiki-concept' || zoom > 1.5;
+    if (showLabel) {
+      ctx.fillStyle = n.href ? 'rgba(230,237,243,0.85)' : 'rgba(200,200,200,0.5)';
+      var label = n.label.length > 32 ? n.label.slice(0, 30) + '...' : n.label;
+      ctx.fillText(label, n.x, n.y + n._r + 3);
     }
   });
 
@@ -983,7 +1176,7 @@ function animate() {
   tick();
   draw();
   simSteps++;
-  if (simSteps < 300) requestAnimationFrame(animate);
+  if (simSteps < 400) requestAnimationFrame(animate);
 }
 animate();
 </script>
