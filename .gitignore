@@ -5,3 +5,6 @@ _site/
 package-lock.json
 graphify-out/cache/
 .graphify_*
+.scoring_batch/
+.article_titles_for_scoring.txt
+*.csv
