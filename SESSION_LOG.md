@@ -972,3 +972,31 @@ This session re-ingests the OpenAI "Harness engineering: leveraging Codex in an 
 - Key finding: GitHub's reliability degradation is not a temporary operational issue but a structural crisis where 2008-era architecture can't handle agent workload patterns (rapid repo creation, parallel commits, high-frequency APIs, multi-hour autonomous sessions) — Pierre's existence proves the gap is addressable, making this an organizational failure not a fundamental technical limit.
 - Strategic urgency: Pierre is in closed beta, but acquisition price will 10x if they gain traction with enterprises frustrated by GitHub reliability; Mitchell's "buy Pierre" recommendation has clear logic as fastest path to credible AI-native infrastructure separate from legacy GitHub.
 - Organizational insight: Microsoft never backfilling GitHub CEO role after Dohmke's voluntary departure signals strategic ambiguity about GitHub's role; reorg into Microsoft AI group and revenue pressure from Copilot distorts prioritization away from platform reliability — Mitchell's forced choice (platform or product?) surfaces the strategic contradiction GitHub can't resolve without clear leadership/mandate from Microsoft.
+
+---
+
+## Session: 2026-04-09
+
+### Articles Processed
+
+| Article | Retrieval Quality |
+|---------|-----------------|
+| [How Devin Is Modernizing COBOL at Fortune 500 Companies](https://cognition.ai/blog/how-devin-is-modernizing-cobol-at-fortune-500-companies) | **Secondary summary only** — cognition.ai domain is blocked (ERR_BLOCKED_BY_CLIENT). Claims sourced from comprehensive web search results citing the primary source, Devin documentation at docs.devin.ai, Cognition/Infosys partnership announcements (Economic Times, Office Chai), and Microsoft Azure case studies. All specific numerical claims marked [UNVERIFIED]. |
+
+### Summaries Created
+- `wiki/summaries/cognition-devin-cobol-modernization.md`
+
+### Concepts Updated
+- `wiki/concepts/ai-coding-agents-and-developer-role-shift.md` — added new key point on Devin deployed at Fortune 500 companies for COBOL modernization: automated documentation of millions of lines of legacy code, migration from COBOL to cloud platforms (AWS Lambda), refactoring business logic across hundreds of interdependent modules; addresses three core challenges: COBOL data complexity (copybooks, flat memory, inconsistent naming), LLMs' lack of COBOL training data (mainframe code absent from typical datasets), and workforce crisis ([UNVERIFIED] 47% cannot fill COBOL roles, 92% of developers retire by 2030); operates as autonomous agent in sandboxed environments with integration to Microsoft Azure, GitHub, and platforms like Infosys Topaz Fabric; added new open question on consulting services TAM disruption
+
+### Connections Added
+- **New pattern**: "Legacy Modernization Agents and the Consulting Services Disruption" — Cognition's Devin deployment at Fortune 500 companies for COBOL modernization signals structural shift in legacy transformation market; where GitHub Copilot extends into .NET migration workflows, Devin tackles COBOL mainframe code with three compounding crises (data complexity, LLM training gaps, workforce exodus: [UNVERIFIED] 47% can't fill roles, 92% retire by 2030); Devin's capabilities (automated documentation of millions of lines, migration COBOL → AWS Lambda, refactoring across hundreds of modules) represent automation of multi-year consulting engagements with Accenture/Deloitte/Cognizant/Infosys; strategic Cognition/Infosys partnership revealing: Infosys deploying Devin internally suggests consulting firms adopt agent tools for productivity/margins rather than being displaced; two-tier pattern emerges: (1) Assessment/planning layer (GitHub Copilot for Modernization) captures CTO-level budget for transformation roadmaps, (2) Execution/remediation layer (Devin for COBOL) handles actual code transformation where consulting labor-hours concentrate; Microsoft/GitHub sits at intersection of both layers (Copilot for assessment, GitHub repos for code, Actions for orchestration, Azure for cloud-native workloads); six strategic implications: (1) consulting services TAM disruption is real but gradual (B2B2E opportunity selling to consultancies), (2) COBOL as strategic test case ([UNVERIFIED] 92% retirement by 2030 creates urgency; success validates agents for all legacy stacks), (3) partnership positioning as tooling provider vs direct competitor (Cognition partnered with Azure/GitHub; formalize "Legacy Modernization Agent" partner category), (4) workforce crisis compresses sales cycles ("you can't hire your way out, only automate"), (5) build vs partner for non-.NET legacy execution (open ecosystem approach aligns with GitHub neutrality), (6) Azure data gravity advantage (GitHub-driven migrations favor Azure landing zones)
+
+### Index Updated
+- `wiki/index.md` — added entry #29 for cognition-devin-cobol-modernization; updated source count from 28 to 29; updated concept source counts: ai-agent-ecosystem from 18 to 19 sources, ai-coding-agents-and-developer-role-shift from 9 to 10 sources
+
+### Issues / Limitations
+- Full article text unavailable (cognition.ai domain blocked). All specific numerical claims ([UNVERIFIED] 47% can't fill COBOL roles, 92% retire by 2030) should be reviewed and confirmed if full primary source becomes accessible.
+- Publication date approximated as ~April 2026 based on secondary sources and partnership announcement timing; marked [UNVERIFIED].
+- The strategic partnership details between Cognition and Infosys are sourced from press coverage (Economic Times, Office Chai) rather than the primary blog post, but these are reliable secondary sources for partnership announcements.
+- Key strategic finding: Legacy modernization represents a two-tier market where GitHub Copilot can own the assessment/planning layer while partnering with specialized execution agents (Devin for COBOL) rather than building natively for every legacy stack — aligns with GitHub's historical neutrality and platform positioning.
