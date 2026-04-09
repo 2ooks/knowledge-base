@@ -20,6 +20,7 @@ The competitive dynamics of AI-powered developer tooling platforms — which lab
 - Pierre Computer (Jacob Thornton, founder) claims sustained peak >15,000 repos/min vs GitHub's 230/min average — 65x capacity demonstrating AI-native infrastructure is buildable ([[pragmatic-engineer-github-ai-native-development]])
 - GitHub organizational crisis: no CEO since Thomas Dohmke's departure, stripped of independence via reorg into Microsoft AI group, caught in Microsoft internal politics over Copilot brand and control ([[pragmatic-engineer-github-ai-native-development]])
 - Mitchell Hashimoto's strategic prescription for GitHub: establish North Star around agentic code lifecycles, shut down Copilot, buy Pierre for agentic repo hosting, re-evaluate all products ([[pragmatic-engineer-github-ai-native-development]])
+- Claude Code enterprise reliability concerns: AMD AI Group publicly abandoned Claude Code for demanding engineering tasks citing quantified performance regression after February 2026 update; demonstrates competitive vulnerability when harness reliability degrades—switching to undisclosed competitor signals enterprise customers evaluating alternatives on production-grade criteria [UNVERIFIED] ([[infoworld-enterprise-claude-code-reliability]])
 
 ## Open Questions
 - Is GitHub/Microsoft's position as the neutral developer infrastructure layer sustainable now that all labs own toolchains?
