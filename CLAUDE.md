@@ -4,6 +4,10 @@
 
 This repo has a graphify knowledge graph at `graphify-out/graph.json` (155 nodes, 160 edges, 18 communities). The site's graph page (`build.js`) reads this file at build time.
 
+### On session start
+
+Proactively run `git pull origin main` and then `python .claude/check-graphify-stale.py` to check if the graph needs updating. If new files are detected, tell the user and offer to run the update. If the user confirms (or says anything like "go", "do it", "yes"), run the full update cycle: `/graphify ./raw --update`, then the automatic trace analysis below, then commit and push.
+
 ### After git pull or new article ingestion
 
 Check if graphify is stale by comparing `raw/` contents against `graphify-out/manifest.json`. If new or changed files exist in `raw/` that aren't in the manifest, suggest running:
