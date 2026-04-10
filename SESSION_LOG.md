@@ -1061,3 +1061,34 @@ This session re-ingests the OpenAI "Harness engineering: leveraging Codex in an 
 - Date confirmed as April 9, 2026 from article header.
 - This ingestion provides Anthropic's first comprehensive public framework on agent security and the official definition of "harness" as a core agent component.
 - Key strategic insights: (1) Anthropic explicitly pushes security responsibility to deployment layer (harness/tools/environment) where GitHub operates, creating natural platform opportunity, (2) Four-component framework validates existing harness engineering thesis and maps cleanly to GitHub's infrastructure, (3) Plan Mode pattern generalizes beyond Claude Code to any long-running agent workflow, (4) Subagent coordination identified as emerging challenge GitHub already solved for CI/CD (matrix builds, composite actions, reusable workflows), (5) MCP donation to Linux Foundation signals Anthropic wants neutral ecosystem — GitHub should embrace this while building proprietary governance layer around it, (6) Ecosystem infrastructure call (benchmarks, evidence sharing, open standards) creates leadership vacuum GitHub can fill faster than NIST/standards bodies.
+
+
+---
+
+## Session: 2026-04-10 (2) — Combined Ingestion
+
+### Articles Processed
+
+| Article | Retrieval Quality |
+|---------|-----------------|
+| [Scaling Managed Agents: Decoupling the Brain from the Hands](https://www.anthropic.com/engineering/scaling-managed-agents) | **Full primary source text provided** — complete article text included in issue #110 description. All claims directly attributable to primary source with no [UNVERIFIED] flags needed. |
+| [Clouded Judgement 4.10.26 — Long Live](https://cloudedjudgement.substack.com/p/clouded-judgement-41026-long-live) | **Source retrieval failed** — cloudedjudgement.substack.com returned 403 (blocked). Multiple web searches for secondary coverage, excerpts, or social media discussion returned no results. Minimal stub created noting retrieval failure. |
+
+### Summaries Created
+- `wiki/summaries/anthropic-scaling-managed-agents.md` — full primary source summary with 13 key claims covering meta-harness architecture, brain/hands/session decoupling, pets vs cattle, credential isolation patterns, session as durable context object, performance gains (p50 TTFT ~60% drop, p95 >90% drop), many brains many hands
+- `wiki/summaries/clouded-judgement-41026-long-live.md` — minimal stub noting retrieval failure; no claims attributable to source; inferred from URL slug and prior "Long Live" editions only
+
+### Concepts Updated
+- `wiki/concepts/harness-engineering.md` — added six new key points: (1) Meta-harness architecture virtualizing session/harness/sandbox as independent interfaces following OS abstraction pattern, (2) Harness assumptions go stale — Sonnet 4.5 "context anxiety" gone in Opus 4.5 making harness resets "dead weight", (3) Brain/hands decoupling via `execute(name, input) → string` making containers cattle with harness failure recovery via `wake(sessionId)`, (4) Session as durable context object outside context window via `getEvents()` for positional event stream slicing, (5) Performance gains — p50 TTFT ~60% drop, p95 >90% drop from decoupled architecture, (6) Many brains = stateless harnesses, scaling without container provisioning overhead
+- `wiki/concepts/ai-agent-ecosystem.md` — added two new key points: (1) Managed Agents as hosted platform virtualizing session/harness/sandbox independently eliminating pets-vs-cattle problem, (2) Many brains many hands pattern with `execute(name, input) → string` interface supporting arbitrary tools/MCP servers/sandboxes, brains passing hands to one another
+- `wiki/concepts/agent-security-identity-and-permissions.md` — added three new key points: (1) Structural credential isolation — tokens never reachable from sandbox, narrow scoping goes stale as "Claude is getting increasingly smart", (2) Git token bundling — credentials consumed during setup not available at runtime, (3) MCP OAuth vault proxy — credentials in vault accessed via session-scoped proxy, harness never sees credentials
+
+### Connections Added
+- **New pattern**: "The Meta-Harness Convergence: From 'Harness > Model' to 'Platform > Harness'" — traces the evolution from LangChain's framework definition through OpenAI's production validation to Anthropic's meta-harness as the next abstraction layer; connects to GitHub infrastructure crisis, credential isolation patterns, TTFT performance insights; four strategic implications: (1) GitHub should build the open model-neutral meta-harness platform with session-as-durable-context-object as first-class artifact, (2) Git token bundling and MCP OAuth vault proxy should become GitHub platform primitives extending scoped tokens and environment secrets, (3) Session portability across model vendors as competitive moat using GitHub's repository model, (4) "Context anxiety" finding implies GitHub harness maintenance tooling should include model-capability regression tests detecting stale compensations
+
+### Index Updated
+- `wiki/index.md` — incremented source count from 171 to 173; added entries #31 (anthropic-scaling-managed-agents) and #32 (clouded-judgement-41026-long-live); renumbered remaining entries +2
+
+### Issues / Limitations
+- **Clouded Judgement retrieval failure**: cloudedjudgement.substack.com blocked (403), no secondary sources found via web search. The April 10, 2026 edition may not yet be indexed. Minimal stub created. User should re-submit with full article text pasted in issue body for proper ingestion.
+- Anthropic "Scaling Managed Agents" fully ingested with no limitations — comprehensive primary source text available from issue #110.
