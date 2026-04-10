@@ -37,7 +37,7 @@ and lists related concepts.
 | 29 | [[cognition-devin-cobol-modernization]] | Cognition AI | 2026-04-08 | [[ai-coding-agents-and-developer-role-shift]], [[ai-agent-ecosystem]], [[harness-engineering]] |
 | 30 | [[anthropic-trustworthy-agents-in-practice]] | Anthropic | 2026-04-09 | [[harness-engineering]], [[ai-agent-ecosystem]], [[agent-security-identity-and-permissions]], [[ai-coding-agents-and-developer-role-shift]] |
 | 31 | [[anthropic-scaling-managed-agents]] | Anthropic Engineering Blog | 2026-04-10 | [[harness-engineering]], [[ai-agent-ecosystem]], [[agent-security-identity-and-permissions]] |
-| 32 | [[clouded-judgement-41026-long-live]] | Clouded Judgement | 2026-04-10 | [[token-economics-and-pricing]] |
+| 32 | [[clouded-judgement-41026-long-live]] | Clouded Judgement | 2026-04-10 | retrieval-failed |
 | 33 | [[latentspace-h100-prices-are-melting-up]] | Latent Space | 2026-03-28 | [[gpu-and-compute-economics]], [[inference-architecture-and-scaling]], [[token-economics-and-pricing]] |
 | 34 | [[ai-daily-brief-why-ai-needs-better-benchmarks]] | AI Daily Brief | 2026-03-27 | [[ai-agent-ecosystem]], [[harness-engineering]], [[autoresearch-and-recursive-self-improvement]], [[ai-coding-agents-and-developer-role-shift]] |
 | 35 | [[nates-newsletter-the-most-expensive-coordination-cost-in-product-development]] | Nate's Newsletter | 2026-03-27 | [[inference-architecture-and-scaling]], [[open-models-and-local-inference]], [[token-economics-and-pricing]] |
