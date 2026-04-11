@@ -1,0 +1,11 @@
+[build]
+builder = "NIXPACKS"
+buildCommand = "cd mcp-server && npm ci && npm run build"
+
+[deploy]
+startCommand = "cd mcp-server && node dist/index.js"
+healthcheckPath = "/health"
+healthcheckTimeout = 30
+
+[variables]
+DATA_DIR = "/app"

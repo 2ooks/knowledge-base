@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: knowledge-base-mcp
+    runtime: node
+    region: oregon
+    plan: free
+    buildCommand: cd mcp-server && npm ci && npm run build
+    startCommand: cd mcp-server && node dist/index.js
+    healthCheckPath: /health
+    envVars:
+      - key: DATA_DIR
+        value: /opt/render/project/src
+      - key: NODE_ENV
+        value: production
