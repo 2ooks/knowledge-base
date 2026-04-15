@@ -20,6 +20,9 @@ The competitive dynamics of AI-powered developer tooling platforms — which lab
 - Pierre Computer (Jacob Thornton, founder) claims sustained peak >15,000 repos/min vs GitHub's 230/min average — 65x capacity demonstrating AI-native infrastructure is buildable ([[pragmatic-engineer-github-ai-native-development]])
 - GitHub organizational crisis: no CEO since Thomas Dohmke's departure, stripped of independence via reorg into Microsoft AI group, caught in Microsoft internal politics over Copilot brand and control ([[pragmatic-engineer-github-ai-native-development]])
 - Mitchell Hashimoto's strategic prescription for GitHub: establish North Star around agentic code lifecycles, shut down Copilot, buy Pierre for agentic repo hosting, re-evaluate all products ([[pragmatic-engineer-github-ai-native-development]])
+- **Google Chrome Skills launched end-user agentization:** Chrome introduced Skills feature letting users save Gemini prompts as one-click actions that run against current page/selected tabs; Google shipped library of ready-made Skills making this "more than prompt history" and "effectively lightweight end-user agentization inside the browser"; competitive threat to IDE-based agent interfaces by bringing automation directly to browser ([[ainews-humanity-last-gasp]])
+- **Cursor multi-agent CUDA optimization system:** Cursor's multi-agent software engineering system delivered 38% geomean speedup across 235 CUDA problems in 3 weeks, demonstrating "concrete example of agents being applied to systems optimization rather than app scaffolding" ([[ainews-humanity-last-gasp]])
+- **Hugging Face Kernels repo type:** New repo type for GPU kernels with precompiled artifacts matched to exact GPU/PyTorch/OS combinations claiming 1.7x–2.5x speedups over PyTorch baselines ([[ainews-humanity-last-gasp]])
 
 ## Open Questions
 - Is GitHub/Microsoft's position as the neutral developer infrastructure layer sustainable now that all labs own toolchains?
