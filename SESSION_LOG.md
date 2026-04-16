@@ -1061,3 +1061,42 @@ This session re-ingests the OpenAI "Harness engineering: leveraging Codex in an 
 - Date confirmed as April 9, 2026 from article header.
 - This ingestion provides Anthropic's first comprehensive public framework on agent security and the official definition of "harness" as a core agent component.
 - Key strategic insights: (1) Anthropic explicitly pushes security responsibility to deployment layer (harness/tools/environment) where GitHub operates, creating natural platform opportunity, (2) Four-component framework validates existing harness engineering thesis and maps cleanly to GitHub's infrastructure, (3) Plan Mode pattern generalizes beyond Claude Code to any long-running agent workflow, (4) Subagent coordination identified as emerging challenge GitHub already solved for CI/CD (matrix builds, composite actions, reusable workflows), (5) MCP donation to Linux Foundation signals Anthropic wants neutral ecosystem — GitHub should embrace this while building proprietary governance layer around it, (6) Ecosystem infrastructure call (benchmarks, evidence sharing, open standards) creates leadership vacuum GitHub can fill faster than NIST/standards bodies.
+
+---
+
+## Session: 2026-04-16
+
+### Articles Processed
+
+| Article | Retrieval Quality |
+|---------|-----------------|
+| [[AINews] RIP Pull Requests (2005-2026)](https://www.latent.space/p/ainews-rip-pull-requests-2005-2026) | **Full primary source accessed** — Complete article text provided in issue description. AINews article with two sections: opening editorial on Pull Request obsolescence and news digest for April 14-15, 2026. No paywalled content. All claims directly attributable to primary source. |
+
+### Summaries Created
+- `wiki/summaries/ainews-rip-pull-requests.md`
+
+### Concepts Updated
+- `wiki/concepts/developer-tooling-competitive-landscape.md` — added 4 new key points: GitHub PR disablement (first time in history), Prompt Requests vs Pull Requests (Pete Steinberger/Theo advocacy), reputation-based contribution systems (Mitchell Hashimoto/Amp Code), Cloudflare complete agent platform positioning (Project Think, Agent Lee, voice pipeline, Browser Run)
+- `wiki/concepts/harness-engineering.md` — added 2 new key points: OpenAI harness separation and sandbox ecosystem (Cloudflare/Modal/Daytona/E2B/Vercel integrations, "stateless orchestration + stateful isolated workspaces" pattern convergence), Hermes persistent skill formation (automatic workflow-to-skill conversion, Gemma 4 abliteration case study)
+- `wiki/concepts/ai-agent-ecosystem.md` — added 3 new key points: OpenAI Agents SDK sandbox ecosystem emergence, Hermes vs OpenClaw architectural divergence, Gemini 3.1 Pro eval data (6.4 hour time horizon on software tasks, Document Arena rankings)
+- `wiki/concepts/open-models-and-local-inference.md` — added 5 new key points: Nucleus-Image (sparse MoE diffusion), Parcae (looped transformers), Nemotron 3 Super (120B hybrid Mamba-Attention MoE), NVIDIA Lyra 2.0 (3D world generation), TIPS v2 (text-image encoder)
+
+### Connections Added / Updated
+- **New major pattern**: "The Death of Pull Requests and GitHub's Existential Dilemma" — documents GitHub allowing PR disablement for first time, Prompt Requests vs Pull Requests shift, Aaron Levie's "make software that agents want" framing, convergence with GitHub infrastructure crisis; strategic implications include git replacement exploration, Prompt Requests as GitHub feature, Pierre Computer acquisition forcing function, reputation-based contribution product opportunity, session-as-artifact shift
+- **New major pattern**: "OpenAI's Harness Separation and the Sandbox Ecosystem Convergence" — documents OpenAI splitting harness from compute/storage, five major sandbox provider integrations (Cloudflare/Modal/Daytona/E2B/Vercel), Cloudflare's full-stack agent platform positioning; strategic implications include GitHub Actions as neutral orchestration layer, state/memory as unclaimed layer, Cloudflare full-stack threat, GitHub-certified agent runtimes program, sandbox providers' execution moat vs orchestration control plane
+
+### Issues / Limitations
+- None — full article text was accessible via issue description. All claims are attributed to the primary source with no [UNVERIFIED] flags needed.
+- Article covers 2-day news window (April 14-15, 2026) so marked with fast decay rate for future review.
+
+### Key Strategic Insights
+1. **GitHub PR disablement is an existential admission**: First time in platform history that the core collaboration primitive (pull requests) can be disabled signals GitHub acknowledging git-based workflows may not survive AI-native development era. Combined with infrastructure crisis (90% uptime, Pierre Computer 65x capacity advantage), GitHub faces pincer movement: technically unable to scale for AI agents and strategically committed to collaboration model agents don't want.
+
+2. **OpenAI harness separation commoditizes orchestration**: By open-sourcing harness and delegating execution to partner sandboxes, OpenAI shifts differentiation to state management and secure execution—exactly where GitHub Actions/Environments currently operate. Risk of "horizontal specialization" fragmenting agent stack into harness/execution/state/orchestration layers with unclear ownership. GitHub must position Actions as neutral orchestration control plane before LangSmith or cloud vendors capture layer.
+
+3. **Cloudflare full-stack positioning is direct GitHub threat**: Project Think + Agent Lee + voice + browser automation frames "production agent platform as composition of durable runtime + UI grounding + browser + voice + sandbox"—complete alternative to GitHub Actions + Copilot Workspace. GitHub advantage is neutral positioning and existing enterprise relationships, but only matters if feature parity achieved on orchestration primitives (durable sessions, sub-agent coordination, runtime tool creation).
+
+4. **Prompt Requests vs Pull Requests shift requires GitHub product response**: Pete Steinberger/Theo advocacy for Prompt Requests (no merge conflicts, easier maintainer modification, lower security risk) and Mitchell Hashimoto/Amp Code reputation systems signal collaboration model shifting from code review to contributor trust scoring. GitHub should add first-class "Prompt Request" workflows alongside Pull Requests rather than defend dying paradigm.
+
+5. **State/memory layer is unclaimed strategic opportunity**: OpenAI separated harness from execution but didn't define where persistent state lives. Agents need durable storage for workspace files, intermediate results, session history. GitHub should add "Agent State Storage" as first-class primitive: per-repo state volumes persisting across agent runs, accessible via MCP servers, versioned but optimized for key-value access. Captures memory layer before LangSmith or database vendors.
+
