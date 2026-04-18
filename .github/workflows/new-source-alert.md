@@ -10,6 +10,10 @@ permissions:
   contents: read
   issues: read
 
+concurrency:
+  group: wiki-ingestion
+  cancel-in-progress: false
+
 safe-outputs:
   create-issue:
     title-prefix: "[ingestion] "

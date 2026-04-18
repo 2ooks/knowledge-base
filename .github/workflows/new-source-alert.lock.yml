@@ -45,7 +45,8 @@ name: "New Source Alert"
 permissions: {}
 
 concurrency:
-  group: "gh-aw-${{ github.workflow }}-${{ github.ref || github.run_id }}"
+  group: "wiki-ingestion"
+  cancel-in-progress: false
 
 run-name: "New Source Alert"
 

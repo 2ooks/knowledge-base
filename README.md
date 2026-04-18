@@ -28,3 +28,9 @@ node build.js
 ```
 
 GitHub Pages must be configured in **Settings → Pages → Source: GitHub Actions**.
+
+## Workflow engines and ingestion queueing
+
+- `new-source-alert` runs as a GitHub Agentic Workflow and is serialized with workflow-level concurrency (`group: wiki-ingestion`, `cancel-in-progress: false`) so ingestion runs queue instead of racing.
+- `nightly-integrity` and `weekly-digest` are configured to use the Claude engine (`engine: claude`) to avoid depending on a separate `COPILOT_GITHUB_TOKEN` secret.
+- When adding a new Agentic Workflow, update both the source `.md` file and its compiled `.lock.yml` file together, and apply the same fixed concurrency pattern for any workflow that edits shared wiki/index/session files.
