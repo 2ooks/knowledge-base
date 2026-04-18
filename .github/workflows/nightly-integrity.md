@@ -7,6 +7,8 @@ permissions:
   contents: read
   issues: read
 
+engine: claude
+
 safe-outputs:
   create-issue:
     title-prefix: "[wiki-health] "
