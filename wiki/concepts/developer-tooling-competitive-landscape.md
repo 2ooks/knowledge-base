@@ -20,6 +20,7 @@ The competitive dynamics of AI-powered developer tooling platforms — which lab
 - Pierre Computer (Jacob Thornton, founder) claims sustained peak >15,000 repos/min vs GitHub's 230/min average — 65x capacity demonstrating AI-native infrastructure is buildable ([[pragmatic-engineer-github-ai-native-development]])
 - GitHub organizational crisis: no CEO since Thomas Dohmke's departure, stripped of independence via reorg into Microsoft AI group, caught in Microsoft internal politics over Copilot brand and control ([[pragmatic-engineer-github-ai-native-development]])
 - Mitchell Hashimoto's strategic prescription for GitHub: establish North Star around agentic code lifecycles, shut down Copilot, buy Pierre for agentic repo hosting, re-evaluate all products ([[pragmatic-engineer-github-ai-native-development]])
+- **UI philosophy divide (April 2026 simultaneous releases):** Anthropic (Claude Desktop) uses three distinct modes—Chat, Cowork, Code—for different work types; OpenAI (new Codex) uses single unified interface where "ask for a coding task, get code; ask for a doc, get a doc"; OpenAI bets agent is smart enough that "the interface should basically disappear," switching modes is friction; Anthropic bets modes are different enough that collapsing them creates meaningful compromise, closer to how native apps are designed ([[ai-daily-brief-opus-4-7-and-new-codex]])
 
 ## Open Questions
 - Is GitHub/Microsoft's position as the neutral developer infrastructure layer sustainable now that all labs own toolchains?
