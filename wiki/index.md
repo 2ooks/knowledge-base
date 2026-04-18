@@ -2,7 +2,7 @@
 This index is maintained automatically. Each entry links to its summary
 and lists related concepts.
 
-## Sources (171)
+## Sources (172)
 
 | # | Summary | Source | Date | Concepts |
 |---|---------|--------|------|----------|
@@ -177,6 +177,7 @@ and lists related concepts.
 | 169 | [[latentspace-ai-engineer-summit-online-updated]] | Latent Space | 2025-02-20 | [[harness-engineering]], [[inference-architecture-and-scaling]], [[token-economics-and-pricing]] |
 | 170 | [[latentspace-llm-gateway-the-one-decision-that-removes-100-ai-engineering]] | Latent Space | 2025-02-06 | [[inference-architecture-and-scaling]], [[open-models-and-local-inference]], [[token-economics-and-pricing]] |
 | 171 | [[pragmatic-engineer-ai-engineering-with-chip-huyen]] | The Pragmatic Engineer | 2025-02-05 | [[inference-architecture-and-scaling]], [[ai-scaling-limits-and-research-paradigm]] |
+| 172 | [[ai-daily-brief-opus-4-7-and-new-codex]] | AI Daily Brief | 2026-04-17 | [[harness-engineering]], [[ai-coding-agents-and-developer-role-shift]], [[developer-tooling-competitive-landscape]], [[ai-agent-ecosystem]] |
 
 ## Concepts (13)
 
