@@ -19,6 +19,11 @@ The trend toward open-weight AI models with permissive licenses that can run loc
 - Qwen 3.5 Max Preview reaches #3 in Math and Top 10 in Arena Expert; open model leaderboard movement remains rapid ([[ainews-every-lab-serious-enough-about]])
 - NVIDIA Nemotron 3 mixes Transformer + Mamba 2, MoE/LatentMoE, multi-token prediction, and NVFP4 for lower inference costs and long-context agent workloads — architecture experimentation beyond pure transformers accelerating ([[ainews-every-lab-serious-enough-about]])
 - Kimi K2.5 (open-source / Chinese base model) served as the foundation for Cursor Composer 2 which beats Opus 4.6 after RL post-training — demonstrates that adequate open base models can reach frontier performance via domain-specific training ([[ai-daily-brief-anthropic-mythos-vertical-models]])
+- **Nucleus-Image (sparse MoE diffusion):** First sparse MoE diffusion model, 17B parameters with 2B active, Apache 2.0 license, with weights, training code, and dataset recipe; day-0 support in diffusers ([[ainews-rip-pull-requests]])
+- **Parcae (looped transformers):** Stabilized layer-looping Transformer where looping blocks can recover quality of model ~2x the size for fixed parameter budgets; creates new scaling axis where FLOPs scale via looping not just parameters/data ([[ainews-rip-pull-requests]])
+- **Nemotron 3 Super (NVIDIA):** Open 120B hybrid Mamba-Attention MoE with 12B active parameters, 1M context, trained on 25T tokens; up to 2.2x throughput vs GPT-OSS-120B and 7.5x vs Qwen3.5-122B; memory bandwidth and long-context throughput increasingly first-class architectural objectives ([[ainews-rip-pull-requests]])
+- **NVIDIA Lyra 2.0:** Framework for generating persistent, explorable 3D worlds maintaining per-frame 3D geometry with self-augmented training to reduce temporal drift ([[ainews-rip-pull-requests]])
+- **TIPS v2 (Google):** Foundational text-image encoder under Apache 2.0 with new pretraining recipes ([[ainews-rip-pull-requests]])
 
 ## Open Questions
 - Will Apache 2.0 open models close the gap with closed-source frontier models (Claude, GPT)?
