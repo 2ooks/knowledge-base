@@ -29,7 +29,7 @@ gh api --paginate "repos/${REPO}/issues?state=open&labels=new-source&per_page=10
 import re, sys
 
 text = sys.stdin.read()
-pattern = re.compile(r"(?<!\\w)@([a-zA-Z0-9][a-zA-Z0-9-]{0,38})\\b")
+pattern = re.compile(r"(?<!\w)@([a-zA-Z0-9][a-zA-Z0-9-]{0,38})\b")
 
 def sanitize(match):
     start, end = match.span(0)
