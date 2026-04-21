@@ -19,6 +19,10 @@ The trend toward open-weight AI models with permissive licenses that can run loc
 - Qwen 3.5 Max Preview reaches #3 in Math and Top 10 in Arena Expert; open model leaderboard movement remains rapid ([[ainews-every-lab-serious-enough-about]])
 - NVIDIA Nemotron 3 mixes Transformer + Mamba 2, MoE/LatentMoE, multi-token prediction, and NVFP4 for lower inference costs and long-context agent workloads — architecture experimentation beyond pure transformers accelerating ([[ainews-every-lab-serious-enough-about]])
 - Kimi K2.5 (open-source / Chinese base model) served as the foundation for Cursor Composer 2 which beats Opus 4.6 after RL post-training — demonstrates that adequate open base models can reach frontier performance via domain-specific training ([[ai-daily-brief-anthropic-mythos-vertical-models]])
+- Moonshot Kimi K2.6: 1T-parameter MoE (32B active, 384 experts, 8 routed + 1 shared), MLA attention, 256K context, native multimodality, INT4 quantization — claims open-source SOTA on SWE-Bench Pro (58.6%), HLE w/ tools (54.0), long-horizon execution (4,000+ tool calls, 12+ hour runs, 300 parallel sub-agents) ([[ainews-kimi-k26-qwen36-hermes-agent]])
+- Kimi K2.6 day-0 ecosystem support: vLLM, OpenRouter, Cloudflare Workers AI, Baseten, MLX, Hermes Agent, OpenCode — demonstrates Chinese open models achieving parity with Western labs in ecosystem integration speed ([[ainews-kimi-k26-qwen36-hermes-agent]])
+- Alibaba Qwen3.6-Max-Preview: improved agentic coding, stronger instruction following, reached #7 in Code Arena, moving Alibaba to #3 lab overall; community reports solving AIME 2026 #15 after ~30 minutes of thinking ([[ainews-kimi-k26-qwen36-hermes-agent]])
+- Prefill-as-a-Service for cross-datacenter inference: linear-attention architectures like Kimi Linear reduce KV cache transfer enough to enable remote prefill across 100 Gbps inter-DC links; PoC with 1T-parameter linear-attention model reports +54% throughput, -64% P90 TTFT, ~13 Gbps outbound bandwidth ([[ainews-kimi-k26-qwen36-hermes-agent]])
 
 ## Open Questions
 - Will Apache 2.0 open models close the gap with closed-source frontier models (Claude, GPT)?
