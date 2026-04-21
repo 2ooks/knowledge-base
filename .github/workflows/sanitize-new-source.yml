@@ -23,8 +23,11 @@ jobs:
             const sanitizedBody = originalBody.replace(
               mentionRegex,
               (match, username, offset, fullText) => {
-                const before = fullText[offset - 1];
-                const after = fullText[offset + match.length];
+                const before = offset > 0 ? fullText[offset - 1] : "";
+                const after =
+                  offset + match.length < fullText.length
+                    ? fullText[offset + match.length]
+                    : "";
                 if (before === '`' && after === '`') {
                   return match;
                 }
