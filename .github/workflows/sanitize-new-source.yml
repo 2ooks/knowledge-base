@@ -1,0 +1,52 @@
+name: Sanitize new-source issue body
+
+on:
+  issues:
+    types: [opened, edited]
+
+permissions:
+  issues: write
+
+jobs:
+  sanitize:
+    if: contains(join(github.event.issue.labels.*.name, ','), 'new-source')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Sanitize @mentions in issue body
+        uses: actions/github-script@v8
+        with:
+          script: |
+            const issue = context.payload.issue;
+            const originalBody = issue.body || "";
+            const mentionRegex = /(?<!\w)@([a-zA-Z0-9][a-zA-Z0-9-]{0,38})\b/g;
+
+            const sanitizedBody = originalBody.replace(
+              mentionRegex,
+              (match, username, offset, fullText) => {
+                const before = fullText[offset - 1];
+                const after = fullText[offset + match.length];
+                if (before === '`' && after === '`') {
+                  return match;
+                }
+                return `\`@${username}\``;
+              }
+            );
+
+            if (sanitizedBody === originalBody) {
+              core.info("No mention sanitization needed.");
+              return;
+            }
+
+            await github.rest.issues.update({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: issue.number,
+              body: sanitizedBody,
+            });
+
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: issue.number,
+              body: "Applied mention sanitization to the issue body: wrapped detected `@handle` tokens in backticks to prevent accidental GitHub user notifications.",
+            });
