@@ -14,6 +14,7 @@ AI systems autonomously improving their own training recipes, harnesses, or inst
 - Opus 4.6 sustains 12+ hours / 118 experiments in autonomous research loops; GPT-5.4 cannot — harness quality determines autoresearch ceiling ([[ainews-autoresearch-sparks-of-recursive]])
 - Hermes Agent self-improvement loop: evaluates what worked/didn't work after each interaction and automatically converts successful workflows into reusable skills (procedural memory) ([[turingpost-hermes-agent-openclaw-rival]])
 - Skills generation contrast: OpenClaw skills are mostly human-authored; Hermes skills are automatically generated from successful workflow patterns, representing different approach to capability accumulation ([[turingpost-hermes-agent-openclaw-rival]])
+- **Hugging Face ml-intern automates the full post-training research loop:** ml-intern is described as "the strongest open agent-in-the-loop release" automating reading papers, following citation graphs, collecting/reformatting datasets, launching training jobs, evaluating runs, and iterating on failures. Reported examples include GPQA scientific reasoning improving 10% → 32% in under 10h on Qwen3-1.7B, a healthcare setup beating Codex on HealthBench by 60%, and autonomous fine-tuning publishing artifacts back to the Hub ([[ainews-openai-launches-gpt-image-2]])
 
 ## Open Questions
 - Can autoresearch loops be made robust enough for production ML pipelines beyond toy benchmarks?
