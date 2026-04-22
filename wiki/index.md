@@ -2,15 +2,16 @@
 This index is maintained automatically. Each entry links to its summary
 and lists related concepts.
 
-## Sources (171)
+## Sources (172)
 
 | # | Summary | Source | Date | Concepts |
 |---|---------|--------|------|----------|
-| 1 | [[ainews-everything-is-cli]] | Latent.Space | 2026-03-26 | [[ai-agent-ecosystem]], [[harness-engineering]], [[developer-tooling-competitive-landscape]] |
-| 2 | [[ainews-claude-code-source-leak]] | Latent.Space | 2026-03-31 | [[harness-engineering]], [[agent-security-identity-and-permissions]], [[ai-agent-ecosystem]] |
-| 3 | [[ainews-gemma-4-multimodal]] | Latent.Space | 2026-04-03 | [[open-models-and-local-inference]], [[ai-agent-ecosystem]] |
-| 4 | [[nvidia-inference-kingdom-expands]] | SemiAnalysis | 2026-03-23 | [[inference-architecture-and-scaling]], [[semiconductor-supply-chain-bottlenecks]] |
-| 5 | [[great-gpu-shortage-rental-capacity]] | SemiAnalysis | 2026-04-01 | [[gpu-and-compute-economics]], [[token-economics-and-pricing]], [[ai-agent-ecosystem]] |
+| 1 | [[ainews-openai-launches-gpt-image-2]] | Latent.Space | 2026-04-21 | [[harness-engineering]], [[autoresearch-and-recursive-self-improvement]], [[ai-agent-ecosystem]], [[open-models-and-local-inference]], [[developer-tooling-competitive-landscape]], [[inference-architecture-and-scaling]] |
+| 2 | [[ainews-everything-is-cli]] | Latent.Space | 2026-03-26 | [[ai-agent-ecosystem]], [[harness-engineering]], [[developer-tooling-competitive-landscape]] |
+| 3 | [[ainews-claude-code-source-leak]] | Latent.Space | 2026-03-31 | [[harness-engineering]], [[agent-security-identity-and-permissions]], [[ai-agent-ecosystem]] |
+| 4 | [[ainews-gemma-4-multimodal]] | Latent.Space | 2026-04-03 | [[open-models-and-local-inference]], [[ai-agent-ecosystem]] |
+| 5 | [[nvidia-inference-kingdom-expands]] | SemiAnalysis | 2026-03-23 | [[inference-architecture-and-scaling]], [[semiconductor-supply-chain-bottlenecks]] |
+| 6 | [[great-gpu-shortage-rental-capacity]] | SemiAnalysis | 2026-04-01 | [[gpu-and-compute-economics]], [[token-economics-and-pricing]], [[ai-agent-ecosystem]] |
 | 6 | [[dwarkesh-dylan-patel-interview]] | Dwarkesh Podcast | 2026-03-13 | [[semiconductor-supply-chain-bottlenecks]], [[gpu-and-compute-economics]], [[inference-architecture-and-scaling]] |
 | 7 | [[clouded-judgement-per-token-pricing]] | Clouded Judgement | 2026-03-27 | [[token-economics-and-pricing]], [[gpu-and-compute-economics]], [[inference-architecture-and-scaling]] |
 | 8 | [[fourth-industrial-revolution]] | Clouded Judgement | 2024-07-17 | [[inference-architecture-and-scaling]] |
