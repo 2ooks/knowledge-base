@@ -1,0 +1,90 @@
+# Microsoft Earnings, Apple Earnings
+**Source:** https://stratechery.com/2026/microsoft-earnings-apple-earnings/?access_token=eyJhbGciOiJSUzI1NiIsImtpZCI6InN0cmF0ZWNoZXJ5LnBhc3Nwb3J0Lm9ubGluZSIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJzdHJhdGVjaGVyeS5wYXNzcG9ydC5vbmxpbmUiLCJhenAiOiJIS0xjUzREd1Nod1AyWURLYmZQV00xIiwiZW50Ijp7InVyaSI6WyJodHRwczovL3N0cmF0ZWNoZXJ5LmNvbS8yMDI2L21pY3Jvc29mdC1lYXJuaW5ncy1hcHBsZS1lYXJuaW5ncy8iXX0sImV4cCI6MTc4MjI3Njc3MCwiaWF0IjoxNzc5Njg0NzcwLCJpc3MiOiJodHRwczovL2FwcC5wYXNzcG9ydC5vbmxpbmUvb2F1dGgiLCJzY29wZSI6ImZlZWQ6cmVhZCBhcnRpY2xlOnJlYWQgYXNzZXQ6cmVhZCBjYXRlZ29yeTpyZWFkIGVudGl0bGVtZW50cyBwb2RjYXN0IHJzcyIsInN1YiI6ImU1ZDQ0YTY0LWNhNTgtNDcxZC05ZmEzLTljOTA4MTNhODg1MCIsInVzZSI6ImFjY2VzcyJ9.T6DpPU9fik-kcnuOt8kWlvTKVr7bF0VGulz-PGtJCKZbypBV4fOuUM6Our-K_e6vwAE_X-1w3-7lNXr4ukzHsu2jFR-oomB-_BDu4MqE2094_eji2uwcWXzVIIgJW4qTofssaU5z4nClYKnm8trt44IY9EBWAA3Pn-hnkqcHpwfkwBq8IACa6ulIfW4Ih49XfyfneFbM5VsptZGctlLEcNhWzV1uew4YtwepBZKJvIxwrhq6ySk99Ymk4tC28RZPryDkwneiZCHbM3cx9xXb2M3rZtHRM3XH9XuwCBoJVlH4qM4kJw60xfDSuu0H-2Mb_xPtZJEKlhH3SuMXyhrMuA
+**Date:** 2026-05-06
+**Author:** Ben Thompson
+**Score:** TBD | **Concepts:** TBD
+**Scoring reason:** Bridged from take_engine (no takes generated yet; pending next pipeline run).
+
+Listen to this post:
+Your browser does not support the audio element.
+Good morning,
+On
+last week’s episode of Sharp China
+, Andrew and Bill discussed Beijing’s belated cancellation of Meta’s acquisition of Manus.
+One scheduling note: there will be no episode of Sharp Tech this week, although Friday’s Dithering will be recorded as scheduled.
+On to the Update:
+Microsoft Earnings
+From the
+Wall Street Journal
+:
+Microsoft reported robust cloud growth and an increase in paid AI subscribers, offering a reprieve for investor concerns about returns in the face of massive bets on artificial intelligence. Sales reached $82.9 billion, an 18% increase from the March quarter a year ago, and net income was $31.8 billion. Both sales and net income exceeded Wall Street expectations. Shares were roughly flat in after-hours trading after the company forecast 13% to 15% revenue growth in the June quarter. Capital spending this year will reach $190 billion, a 61% increase over 2025…
+Microsoft Chief Executive Satya Nadella has sought to transform the company into an AI powerhouse in recent years. Azure, its cloud-computing platform, has become the infrastructure backbone for AI startup OpenAI and other companies building AI applications. But Azure revenue growth slowed in the company’s last quarterly earnings report and its data-center push has struggled to keep pace with demand.
+Another issue for Microsoft has been its suite of Copilot AI tools, which embeds AI assistants into Microsoft’s Office, Teams and GitHub software. The company has struggled to convert its massive user base into paying AI customers, and has allowed models from AI startup Anthropic into its Copilot platform. Microsoft said Copilot now has 20 million paid users, up 33% since January. Growth in the company’s Azure cloud business reached 40%, in line with expectations, and its capital spending was about $31.9 billion, more than 8% lower than projections.
+Satya Nadella opened
+the earnings call
+talking, as you might expect, about agents:
+We are at the beginning of one of the most consequential platform shifts that will change the entire tech stack as agents proliferate and become the dominant workload. This will drive TAM expansion and change the value creation equation across the entire economy.
+To capture this opportunity, we are executing against two priorities. First, we are building the world’s leading cloud and AI infrastructure for agentic computing era. Second, we are building high-value agentic systems across core domains such as productivity, coding and security. These two layers reinforce each other, and we are focused on driving competitive value and differentiation for customers across each so that they can eval-max their outcomes.
+The real focus of the call, however, was addressing the existential problem that agents present to Microsoft. Specifically, Microsoft’s productivity offerings monetize on a per-seat licensing basis, but the promise of agents is that they (1) accomplish more than any one person, (2) use tremendously more compute than any one person, and (3) replace or reduce the number of persons necessary, reducing the number of Microsoft 365 seat licenses that need to be bought.
+The answer was a new description of the Microsoft 365 business model: it’s no longer “seats”, but “seats plus consumption”; from Nadella’s prepared remarks:
+When it comes to biz apps, we are seeing a new pattern emerge as customers shift from traditional seat model to seats plus consumption.
+I love this framing, as if this business model is just magically appearing out of thin air, instead of it clearly being something that Microsoft needs to happen. But I digress. CFO Amy Hood expanded on the new business model in the question-and-answer section:
+I think if you take a step back, which is I think the broader question you’re asking, and obviously, I’ll let Satya talk to it, too, you’re really thinking through as we go through using a model that’s historically thought of as a per seat business. And suddenly, if you think about getting worked on and being more productive, it’s thinking about being a seat or a worker plus an agent. And when I think about that model, I start to think about it as a license business plus a consumption business and really applying far more broadly than I think people have thought about that.
+And so it starts to mean that over time bookings will actually also look a little different. It will still have that per seat license logic, but it will also have a meter, just like you see in Azure. And it may not all flow through bookings in the same way. You’ll just bill for usage. And if that usage has great value to customers, and I’ll let Satya talk a little bit about this, then you’ll keep spinning and keep using those agents if they’re adding direct value or growth to your business. And so I think it’s probably healthy to sort of start to think about that transition in a broader way. Well, you may not see it in the short term in bookings. I think if I were to frame how to think about the opportunity, I would probably think about it more in that light.
+Nadella added:
+I think the basic transformation of, I’ll say, any per user business of ours, whether it’s productivity, coding, security, will become a per user and usage business. That’s the best way to think about. It’s obviously already happening with coding. That’s where you see it already perhaps at scale. Some of the business model changes even we made this quarter speak to that. But it also speaks, I think, to the intensity of usage, right, because where is these dollars going to come from? At the end of the day, it is going to come from some eval and outcome that a business has, where these agents that are working on behalf of users or with users has created value. And so that’s sort of where it starts, whether it’s customer service, whether it’s individual productivity, team productivity, a business process, some costs per is either decreasing because of the use of agents, or some revenue is increasing because of agents because it was able to compress these workflows.
+And that’s what you broadly start seeing, right? Even when people talk about Copilot, it’s obviously, they use chat, chat with reasoning, they use Cowork, they use Agent Mode inside a Word, Excel, PowerPoint, but it’s all been done in the context of some task trajectory. And so when they start seeing that the task trajectory is compressing the workflow, improving revenue, decreasing costs, that is what’s driving usage. So it may not be, by the way, pure seat coverage type of motions like in the past. This is more about getting intense users and intense usage. And that’s what we’re focused on.
+This certainly makes sense at a high level, but the most interesting aspect of this — at least from a management perspective — is that line Nadella has about “it may not be…pure seat coverage type of motions like in the past.” The word “motion” is a reference to how a company like Microsoft takes its products to market, including incentivizing its sales force and partners to push Microsoft 365. It won’t simply be a lift to convince customers to accept more uncertainty in their costs, with the promise of greater productivity; it will also be a lift for Microsoft internally to figure out how to incentivize its own employees to make the case for this new model.
+The positive aspect of this shift for customers is that, as Hood noted, it places a lot of pressure on Microsoft to actually deliver value:
+I do believe that one of the real focuses that we’ve got to all have is that — and this really dates back to the question that Keith asked in the beginning, which is that when you move to usage-based models, you have to make sure you’re delivering incredibly high value to customers. So what we need to do is make sure the focus starts with customer usage that creates value. If that creates value and positive output, then the TAM expansion here and the ROI will be very good.
+This perspective also reframes the AI threat to Microsoft’s business model. On the plus side, if a customer isn’t reaping AI benefits, then they won’t need to reduce the number of seats (or use much AI); in truth, however, this gets at the real danger, which is customers reaping the benefits of AI, but not
+Microsoft’s
+AI, which means the usage is going elsewhere.
+The threat here is, of course, the model companies, and the possibility that
+the point of integration that matters is model and harness
+; Nadella once again made the case that the integration that matters is actually harness and proprietary company data, which isn’t dependent on any one model:
+The other thing that is important when you think about what makes these form factors useful is intelligence, and the intelligence is a function of two things. It’s an intelligence of having multiple models coupled to context, that’s the meetings, the documents, the e-mails, the Teams, I mean all of that — SharePoint data, all of that rich, by the way, constantly updated, right? So this is not some static database. It’s the most important database in any company that is constantly changing every second. So that’s the context, the models brought together with the harness that’s multi-model.
+The other interesting point from the call was Hood’s admission that Microsoft getting access to OpenAI models for free is going to be great for margins:
+I also think it’s been important to us to make sure we leverage the IP we have, the IP we get from our partnerships is obviously free to us for a long time. So we’re able to take that and apply it and to benefit our margins in a healthy way.
+It may be the case that, for all of their multi-model bluster, Microsoft will suddenly find itself very motivated to make one particular model work best — and maybe that will actually make the entire thing work. Time will tell.
+Apple Earnings
+From the
+Wall Street Journal
+:
+Apple reported that revenue from iPhones rose 21.7% to nearly $57 billion in the second quarter compared with the prior year as customers, excited by the iPhone 17 lineup, continued to upgrade their devices at a brisk pace. That powered Apple to quarterly sales of $111.2 billion, results that exceeded Wall Street expectations. The results might have been better if not for the constrained supply of advanced chips that power Apple’s devices, said Apple Chief Financial Officer Kevan Parekh. And Apple said results will continue to be strong, projecting that revenue will leap between 14% and 17% during the current quarter, far higher than analysts’ estimate of 10%. Shares rose 2% in after-hours trading.
+The company also undershot its estimates of demand for Mac computers, Cook said on the company’s earnings call, which has led to longer wait times for customers. At the same time, Apple’s gross profit margin, a measure that is closely watched by investors, came in at an iPhone-era record of 49.3% for the company. But the tidy margins may be short-lived. Cook warned that memory costs will be “significantly higher” for the company beyond the June quarter and that Apple is looking at a range of options to offset the impact to its business.
+This was
+a really interesting earnings call
+on several points. First, Apple is leaning into the Mac as “the best platform for AI”; Cook said in his prepared remarks:
+From Mac Mini to MacBook Pro and everything in between, Mac is the best platform for AI, with Apple Silicon delivering exceptional performance, industry-leading efficiency, and the ability to run advanced models locally in ways that simply weren’t possible before.
+Relatedly, Cook started talking up Apple Intelligence again, linking it to this same point:
+Apple Intelligence brings together dozens of powerful capabilities from visual intelligence to Clean Up in photos, that are seamlessly integrated into the moments that matter most to our users every day. And we look forward to bringing a more personalized Siri to users coming this year. What truly sets Apple apart is how Apple Intelligence is woven into the core of our platforms, powered by Apple Silicon, and designed from the ground up to deliver intelligence that is fast, personal, and private. This is not AI as a standalone feature, but AI as an essential intuitive part of the experience across our devices. It builds on years of innovation, from the neural engine, to advanced on-device processing, enabling capabilities that are not only incredibly powerful but also respectful of user privacy.
+Increasingly, that same foundation is drawing developers and researchers to our products as powerful platforms for building and running agentic AI, thanks to the unique combination of performance, efficiency, and on-device capabilities. When you combine this level of integration with our relentless focus on the customer experience, it becomes clear why Apple platforms are the best place to experience AI.
+This isn’t wrong — both Apple Intelligence and the Mac’s suitability to AI use cases are ultimately based on Apple Silicon — but they are two very different and distinct points. In fact, I made the case last year in
+Apple AI’s Platform Pivot Potential
+that Apple’s best response to the new Siri disaster was to lean into the Mac as an AI platform generally. There are two things that are interesting about that argument a year later:
+I was wrong that the primary reason that Mac’s would be compelling would be for on-device inference; rather, what is spurring the shortage in Mac Minis and Mac Studios are agentic workflows using harnesses like OpenClaw; that actually leverages the CPU more than the GPU, since the default setup actually uses cloud LLMs.
+Apple definitely didn’t take my argument seriously, because the company had to admit on this earnings call that they didn’t foresee the explosion in demand for Minis and Studios, and that it would take months for them to catch up to demand.
+The biggest issue for both models is memory. Cook explained why memory hadn’t had a big impact on Apple yet, but would in the future:
+Let me talk about memory specifically, which I think is the root of the question. And I’ll go back to December for a moment and just walk you through the chronology. In the December quarter, we really had a minimal impact due to memory, and you can kind of see that in the gross margin results. We said it would be a bit more in the March quarter, and we did see higher memory costs in the March quarter, and they were partially offset by benefits from carry-in inventory that we had. For the June quarter and what’s embedded in the guidance that Kevan went through earlier, we expect significantly higher memory costs. They are also partly offset by the benefit of carry-in inventory. And then where we don’t give color beyond June, I can tell you that beyond the June quarter, we believe memory costs will drive an increasing impact on our business. And we’ll continue to evaluate this, and as we’ve said before, we’ll look at a range of options.
+Apple also has two chip problems. First,
+as discussed last quarter
+, Apple doesn’t have enough A19 Pro chips, and TSMC doesn’t have the capacity to give them more. Second, the MacBook Neo has been so popular that
+Tim Culpan reported that Apple blew through its stockpile of A18 Pro chips
+— and again, TSMC doesn’t have any spare capacity!
+I’m sure that Apple’s plan for the MacBook Neo was to update it yearly to use the previous year’s iPhone Pro chip. If it’s true, however, that Apple is out of both A19 Pro chips and A18 Pro chips, I wonder if the company will ultimately decide to update the Neo sooner rather than later in order to consolidate its demand on one chip (the A19 Pro).
+More generally, this really is a unique situation that John Ternus is going to be stepping into. For all of Apple’s mastery of the supply chain, and most favored customer status with TSMC, they have, at least in recent memory, never needed to operate in a world where they weren’t dictating terms or were unable to satisfy demand for quarters on end. That, however, is the true power of AI: even Apple is a 2nd priority to the insatiable demand for everything from memory to TSMC fab capacity.
+This Update will be available as a podcast later today. To receive it in your podcast player,
+visit Stratechery
+.
+The Stratechery Update is intended for a single recipient, but occasional forwarding is totally fine! If you would like to order multiple subscriptions for your team with a group discount (minimum 5), please contact me directly.
+Thanks for being a subscriber, and have a great day!
+Share
+Share on Facebook (Opens in new window)
+Facebook
+Share on X (Opens in new window)
+X
+Share on LinkedIn (Opens in new window)
+LinkedIn
+Email a link to a friend (Opens in new window)
+Email

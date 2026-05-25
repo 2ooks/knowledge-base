@@ -1,0 +1,36 @@
+# AI metrics
+**Source:** https://www.ben-evans.com/benedictevans/2025/6/9/generative-ais-metrics-question
+**Date:** 2025-06-09
+**Author:** Benedict Evans
+**Score:** TBD | **Concepts:** TBD
+**Scoring reason:** Bridged from take_engine (no takes generated yet; pending next pipeline run).
+
+AI metrics
+In the early days of the consumer Internet, a lot of metrics floated around and no-one was clear what to measure or what it meant. The first chart in Mary Meeker’s first Internet Trends Report, in 1995, was ‘internet hosts’, followed by global PC users, internet backbone traffic and subscribers to AOL. As the web took off, we talked about ‘hits’ - for younger readers, that meant counting file transfers from your web server, so if you added more buttons to your nav bar, you had more GIFs to download and more hits. Social went from ‘registered users’ to MAU and then DAU and MAU/DAU. When smartphones took off, people were confused about the difference between unit sales, installed base and usage, and how those related to ASP and ARPU. And, of course, everyone picks the metric that makes them look best, or that redefines the market in the way they want. Apple talked a lot about how many app were on the app store while Google talked about ‘cumulative activations’ of Android. You can see the FTC playing this game now with its assertion that Instagram doesn’t compete with TikTok: is the right metric time spent, or videos watched, or connections to real-world friends? It depends.
+Naturally, all of these questions come up again for generative AI. OpenAI occasionally reports round numbers for ‘weekly active users’, even though Sam Altman, as a former social media founder, is entirely aware that WAU is a pretty weak metric (if you’re only using this once a week, it isn’t changing your life).
+View fullsize
+Still, WAU is at least a tangible, specific metric: too many people are still asking consumers and enterprises questions like “do you use AI?” or even “have you used AI in the last year?” There’s a definitional problem here - are you asking about things like ChatGPT, Claude and Gemini, or do you also mean Snapchat filters and Alexa, both powered by machine learning, which we certainly used to call ‘AI’. Which do you mean, and which does the person you’re asking mean? And even if you agree on definition, who cares if someone has used ChatGPT
+once
+? If you ask a giant corporation ‘do you use AI?’ and they say yes, do they mean they’re rebuilding their invoice processing around an LLM or that someone in marketing does mockups with MidJourney sometimes?
+Google IO 2025
+Google and Microsoft have given charts of ‘tokens generated’, and even label the axis, but this is very much like reporting bandwidth growth in 1996: it looks great and certainly tells us that something is going up, but there are too many multipliers to know what that something really is. Usage and users are growing, yes, but meanwhile the models have become far more efficient on one hand and on the other agents and media creation use far more tokens for a given request, and of course Google is showing ‘AI Overviews’ to everyone. If you saw this chart for YouTube bandwidth 20 years ago, you’d ask how much this was more users, more views per user, longer videos, more completion or higher quality video. Indeed, given that most of this token generation today is enterprise API use, this is a bit like trying to understand cloud adoption by measuring AWS and Azure bandwidth transfers.
+Then, I’ve seen
+survey data
+for DAU time spent, which seems more useful, but not on a timeline, and it’s tough for third parties to collect this on mobile. Mary Meeker’s 30-year anniversary report had a chart comparing Google and ChatGPT retention, which puzzles me: mathematically, surely you can have growing loyalty of even a shrinking user base?
+View fullsize
+View fullsize
+When you get inside a well-run hyper-growth company like Meta or Google, conversely, you see a lot of very specific and rigorously-collected and defined  second and third derivative metrics that really tell you how well the product is working and what people are doing. Google famously optimised for response time, which no-one else thought was important, and aimed to get people to leave the site quickly, which everyone else thought was bad. A lot of these metrics can also be a positive feedback cycle making the product itself better: when you reformulate a Google search and try again, or click on the third link and do or don’t come back afterwards, you’re giving Google signals that make it better, and that’s a powerful network effect. It’s not clear that any LLM providers are really able to leverage this kind of thing yet, and what they would measure: if I ask a question and don’t try again, was that the right result, was it wrong but I thought it was right, or did I give up and go to Google?
+At the other extreme, I think charts comparing generative AI user growth to things like the internet or smartphones need some caution, or context. The original Macintosh started at $7850 and the original iPhone at $800 ($2450 and $499 before adjusting for inflation) where generative AI is ‘just’ a website or an app (as far as the user experiences it). You don’t need to buy a device or wait for your telco to build broadband or 3G, and meanwhile there are billions of people online now instead of tens or hundreds of millions, so yes, it’s grown a lot bigger a lot faster: we’re standing on the shoulders of giants. (This is also why Nvidia can ramp its sales so fast - it’s riding on the contract manufacturing base built over the last few decades). That doesn’t mean this is a
+bad
+comparison: as I wrote a long time ago,
+unfair comparisons are often the best kind
+, but you do need to know it’s unfair.
+Stepping back, Eric Schmidt told Sheryl Sandberg that when you’re getting on a rocket ship, don’t argue about which seat, and this is certainly a rocket ship. The Occam’s Razor is that in the end all of these metrics resolve to money and time. But the fuzziness today also reflects how early and unclear all of this is. We don’t know what the business and the products will be yet, and the right metric will be shaped by that. Mary Meeker’s 1995 report forecast email and web use separately, and she thought email would be bigger, which wasn’t really how this worked.
+View fullsize
+From Mary Meeker's 1995 report
+View fullsize
+From Mary Meeker's 2001 report
+Hence, the real question, as I’ve hinted at a couple of times, is how much LLMs will be used mostly as actual user-facing general-purpose chatbots at all or whether they will mostly be embedded inside other things, in which case trying to measure their use at all will be like trying to measure machine learning, or SQL (how many times a day do you use a database? Who cares?). Conversely, we’re also wondering if LLMs will hit Google’s query volume (a casual comment fro, Eddie Cue earlier this year spiked Google’s share price), or accelerate the smartphone refresh cycle, or change e-commerce buying behaviours. And what are the metrics for SEO for LLMs?
+Artificial Intelligence
+Benedict Evans
+9 June 2025
