@@ -1,0 +1,12 @@
+# Drop one URL per line. Lines starting with # are ignored.
+# Processed URLs move to articles.processed.txt automatically with a timestamp + status.
+# This file is read by .claude/scripts/process_inbox.py (run manually or on session start).
+#
+# When run:
+#   - Each URL is fetched, given a slug + KB-formatted markdown header
+#   - File lands in raw/articles/<slug>.md
+#   - Next time you run /graphify, it picks up the new files
+#
+# Examples:
+# https://every.to/divinations/the-grand-unified-theory-of-strategy
+# https://www.anthropic.com/news/claude-3-5-sonnet

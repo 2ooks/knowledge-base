@@ -1,0 +1,11 @@
+{
+  "servers": {
+    "nate-bot": {
+      "type": "stdio",
+      "command": "python",
+      "args": [
+        "C:\\Users\\matttookey\\OneDrive - Microsoft\\Desktop\\Nate\\nate-knowledge-base\\mcp-server\\nate_mcp_server.py"
+      ]
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Bash(git pull*)",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python .claude/check-graphify-stale.py"
+          }
+        ]
+      },
+      {
+        "matcher": "Bash(git merge*)",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python .claude/check-graphify-stale.py"
+          }
+        ]
+      },
+      {
+        "matcher": "Bash(git rebase*)",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python .claude/check-graphify-stale.py"
+          }
+        ]
+      }
+    ]
+  }
+}

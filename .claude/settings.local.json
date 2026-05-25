@@ -1,0 +1,43 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(\"$APPDATA/Python/Python314/Scripts/graphify.exe\" install:*)",
+      "Bash(python -c \":*)",
+      "Bash(mkdir -p graphify-out)",
+      "Bash(PYTHONIOENCODING=utf-8 python -c \":*)",
+      "Bash(rm -f .graphify_detect.json .graphify_extract.json .graphify_ast.json .graphify_semantic.json .graphify_analysis.json .graphify_labels.json .graphify_python .graphify_chunk1.json .graphify_chunk2.json)",
+      "Bash(cd:*)"
+    ]
+  },
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Bash(git pull*)",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python .claude/check-graphify-stale.py"
+          }
+        ]
+      },
+      {
+        "matcher": "Bash(git merge*)",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python .claude/check-graphify-stale.py"
+          }
+        ]
+      },
+      {
+        "matcher": "Bash(git rebase*)",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python .claude/check-graphify-stale.py"
+          }
+        ]
+      }
+    ]
+  }
+}
