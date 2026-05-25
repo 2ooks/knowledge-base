@@ -5,8 +5,19 @@
       "input_tokens": 0,
       "output_tokens": 0,
       "files": 23
+    },
+    {
+      "date": "2026-05-24",
+      "new_files": 195,
+      "total_words": 994459,
+      "input_tokens": 126000,
+      "output_tokens": 34500,
+      "nodes_added": 804,
+      "nodes_total": 1693
     }
   ],
   "total_input_tokens": 0,
-  "total_output_tokens": 0
+  "total_output_tokens": 0,
+  "cumulative_input_tokens": 126000,
+  "cumulative_output_tokens": 34500
 }
